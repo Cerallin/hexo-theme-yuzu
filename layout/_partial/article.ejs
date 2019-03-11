@@ -1,0 +1,30 @@
+<article class="post" id="post">
+  <header class="post-head">
+    <h1 class="post-title">
+      <a class="title" href="<%- url_for(post.path) %>">
+        <%= post.title %>
+      </a>
+    </h1>
+  </header>
+  <div class="post-datetag">
+    <div class="post-date">
+      <%- partial('_partial/post/date') %>
+    </div>
+    <div class="post-tag">
+      <%- partial('_partial/post/tag') %>
+    </div>
+  </div>
+  <div class="article-entry" itemprop="articleBody">
+    <% if (post.excerpt && index){ %>
+    <%- post.excerpt %>
+    <% if (theme.excerpt_link){ %>
+    <p class="article-more-link">
+      <a href="<%- url_for(post.path) %>#more">
+        <%= theme.excerpt_link %></a>
+    </p>
+    <% } %>
+    <% } else { %>
+    <%- post.content %>
+    <% } %>
+  </div>
+</article>

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+    <%- partial('_partial/head', null, {cache: false}) %>
+<body>
+
+  <div class="page">
+    <div class="head">
+      <%- partial('_partial/header', null, {cache: false}) %>
+    </div>
+    <div class="main">
+        <%- partial('_partial/head-bar') %>
+      <%- body %>
+    </div>
+    <footer class="footer-nav">
+      <%- partial('_partial/footer', null, {cache: false}) %>
+    </footer>
+    <div class="back-top" id="back-top">
+      <i class="back-top-icon"></i>
+    </div>
+    <%- partial('_partial/after-footer') %>
+  </div>
+</body>

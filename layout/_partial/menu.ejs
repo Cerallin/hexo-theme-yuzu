@@ -1,0 +1,15 @@
+<div class="menu-nav">
+  <% for (var i in theme.menu){ %>
+  <div class="menu-navItem">
+    <div class="menu-navItem-tit">
+      <a href="<%- url_for(theme.menu[i]) %>">
+        <span>
+          <%= i %></span>
+      </a>
+    </div>
+    <div class="menu-navItem-cont">
+        <%- partial('_widget/' + i) %>
+    </div>
+  </div>
+  <% } %>
+</div>

@@ -1,0 +1,51 @@
+
+@keyframes showBlock{
+  0%{
+    opacity: 0;
+    height: 0px;
+  }
+  100%{
+    opacity: 1;
+    height: 164px;
+  }
+}
+@keyframes hideBlock{
+  0%{
+    opacity: 1; 
+    height: 164px;
+  }
+  100%{
+    opacity: 0;
+    height: 0px;
+  }
+}
+.barShow-head{
+  display: none;
+}
+.barShow{
+  animation: showBlock 0.4s forwards;
+  display: block !important;
+  z-index: 10;
+}
+.barShow-ul{
+  padding-left: 20px;
+  width: 100%;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  .barShow-item{
+    a{
+      display: inline-block;
+      font-size: 15px;
+      margin: 8px auto;
+      padding-left: 0px;
+      color: rgba(1, 1, 1, .75);
+    }
+  }
+}
+.barShow-hide{
+  animation: hideBlock 0.4s forwards;
+  z-index: 10;
+  display: block !important;
+  opacity: 1;
+  height: 150px;
+}

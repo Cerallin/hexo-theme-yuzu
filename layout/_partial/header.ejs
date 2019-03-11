@@ -1,0 +1,24 @@
+<header class="head-header">
+  <h1 class="head-authorH">
+    <a href="<%- url_for() %>" class="head-authorLink">
+      <%= config.title%></a>
+  </h1>
+  <div class="head-right">
+    <!-- <div class="head-search">
+      <input class="head-searchK"></input>
+      <span class="head-searchT">
+        <%= theme.otherMenu1 %></span>
+    </div> -->
+    <button class="barWrap" id="barWrap-toggle">
+      <span class="bar"></span>
+      <span class="bar"></span>
+      <span class="bar"></span>
+    </button>
+    <div class="head-about" id="head-about">
+      <% for (var i in theme.otherMenu2){ %>
+      <a class="head-aboutLink" href="<%- url_for(theme.otherMenu2[i]) %>">
+        <%= i %></a>
+      <% } %>
+    </div>
+  </div>
+</header>

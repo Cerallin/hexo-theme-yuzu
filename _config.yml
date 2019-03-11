@@ -1,0 +1,51 @@
+# ===========================================
+# Site Information Settings
+# ===========================================
+
+# Site creation time
+since: 2018
+
+# Set feed link (false | default | your feed link)
+# false: disable
+# default: use `atom.xml`, generator for `hexo-generator-feed`
+rss: default
+
+# ===========================================
+# Menu Settings
+# ===========================================
+menu:
+  Archives: /archives
+  Lifes: /categories/life
+  Tags: /tags
+
+#other menu1
+# otherMenu1: Search
+#other Menu2
+otherMenu2:
+  About: /about
+
+# menu
+archive_type: 'yearly'
+tag_type: 'monthly'
+show_count: false
+
+# 是否开启toc
+# toc: true
+toc:
+  list_number: true  # 是否显示数字排序
+#Tag 页面的标题
+tagTitle: Tags
+
+#life 标题
+lifeAbout: 热爱生活，然后发现，处处都是阳光
+
+theme:
+  color: Default
+  fancybox: false
+
+favicon: /img/favicon.ico
+
+# ===========================================
+# Version
+# ===========================================
+version: 1.1

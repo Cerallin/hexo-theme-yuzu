@@ -1,0 +1,28 @@
+<%- partial('_partial/menu', {pagination: 2, index: true}) %>
+
+<div id="index-content" class="content">
+
+  <% page.posts.each(function(post){ %>
+  <%- partial('_partial/article', {post: post, index: true}) %>
+  <% }) %>
+
+  <div class="content-pagination">
+    <% if (page.prev){ %>
+    <div class="prev">
+      <i class="prev-icon"></i>
+      <a href="<%- config.root %><%- page.prev_link %>">
+        <span>Prev</span>
+      </a>
+    </div>
+    <% } %>
+    <% if (page.next){ %>
+    <div class="next">
+      <a href="<%- config.root %><%- page.next_link %>">
+        <span>Next</span>
+      </a>
+      <i class="next-icon"></i>
+    </div>
+    <% } %>
+
+  </div>
+</div>

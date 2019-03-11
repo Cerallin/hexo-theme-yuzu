@@ -1,0 +1,150 @@
+
+////////////////////////////////////
+code-font-size = 13px;
+code-font-family = "Open Sans","PingFang SC","Hiragino Sans GB","Microsoft Yahei","Microsoft Jhenghei",sans-serif;
+$theme-color-map = {
+  'Default': #4D89FB #F8F8F8,
+  'Mint Green': #16982B #f5f5f5,
+  'Cobalt Blue': #0047AB #f0f2f5,
+  'Hot Pink': #FF69B4 #f8f5f5,
+  'Dark Violet': #9932CC #f5f4fa
+};
+$theme-color-config = hexo-theme-config('theme.color');
+// $theme-color-list = map-get($theme-color-map, $theme-color-config);
+// $theme-color = nth($theme-color-list, 1);
+// $deputy-color = nth($theme-color-list, 2);
+theme-color = #f8f8f8;
+deputy-color = #f5f5f5;
+code-color = #000;
+code-background = deputy-color;
+// code-background = #f8f8f8;
+gray = #cacaca;
+
+code-font-size = 13px;
+// $code-highlight-color = {
+  comment = #93a1a1;
+  keyword = #859900;
+  number = #2aa198;
+  name = #268bd2;
+  attribute = #b58900;
+  symbol = #cb4b16;
+  built_in = #dc322;
+// }
+
+
+code, pre {
+  padding: 7px;
+  font-size: code-font-size;
+  font-family: code-font-family;
+  background: code-background;
+}
+
+code {
+  padding: 3px 5px;
+  color: code-color;
+}
+
+.highlight {
+  margin: 1em 0;
+  overflow-x: auto;
+  box-shadow: 1px 1px 2px rgba(0,0,0,0.125);
+  table {
+    position: relative;
+
+    &::after {
+      position: absolute;
+      top: 0;
+      right: 0;
+      left: 0;
+      padding: 2px 7px;
+      font-size: code-font-size;
+      font-weight: bold;
+      color: gray;
+      background: darken(code-background, 3%);
+      content: 'Code';
+    }
+  }
+
+  .code {
+    pre {
+      margin: 0;
+      padding: 30px 10px 10px;
+    }
+  }
+
+  .gutter {
+    width: 10px;
+    color: gray;
+
+    pre {
+      margin: 0;
+      padding: 30px 7px 10px;
+    }
+  }
+
+  .line {
+    height: round(code-font-size * 1.5);
+  }
+
+  table, tr, td {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    border-collapse: collapse;
+  }
+
+  .code {
+    .comment,
+    .quote {
+      color: comment;
+    }
+
+    .keyword,
+    .selector-tag,
+    .addition {
+      color: keyword;
+    }
+
+    .number,
+    .string,
+    .meta .meta-string,
+    .literal,
+    .doctag,
+    .regexp {
+      color: number;
+    }
+
+    .title,
+    .section,
+    .name,
+    .selector-id,
+    .selector-class {
+      color: title;
+    }
+
+    .attribute,
+    .attr,
+    .variable,
+    .template-variable,
+    .class .title,
+    .type {
+      color: attribute;
+    }
+
+    .symbol,
+    .bullet,
+    .subst,
+    .meta,
+    .meta .keyword,
+    .selector-attr,
+    .selector-pseudo,
+    .link {
+      color: symbol;
+    }
+
+    .built_in,
+    .deletion {
+      color: built_in;
+    }
+  }
+}

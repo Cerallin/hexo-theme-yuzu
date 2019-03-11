@@ -1,0 +1,110 @@
+html {
+  font-size: fontSize;
+  box-sizing: border-box;
+ 
+}
+
+body {
+  padding: 0;
+  margin: 0;
+  color: dark-gray;
+  vertical-align: baseline;
+}
+
+* {
+  margin: 0 px;
+  padding: 0 px;
+  list-style: none;
+  text-decoration: none;
+}
+img{
+  max-width: 100%;
+  height: auto;
+  display: inline-block;
+  vertical-align: middle;
+}
+.page {
+  // display: none;
+  margin-top: 0 px;
+}
+
+.page .head {
+  // display: none;
+  z-index: 9;
+  top: 0;
+  right: 0;
+  left: 0;
+  box-shadow: 0 0 1px rgba(0, 0, 0, 0.15);
+  background: #fff;
+}
+@media screen and (max-width: 750px) {
+  .head{
+    position: fixed;
+  }
+  .menu-nav, #head-about, .post-widget{
+    display: none;
+  }
+  #barWrap-toggle{
+    display: inline-block;
+  }
+  #index-content{
+    width: 100%;
+  }
+  .main{
+    margin-top: 65px !important;
+  }
+
+  .barShow-head{
+    display: none;
+    position: fixed;
+    left: 0px;
+    top: 65px;
+    background: #fff;
+    width: 100%;
+    border-bottom: 1px solid #ccc;
+    border-top: 1px solid #ccc;
+  }
+
+  #post{
+    width: 90%;
+  }
+}
+.page .main {
+  margin: 0 auto;
+  width: 90%;
+  max-width: 1000px;
+}
+.main > .post{
+  width: 75%;
+  float: left;
+  .article-entry{
+   
+  }
+}
+.page .footer-nav {
+  // display: none;
+  display: block;
+  width: 90%;
+	margin: 30px auto 0px;
+	padding: 20px 0;
+	border-top: 1px solid #e1e1e1;
+  color: #aaa;
+	font-size: 14px;
+  max-width: 1000px;
+  overflow: hidden;
+}
+.page .back-top{
+  display: block;
+  display: none;
+  width: 90%;
+	margin: -60px auto 0px;
+  .back-top-icon{
+    margin-top: -68px;
+    float: right;
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    background-image: url('../img/back-top.png');
+    background-repeat: no-repeat;
+  }
+}

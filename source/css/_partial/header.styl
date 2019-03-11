@@ -1,0 +1,63 @@
+.head-header{
+  height: 65px;
+  line-height: 65px;
+  max-width: 1000px;
+  margin: 0 auto;
+  width: 90%;
+}
+.head-authorH{
+  display: inline-block;
+  .head-authorLink{
+    font-size: 24px;
+    font-weight: 400;
+    text-decoration: none;
+    color: dark-gray;
+  }
+}
+.head-right{
+  float: right;
+  .head-search{
+    display: inline-block;
+    .head-searchK{
+      border: none;
+      width: 0px;
+      width: 166px;
+      height: 38px;
+      border-bottom: 1px solid rgba(1, 1, 1, 0.15);
+      &:focus{
+        outline: none;
+      }
+    }
+    .head-searchT{
+      margin-left: 20px;
+      color: rgba(1, 1, 1, 0.6);
+    }
+  }
+  .head-about{
+    display: inline-block;
+    margin-left: 30px;
+    .head-aboutLink{
+      text-decoration: none;
+      color: rgba(1, 1, 1, 0.6);
+    }
+  }
+  .barWrap{
+    display: none;
+    outline: none;
+    padding: 9px 10px;
+    background: transparent;
+    border: none;
+    user-select: none;
+    cursor: pointer;
+    .bar{
+      display: block;
+      width: 22px;
+      height: 2px;
+      background: #666;
+      border-radius: 1px;
+    }
+    .bar + .bar{
+      margin-top: 4px;  
+    }
+  }
+}

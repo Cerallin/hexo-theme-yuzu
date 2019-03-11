@@ -1,0 +1,40 @@
+<div class="life">
+  <p class="life-about">
+    <%- theme.lifeAbout %>
+  </p>
+  <div class="life-cont">
+    <% site.posts.each(function(post, index){ 
+              post.categories.forEach(function(cat){ 
+                if(cat.name === 'life'){ %>
+      <div class="life-item">
+        <a href="<%- url_for(post.path) %>">
+          <span>
+            <%- post.title %>
+          </span>
+        </a>
+        <span class="archive-artDate">
+          <time class="post-time" title="<%- full_date(post.date) %>" datetime="<%- date_xml(post.date) %>" itemprop="datePublished">
+            <%- post.date.format(config.date_format) %>
+          </time>
+        </span>
+        <div class="article-entry" itemprop="articleBody">
+          <% if (post.excerpt && index){ %>
+            <%- post.excerpt %>
+              <% if (theme.excerpt_link){ %>
+                <p class="article-more-link">
+                  <a href="<%- url_for(post.path) %>#more">
+                    <%= theme.excerpt_link %>
+                  </a>
+                </p>
+                <% } %>
+                  <% } else { %>
+                    <%- post.content %>
+                      <% } %>
+        </div>
+      </div>
+      <% 
+    } %>
+        <% }) %>
+          <% }) %>
+  </div>
+</div>
