@@ -1,15 +1,15 @@
 <div class="menu-navlifes-cont">
   <% var showlifeNum = 0;
      var pointShowBool = false;
-    site.posts.each(function(post){ 
-        post.categories.forEach(function(cat){ 
-          if(cat.name === 'life'){ 
+    site.posts.each(function(post){
+        post.categories.forEach(function(cat){
+          if(cat.name === category){
             if(showlifeNum < 5) { %>
               <p class="menu-navlifes-item">
                   <a href="<%- url_for(cat.path) %>"><span>
                       <%- post.title %></span></a>
                 </p>
-            <% } 
+            <% }
             if(!pointShowBool) {
               if(showlifeNum > 4){ %>
                 <p class="menu-navlifes-item">...</p>
@@ -20,4 +20,7 @@
           } %>
   <% }) %>
   <% }) %>
+  <% if (showlifeNum === 0) { %>
+    <p class="menu-navlifes-item">Empty~</p>
+  <% } %>
 </div>

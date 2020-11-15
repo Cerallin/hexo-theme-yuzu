@@ -21,6 +21,7 @@ menu:
     widget: Archives
     link: /archives
   Lifes:
+    name: lifes # category name
     widget: Lifes
     link: /categories/lifes
   Tags:
