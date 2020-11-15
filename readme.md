@@ -14,10 +14,19 @@ archive_generator:
     yearly: false
     monthly: false
     daily: false
-```
 
-## ReadmeFirst
-主题较为简洁粗陋，后期会完善
+# 自定义侧边栏
+menu:
+  Archives:
+    widget: Archives
+    link: /archives
+  Lifes:
+    widget: Lifes
+    link: /categories/lifes
+  Tags:
+    widget: Tags
+    link: /tags
+```
 
 ## 侧边栏
 
@@ -28,7 +37,6 @@ archive_generator:
 ```
 
 ## 待完善功能 （More Functions）
-  评论
-
-
-
+- [x] 适配宽屏幕
+- [ ] 修复分类页面
+- [ ] 提高主题自定义程度

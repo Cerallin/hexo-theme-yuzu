@@ -14,9 +14,15 @@ rss: default
 # Menu Settings
 # ===========================================
 menu:
-  Archives: /archives
-  Lifes: /categories/life
-  Tags: /tags
+  Archives:
+    widget: Archives
+    link: /archives
+  Lifes:
+    widget: Lifes
+    link: /categories/lifes
+  Tags:
+    widget: Tags
+    link: /tags
 
 #other menu1
 # otherMenu1: Search

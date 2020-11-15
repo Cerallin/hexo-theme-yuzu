@@ -1,16 +1,9 @@
 <div class="barShow-head" id="barShow">
   <ul class="barShow-ul">
-    <% for (var i in theme.menu){ %>
+    <% for (var i in config.menu){ %>
       <li class="barShow-item">
-        <a href="<%- url_for(theme.menu[i]) %>"><span>
+        <a href="<%- url_for(config.menu[i].link) %>"><span>
             <%= i %></span></a>
-      </li>
-    <% } %>
-    <% for (var i in theme.otherMenu2){ %>
-      <li class="barShow-item">
-        <a class="head-aboutLink" href="<%- url_for(theme.otherMenu2[i]) %>">
-          <%= i %>
-        </a>
       </li>
     <% } %>
   </ul>

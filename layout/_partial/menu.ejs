@@ -1,14 +1,14 @@
 <div class="menu-nav">
-  <% for (var i in theme.menu){ %>
+  <% for (var item in config.menu){ %>
   <div class="menu-navItem">
     <div class="menu-navItem-tit">
-      <a href="<%- url_for(theme.menu[i]) %>">
+      <a href="<%- url_for(config.menu[item].link) %>">
         <span>
-          <%= i %></span>
+          <%= item %></span>
       </a>
     </div>
     <div class="menu-navItem-cont">
-        <%- partial('_widget/' + i) %>
+        <%- partial('_widget/' + config.menu[item].widget) %>
     </div>
   </div>
   <% } %>
