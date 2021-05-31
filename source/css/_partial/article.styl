@@ -1,9 +1,12 @@
 .post{
   padding: 40px 0;
   margin: auto;
+  font-family: 'Noto Serif', 'Noto Serif SC', sans-serif;
+
   .post-head{
     .post-title{
       margin: 0px 0px 10px;
+
       a{
         position: relative;
         display: inline-block;
@@ -15,41 +18,39 @@
       }
     }
   }
+
   .post-datetag{
     margin-bottom: 10px;
     color: #aaa;
     font-size: 14px;
+
     .post-date{
       display: inline-block;
+
+      .post-time {
+        font-family: 'Raleway', Georgia, 'Times New Roman', Times, serif;
+      }
     }
     .post-tag{
       display: inline-block;
       margin-left: 20px;
+
       a{
         color: #aaa;
         text-decoration: none;
       }
     }
   }
-  @font-face {
-    font-family: "Source Han Sans CN Regular";
-    src: url("Source Han Sans CN Regular.woff2") format("woff2"),
-        url("Source Han Sans CN Regular.woff") format("woff"),
-        url("Source Han Sans CN Regular.ttf") format("truetype"),
-        url("Source Han Sans CN Regular.eot") format("embedded-opentype"),
-        url("Source Han Sans CN Regular.svg") format("svg");
-    font-weight: normal;
-    font-style: normal;
-  }
+
   p{
     word-break: break-all;
     padding-top: 5px;
     padding-bottom: 10px;
-    font-family: "Source Han Sans CN Regular";
     font-size: 20px;
     text-indent: 2em;
     line-height: 1.5em!important;
   }
+
   blockquote>p {
     color: #9A9A9A;
   }
