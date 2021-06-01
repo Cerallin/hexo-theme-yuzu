@@ -9,7 +9,8 @@
     </div>
     <div class="menu-navItem-cont">
       <%- partial('_widget/' + config.menu[item].widget, {
-        category: config.menu[item].name
+        category: config.menu[item].name,
+        showNum: config.menu[item].show_num || 3
       }) %>
     </div>
   </div>
