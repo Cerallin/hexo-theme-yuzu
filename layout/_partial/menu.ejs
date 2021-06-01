@@ -8,7 +8,9 @@
       </a>
     </div>
     <div class="menu-navItem-cont">
-      <%- partial('_widget/' + config.menu[item].widget, {category: config.menu[item].name}) %>
+      <%- partial('_widget/' + config.menu[item].widget, {
+        category: config.menu[item].name
+      }) %>
     </div>
   </div>
   <% } %>
