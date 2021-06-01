@@ -1,10 +1,11 @@
 <span class="footer-msg">
   <% if (config.beian && config.beian.enable) { %>
-    <img src="/img/icp.png">
-    <a href="https://beian.miit.gov.cn/" class="icp-text" target="_blank">
-      <%- config.beian.icp %>
-    </a>
-    <br>
+    <div class="icp">
+      <img src="/img/icp.png">
+      <a href="https://beian.miit.gov.cn/" class="icp-text" target="_blank">
+        <%- config.beian.icp %>
+      </a>
+    </div>
   <% } %>
   <%- config.since_year %>
   <% let current = date(Date.now(), "YYYY") %>
