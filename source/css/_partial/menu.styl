@@ -1,21 +1,80 @@
-.menu-nav{
+.menu-nav {
   float: left;
   width: 19%;
   padding-top: 40px;
-  color: rgba(0, 0, 0, .6);
-  .menu-navItem{
+  color: rgba(0, 0, 0, 0.6);
+
+  .menu-nav-item {
     font-size: 14px;
-    .menu-navItem-tit{
+
+    .menu-nav-item-tit {
       padding-bottom: 5px;
       border-bottom: 1px solid #ddd;
-      a{
+
+      a {
         color: #333;
         font-size: 16px;
         text-decoration: none;
       }
     }
   }
-  div.menu-navItem:nth-of-type(2), div.menu-navItem:nth-of-type(3){
+
+  div.menu-nav-item:not(:first-of-type) {
     margin-top: 30px;
+  }
+}
+
+// Archive menu
+.menu-nav-item-cont.archives {
+  margin-top: 16px;
+
+  .archive-list-item {
+    height: 30px;
+    line-height: 30px;
+
+    a {
+      color: dark-gray;
+    }
+  }
+}
+
+// Lifes menu
+.menu-nav-item-cont.lifes {
+  margin-top: 10px;
+
+  .menu-nav-item {
+    line-height: 24px;
+    white-space: normal;
+    padding-bottom: 5px;
+    word-wrap: break-word;
+
+    a {
+      color: dark-gray;
+    }
+  }
+
+  .menu-nav-item.empty {
+    color: #999;
+  }
+}
+
+// Tag menu
+.menu-nav-item-cont.tags {
+  margin-top: 16px;
+
+  .tag-list-item {
+    display: inline-block;
+    padding: 0px 10px 7px 0px;
+
+    a {
+      color: dark-gray;
+    }
+
+    .tag-list-count {
+      vertical-align: super;
+      font-size: 0.6em;
+      color: rgba(0, 0, 0, 0.35);
+      margin-top: -0.5em;
+    }
   }
 }

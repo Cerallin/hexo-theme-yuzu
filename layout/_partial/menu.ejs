@@ -1,13 +1,13 @@
 <div class="menu-nav">
   <% for (var item in config.menu) { %>
-  <div class="menu-navItem">
-    <div class="menu-navItem-tit">
+  <div class="menu-nav-item">
+    <div class="menu-nav-item-tit">
       <a href="<%- url_for(config.menu[item].link) %>">
         <span>
           <%= item %></span>
       </a>
     </div>
-    <div class="menu-navItem-cont">
+    <div class="menu-nav-item-cont <%- config.menu[item].widget.toLowerCase() %>">
       <%- partial('_widget/' + config.menu[item].widget, {
         category: config.menu[item].name,
         showNum: config.menu[item].show_num || 3
