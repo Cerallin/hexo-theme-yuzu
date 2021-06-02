@@ -27,12 +27,16 @@ post_copy:
 # 自定义侧边栏
 menu:
   Archives:
-    widget: Archives
+    widget: Archives # 三种：Archives | Posts | Tags
     link: /archives
-  Lifes:
-    name: lifes # category name
-    widget: Lifes
-    link: /categories/lifes
+  Posts1:
+    name: Posts
+    widget: Posts
+    link: /categories/posts1
+  Posts2:
+    name: Posts2
+    widget: Posts
+    link: /categories/your-link
   Tags:
     widget: Tags
     link: /tags

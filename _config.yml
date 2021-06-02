@@ -17,10 +17,10 @@ menu:
   Archives:
     widget: Archives
     link: /archives
-  Lifes:
-    name: lifes # category name
-    widget: Lifes
-    link: /categories/lifes
+  Posts:
+    name: posts # category name
+    widget: Posts
+    link: /categories/posts
   Tags:
     widget: Tags
     link: /tags
@@ -43,8 +43,8 @@ toc:
 #Tag 页面的标题
 tagTitle: Tags
 
-#life 标题
-lifeAbout: 热爱生活，然后发现，处处都是阳光
+# A sentense to show
+signature: 热爱生活，然后发现，处处都是阳光
 
 theme:
   color: Default
