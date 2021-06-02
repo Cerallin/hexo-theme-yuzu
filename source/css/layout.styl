@@ -1,13 +1,13 @@
 html {
-  font-size: fontSize;
+  font-size: default-font-size;
   box-sizing: border-box;
-  font-family: 'Noto Sans SC', sans-serif;
+  font-family: default-font-family;
 }
 
 body {
   padding: 0;
   margin: 0;
-  color: dark-gray;
+  color: primary-trans;
   vertical-align: baseline;
 }
 
@@ -19,11 +19,11 @@ body {
 }
 
 a, a:visited {
-  color: #aaa;
+  color: primary-gray;
 }
 
 a:hover {
-  color: #333;
+  color: secondary-gray;
 }
 
 img {
@@ -104,7 +104,7 @@ img {
 
 .article-tag-list-item {
   display: inline;
-  margin-right: 0.2rem;
+  margin-right: 0.5rem;
 }
 
 .article-tag-list-item:last-of-type {
@@ -122,7 +122,7 @@ img {
     margin: 0 auto;
     padding: 20px 0;
     border-top: 1px solid #e1e1e1;
-    color: #aaa;
+    color: primary-gray;
     font-size: 14px;
     max-width: 1000px;
     width: 90%;
