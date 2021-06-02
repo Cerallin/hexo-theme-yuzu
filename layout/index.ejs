@@ -3,7 +3,7 @@
 <div id="index-content" class="content">
 
   <% page.posts.each(function(post){ %>
-  <%- partial('_partial/article-list-item', {post: post}) %>
+  <%- partial('_partial/article-list-item', {post: post, condense: false}) %>
   <% }) %>
 
   <div class="content-pagination">

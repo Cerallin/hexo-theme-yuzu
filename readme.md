@@ -1,9 +1,12 @@
 # Hexo-Theme-Orange
 本项目从 [hexo-theme-orange](https://github.com/Orange-way/hexo-theme-orange) fork 出来，鉴于无法找到原作者联系方式，本项目将由[Cerallin](https://github.com/Cerallin)继续维护。
 
+## 特色
+黑白色调，风格质朴简约。针对文章创作优化。
+
 ## 功能
 - 支持分页（hexo-generator-*）
-- 支持版权声明（Creative Commons）
+- 支持显示 CC（Creative Commons）版权声明
 
 ## 安装使用
 ```
@@ -46,6 +49,6 @@ beian:
 
 ## TODOs
 - [X] 修复分类页面
-- [ ] 自定义侧边栏
 - [ ] 为 stylus 添加更多自定义变量
+- [ ] 生成分享链接
 - [ ] 本地化
