@@ -1,19 +1,25 @@
-## 安装使用（Installation）
+# Hexo-Theme-Orange
+本项目从 [hexo-theme-orange](https://github.com/Orange-way/hexo-theme-orange) fork 出来，鉴于无法找到原作者联系方式，本项目将由[Cerallin](https://github.com/Cerallin)继续维护。
+
+## 功能
+- 支持分页（hexo-generator-*）
+- 支持版权声明（Creative Commons）
+
+## 安装使用
 ```
-$ git clone https://github.com/Orange-way/hexo-theme-orange
+$ git clone https://github.com/Cerallin/hexo-theme-orange
+$ mv ./hexo-theme-orange $hexo_root/themes
 ```
 
-修改（Change） config.yml中的 theme: orange
+将 `config.yml` 中 `theme` 字段改为 `hexo-theme-orange`，在 `config.yml` 中添加如下内容：
 
-```
+```yml
+since_year: 2020
 
-# 在归档页面显示所有文章 （Show all articles on archive page.）
-# 需要安装(Need to install) hexo-generator-archive 插件支持
-archive_generator:
-    per_page: 0
-    yearly: false
-    monthly: false
-    daily: false
+post_copy:
+  text: 署名-非商业性使用-相同方式共享
+  text_en: CC BY-NC-SA 2.5 CN
+  link: https://creativecommons.org/licenses/by-nc-sa/2.5/cn/
 
 # 自定义侧边栏
 menu:
@@ -27,17 +33,19 @@ menu:
   Tags:
     widget: Tags
     link: /tags
+
+# 右上角
+otherMenu2:
+  关于: /about
+
+# 备案
+beian:
+  enable: true
+  icp: 京ICP备2021005293号
 ```
 
-## 侧边栏
-
-```
-# achieves
-# categories/life
-# tags
-```
-
-## 待完善功能 （More Functions）
-- [x] 适配宽屏幕
-- [ ] 修复分类页面
-- [ ] 提高主题自定义程度
+## TODOs
+- [X] 修复分类页面
+- [ ] 自定义侧边栏
+- [ ] 为 stylus 添加更多自定义变量
+- [ ] 本地化

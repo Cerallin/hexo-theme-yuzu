@@ -3,7 +3,7 @@
     function renderPostList(category) {
       let cat = site.categories.findOne({ name: category })
       if (!cat || !cat.posts || !cat.posts.length) { %>
-        <p class="menu-navlifes-item">Empty~</p>
+        <p class="menu-navlifes-item empty">Empty~</p>
   <%
         return;
       }

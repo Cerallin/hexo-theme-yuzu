@@ -1,1 +1,10 @@
-<%- partial('life')%>
+<div class="life">
+  <p class="life-about">
+    <%- theme.lifeAbout %>
+  </p>
+  <div class="life-cont">
+    <% page.posts.each(post => { %>
+    <%- partial('_partial/article-list-item', {post: post, condense: true}) %>
+    <% }) %>
+  </div>
+</div>

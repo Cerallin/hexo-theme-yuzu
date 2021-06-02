@@ -1,0 +1,46 @@
+<div class="life">
+  <p class="life-about">
+    <%- theme.lifeAbout %>
+  </p>
+  <div class="life-cont">
+    <%
+    function renderPostList(category) {
+      let cat = site.categories.findOne({ name: category })
+      if (!cat || !cat.posts || !cat.posts.length) { %>
+        <div class="life-item empty">Empty~</div>
+    <%
+        return;
+      }
+
+      cat.posts.sort('date', -1).each(post => { %>
+        <div class="life-item">
+        <a href="<%- url_for(post.path) %>">
+          <span>
+            <%- post.title %>
+          </span>
+        </a>
+        <span class="archive-artDate">
+          <time class="post-time" title="<%- full_date(post.date) %>" datetime="<%- date_xml(post.date) %>" itemprop="datePublished">
+            <%- post.date.format(config.date_format) %>
+          </time>
+        </span>
+        <div class="article-entry" itemprop="articleBody">
+          <% if (post.excerpt){ %>
+            <%- post.excerpt %>
+              <% if (theme.excerpt_link){ %>
+                <p class="article-more-link">
+                  <a href="<%- url_for(post.path) %>#more">
+                    <%= theme.excerpt_link %>
+                  </a>
+                </p>
+              <% } %>
+          <% } else { %>
+            <%- post.content %>
+          <% } %>
+        </div>
+        </div>
+    <% }) /* posts.each */
+    } /* function renderPostList */ %>
+    <% renderPostList(category) %>
+  </div>
+</div>

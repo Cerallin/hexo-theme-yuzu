@@ -49,6 +49,7 @@ lifeAbout: 热爱生活，然后发现，处处都是阳光
 theme:
   color: Default
   fancybox: false
+excerpt_link: 更多
 
 favicon: /img/favicon.ico
 

@@ -15,26 +15,18 @@
     </div>
   </div>
 
-  <% if (config.post_copy) %>
+  <% if (config.post_copy) { %>
     <div class="post-cc">
       版权声明：
         <% if (config.post_copy.text && config.post_copy.text_en) { %>
           <%- config.post_copy.text %>|<a href="<%- config.post_copy.link %>"><%- config.post_copy.text_en %></a>
-        <% } else %>
+        <% } else { %>
           <a href="<%- config.post_copy.link %>"><%- config.post_copy.text || config.post_copy.text_en %></a>
+        <% } %>
     </div>
+  <% } %>
 
   <div class="article-entry" itemprop="articleBody">
-    <% if (post.excerpt && index){ %>
-      <%- post.excerpt %>
-      <% if (theme.excerpt_link){ %>
-        <p class="article-more-link">
-          <a href="<%- url_for(post.path) %>#more">
-            <%= theme.excerpt_link %></a>
-        </p>
-      <% } %>
-    <% } else { %>
-      <%- post.content %>
-    <% } %>
+    <%- post.content %>
   </div>
 </article>
