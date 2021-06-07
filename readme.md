@@ -7,6 +7,10 @@
 ## 功能
 - 支持分页（hexo-generator-*）
 - 支持显示 CC（Creative Commons）版权声明
+- 文章文字两端对齐
+
+## 强烈推荐插件
+- [hexo-filter-text-autospace](https://github.com/cerallin/hexo-filter-text-autospace) 为中文段落中的英文自动添加间距
 
 ## 安装使用
 ```
