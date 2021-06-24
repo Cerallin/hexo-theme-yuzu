@@ -1,174 +1,143 @@
-html {
-  font-size: default-font-size;
-  box-sizing: border-box;
-  font-family: default-font-family;
-}
+html
+  font-size: default-font-size
+  box-sizing: border-box
+  font-family: default-font-family
 
-body {
-  padding: 0;
-  margin: 0;
-  color: primary-trans;
-  vertical-align: baseline;
-}
+body
+  padding: 0
+  margin: 0
+  color: primary-trans
+  vertical-align: baseline
 
-* {
-  margin: 0px;
-  padding: 0px;
-  list-style: none;
-  text-decoration: none;
-  user-select: none;
-  -webkit-user-select: none;
-  -ms-user-select: none;
-  -moz-user-select: none;
-}
+*
+  margin: 0px
+  padding: 0px
+  list-style: none
+  text-decoration: none
+  user-select: none
+  -webkit-user-select: none
+  -ms-user-select: none
+  -moz-user-select: none
 
-a, a:visited {
-  color: primary-gray;
-}
+a, a:visited
+  color: primary-gray
 
-a:hover {
-  color: secondary-gray;
-}
+a:hover
+  color: secondary-gray
 
-img {
-  max-width: 100%;
-  height: auto;
-  display: inline-block;
-  vertical-align: middle;
-}
+img
+  max-width: 100%
+  height: auto
+  display: inline-block
+  vertical-align: middle
 
-.page {
+.page
   // display: none;
-  margin-top: 0px;
-}
+  margin-top: 0px
 
-.page .head {
+.page .head
   // display: none;
-  z-index: 9;
-  top: 0;
-  right: 0;
-  left: 0;
-  box-shadow: 0 0 1px rgba(0, 0, 0, 0.15);
-  background: #fff;
-}
+  z-index: 9
+  top: 0
+  right: 0
+  left: 0
+  box-shadow: 0 0 1px rgba(0, 0, 0, 0.15)
+  background: #fff
 
-@media screen and (max-width: 750px) {
-  .head {
-    position: fixed;
-  }
+@media screen and (max-width: 750px)
+  .head
+    position: fixed
 
-  .menu-nav, #head-about, .post-widget {
-    display: none;
-  }
+  .menu-nav, #head-about, .post-widget
+    display: none
 
-  #barWrap-toggle {
-    display: inline-block;
-  }
+  #barWrap-toggle
+    display: inline-block
 
-  #index-content {
-    width: 100%;
-  }
+  #index-content
+    width: 100%
 
-  .main {
-    margin-top: 65px !important;
-  }
+  .main
+    margin-top: 65px !important
 
-  .barShow-head {
-    display: none;
-    position: fixed;
-    left: 0px;
-    top: 65px;
-    background: #fff;
-    width: 100%;
-    border-bottom: 1px solid #ccc;
-    border-top: 1px solid #ccc;
-  }
+  .barShow-head
+    display: none
+    position: fixed
+    left: 0px
+    top: 65px
+    background: #fff
+    width: 100%
+    border-bottom: 1px solid #ccc
+    border-top: 1px solid #ccc
 
-  #post {
-    width: 100%;
-  }
-}
+  #post
+    width: 100%
 
-.page .main {
-  margin: 0 auto;
-  width: 90%;
-  max-width: 1000px;
-}
+.page .main
+  margin: 0 auto
+  width: 90%
+  max-width: 1000px
 
-.main > .post {
-  width: 85%;
-  float: left;
+.main > .post
+  width: 85%
+  float: left
 
-  .article-entry {
-    p {
-      line-height: 1.5em;
-    }
-  }
-}
+  .article-entry
+    p
+      line-height: 1.5em
 
-.article-tag-list-item {
-  display: inline;
-  margin-right: 0.5rem;
+.article-tag-list-item
+  display: inline
+  margin-right: 0.5rem
 
-  a {
-    color: secondary-gray;
-  }
-}
+  a
+    color: secondary-gray
 
-.article-tag-list-item:last-of-type {
-  margin-right: auto;
-}
+.article-tag-list-item:last-of-type
+  margin-right: auto
 
-article ul {
-  padding-bottom: 0.5rem;
+article ul
+  padding-bottom: 0.5rem
 
-  li {
-    font-size: 20px;
-    line-height: 2rem;
-    list-style: disc inside;
-  }
-}
+  li
+    font-size: 20px
+    line-height: 2rem
+    list-style: disc inside
 
-.page .footer-nav {
+.page .footer-nav
   // display: none;
-  display: block;
-  margin: 30px auto 0px;
-  width: 100%;
-  float: left;
+  display: block
+  margin: 30px auto 0px
+  width: 100%
+  float: left
 
-  .footer {
-    margin: 0 auto;
-    padding: 20px 0;
-    border-top: 1px solid #e1e1e1;
-    color: primary-gray;
-    font-size: info-font-size;
-    max-width: 1000px;
-    width: 90%;
-    overflow: hidden;
+  .footer
+    margin: 0 auto
+    padding: 20px 0
+    border-top: 1px solid #e1e1e1
+    color: primary-gray
+    font-size: info-font-size
+    max-width: 1000px
+    width: 90%
+    overflow: hidden
 
-    .icp {
-      margin-bottom: 10px;
+    .icp
+      margin-bottom: 10px
 
-      .icp-text {
-        vertical-align: middle;
-      }
-    }
-  }
-}
+      .icp-text
+        vertical-align: middle
 
-.page .back-top {
-  display: block;
-  display: none;
-  width: 90%;
-  margin: -60px auto 0px;
+.page .back-top
+  display: block
+  display: none
+  width: 90%
+  margin: -60px auto 0px
 
-  .back-top-icon {
-    margin-top: -68px;
-    float: right;
-    display: inline-block;
-    width: 16px;
-    height: 16px;
-    background-image: url('/img/back-top.png');
-    background-repeat: no-repeat;
-  }
-}
+  .back-top-icon
+    margin-top: -68px
+    float: right
+    display: inline-block
+    width: 16px
+    height: 16px
+    background-image: url('/img/back-top.png')
+    background-repeat: no-repeat
