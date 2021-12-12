@@ -78,10 +78,6 @@
     font-size: default-font-size
     font-weight: 600
     text-align: center
-    counter-increment: table-num
-
-  caption:before
-    content: '表' counter(table-num) '. '
 
   counter-reset: figure-num
 
@@ -102,10 +98,6 @@
       font-size: default-font-size
       font-weight: 600
       text-align: center
-      counter-increment: figure-num
       display: block
       margin-top: 0.5em
       margin-bottom: 1.5em
-
-    figcaption:before
-      content: '图' counter(figure-num) '. '
