@@ -28,6 +28,7 @@
 
 ### 图
 
+使用非 pandoc 的渲染引擎：
 ```md
 <div class="figure-container">
 
@@ -35,6 +36,11 @@
 
 <p class="figure-title">图名，自动编号</p>
 </div>
+```
+
+使用 pandoc：
+```md
+![figure title](/path/to/figure.jpg)
 ```
 
 ### Mathjax 插件

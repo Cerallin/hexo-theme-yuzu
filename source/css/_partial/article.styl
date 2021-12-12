@@ -82,3 +82,16 @@
 
     .figure-title:before
       content: '图' counter(figure-num) '. '
+
+  figure
+    figcaption
+      font-size: default-font-size
+      font-weight: 600
+      text-align: center
+      counter-increment: figure-num
+      display: block
+      margin-top: .5em
+      margin-bottom: 1.5em
+
+    figcaption:before
+      content: '图' counter(figure-num) '. '
