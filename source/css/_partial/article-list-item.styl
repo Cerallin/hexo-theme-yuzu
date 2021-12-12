@@ -19,7 +19,7 @@
     p
       text-indent: 0
 
-  .table-container table, >table
+  .table-container table, >table, div>table
     line-height: 2em
     border-top: 2px solid #000
     border-bottom: 2px solid #000
@@ -36,6 +36,12 @@
 
     td:first-child
       min-width: 3em
+
+    td:first-child, th:first-child
+      padding-left: 1em
+
+    td:last-child
+      padding-right: 1em
 
   .figure-container
     margin-top: 1em
