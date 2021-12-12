@@ -12,9 +12,10 @@
 ## 学术写作指南
 ### 三线表格
 
+```md
 <div class="table-container">
 
-<p class="table-title">表格名，本主题会自动编号</p>
+<p class="table-title">表格名，自动编号</p>
 
 | key          | value                    |  type   |
 | :----------- | :----------------------- | :-----: |
@@ -23,6 +24,18 @@
 | article_list | [{id: 1}, {id: 2}]       |  array  |
 
 </div>
+```
+
+### 图
+
+```md
+<div class="figure-container">
+
+![](/images/xxx.jpg)
+
+<p class="figure-title">图名，自动编号</p>
+</div>
+```
 
 ### Mathjax 插件
 推荐使用 hexo-filter-mathjax 渲染生成

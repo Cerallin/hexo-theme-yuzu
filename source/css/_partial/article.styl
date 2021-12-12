@@ -68,3 +68,17 @@
 
     .table-title:before
       content: '表' counter(table-num) '. '
+
+  counter-reset: figure-num
+
+  .figure-container
+    margin-bottom: 1.5em
+
+    .figure-title
+      font-size: default-font-size
+      font-weight: 600
+      text-align: center
+      counter-increment: table-num
+
+    .figure-title:before
+      content: '图' counter(figure-num) '. '
