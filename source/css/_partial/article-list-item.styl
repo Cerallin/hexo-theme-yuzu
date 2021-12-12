@@ -16,18 +16,23 @@
 
   // 3-line table
   .table-container
-    line-height: 2em
-    border-top: 2px solid #000
-    border-bottom: 2px solid #000
-    border-collapse: collapse
-    margin-bottom: 1em
+    table
+      line-height: 2em
+      border-top: 2px solid #000
+      border-bottom: 2px solid #000
+      border-collapse: collapse
+      margin-bottom: 1em
 
-    thead
-      line-height: 3em
-      border-bottom: 1px solid #000
+      thead
+        line-height: 3em
+        border-bottom: 1px solid #000
 
-    td
-      padding-right: 1em
+      td
+        padding-bottom: 0.25em
+        padding-top: 0.25em
+
+      td:first-child
+        min-width: 3em
 
 .article-entry.condense
   .article-more-link

@@ -9,8 +9,26 @@
 - 支持显示 CC（Creative Commons）版权声明
 - 文章文字两端对齐
 
-## 强烈推荐插件
-- [hexo-filter-text-autospace](https://github.com/cerallin/hexo-filter-text-autospace) 为中文段落中的英文自动添加间距
+## 学术写作指南
+### 三线表格
+
+<div class="table-container">
+
+<p class="table-title">表格名，本主题会自动编号</p>
+
+| key          | value                    |  type   |
+| :----------- | :----------------------- | :-----: |
+| num          | 65535                    | integer |
+| post         | {id: 4, content: "text"} | object  |
+| article_list | [{id: 1}, {id: 2}]       |  array  |
+
+</div>
+
+### Mathjax 插件
+推荐使用 hexo-filter-mathjax 渲染生成
+
+### 中英文间距插件
+墙裂推荐：使用 [hexo-filter-text-autospace](https://github.com/cerallin/hexo-filter-text-autospace) 为中文段落中的英文自动添加间距
 
 ## 安装使用
 ```
@@ -53,6 +71,9 @@ otherMenu2:
 beian:
   enable: true
   icp: 京ICP备2021005293号
+
+# toc
+toc: true
 ```
 
 ## TODOs

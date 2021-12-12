@@ -51,6 +51,20 @@
   blockquote>p
     color: info-gray
 
+  counter-reset: table-num
+
   .table-container
-    margin-left: auto
-    margin-right: auto
+    margin-top: 1.5em
+
+    table
+      margin-left: auto
+      margin-right: auto
+
+    .table-title
+      font-size: default-font-size
+      font-weight: 600
+      text-align: center
+      counter-increment: table-num
+
+    .table-title:before
+      content: '表' counter(table-num) '. '
