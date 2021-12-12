@@ -12,6 +12,7 @@
 ## 学术写作指南
 ### 三线表格
 
+使用非 pandoc 的渲染引擎：
 ```md
 <div class="table-container">
 
@@ -24,6 +25,16 @@
 | article_list | [{id: 1}, {id: 2}]       |  array  |
 
 </div>
+```
+
+使用 pandoc：
+```md
+| key          | value                    |  type   |
+| :----------- | :----------------------- | :-----: |
+| num          | 65535                    | integer |
+| post         | {id: 4, content: "text"} | object  |
+| article_list | [{id: 1}, {id: 2}]       |  array  |
+: 表格名，自动编号
 ```
 
 ### 图

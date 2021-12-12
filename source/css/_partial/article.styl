@@ -69,6 +69,20 @@
     .table-title:before
       content: '表' counter(table-num) '. '
 
+  >table
+    margin-top: 1.5em
+    margin-left: auto
+    margin-right: auto
+
+  caption
+    font-size: default-font-size
+    font-weight: 600
+    text-align: center
+    counter-increment: table-num
+
+  caption:before
+    content: '表' counter(table-num) '. '
+
   counter-reset: figure-num
 
   .figure-container
@@ -90,7 +104,7 @@
       text-align: center
       counter-increment: figure-num
       display: block
-      margin-top: .5em
+      margin-top: 0.5em
       margin-bottom: 1.5em
 
     figcaption:before
