@@ -5,15 +5,7 @@
 
   Theme.backToTop = {
     register: function () {
-      var $backToTop = $('#back-top');
-
-      $(window).scroll(function () {
-        if ($(window).scrollTop() > 100) {
-          $backToTop.fadeIn(1000);
-        } else {
-          $backToTop.fadeOut(1000);
-        }
-      });
+      let $backToTop = $('#back-top');
 
       $backToTop.click(function () {
         $('body,html').animate({
