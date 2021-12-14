@@ -15,13 +15,14 @@
       <%= tag.name %></p>
     <% tag.posts.map(function(post){  %>
     <p class="post-preview">
-      <span class="tagItem-date">
-        <%= post.date.format('YYYY-MM-DD') %></span>
+      <span class="tag-item-date">
+        <%= post.date.format('YYYY-MM-DD') %>
+      </span>
+      <span class="post-title">
         <a href="<%- url_for(post.path) %>">
-          <span class="post-title">
-            <%- post.title || "Untitled" %>
-          </span>
+          <%- post.title || "Untitled" %>
         </a>
+      </span>
     </p>
     <% }) %>
   </div>
