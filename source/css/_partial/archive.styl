@@ -5,7 +5,7 @@
 
   .archive-year-wrap
     font-size: large-font-size
-    color: primary-trans
+    color: secondary-color
 
   .archives-year-cont
     padding-top: 5px
@@ -27,7 +27,7 @@
         margin-left: 85px
 
         a
-          color: primary-trans
+          color: secondary-color
 
       &:hover
         padding-left: 5px
@@ -47,28 +47,12 @@
     float: left
 
     .prev-icon
-      display: inline-block
-      vertical-align: -2px
-      width: 16px
-      height: 16px
+      nav-icon()
       background-image: url('/img/search-gt.png')
-      background-repeat: no-repeat
-
-    a
-      color: secondary-trans
-      font-size: default-font-size
 
   .next
     float: right
 
-    a
-      color: secondary-trans
-      font-size: default-font-size
-
     .next-icon
-      display: inline-block
-      vertical-align: -2px
-      width: 16px
-      height: 16px
+      nav-icon()
       background-image: url('/img/search-lt.png')
-      background-repeat: no-repeat
