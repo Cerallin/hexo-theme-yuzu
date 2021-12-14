@@ -22,5 +22,22 @@ info-text()
   font-size: info-font-size
 
 quoted-text()
-  color: info-gray
-  text-indent: inherit
+  padding-bottom: 0.5em
+
+  p
+    color: secondary-color
+    text-indent: 0
+
+    quote-sign()
+      font-family: fantasy
+      font-size: 1.5 * content-font-size
+
+    &:before
+      content: '“'
+      padding-right: 0.25em
+      quote-sign()
+
+    &:after
+      content: '”'
+      padding-left: 0.25em
+      quote-sign()
