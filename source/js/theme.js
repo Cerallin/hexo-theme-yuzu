@@ -5,29 +5,31 @@
 
   Theme.backToTop = {
     register: function () {
-      let $backToTop = $('#back-top');
-
-      $backToTop.click(function () {
-        $('body,html').animate({
-          scrollTop: 0
+      document.getElementById('back-top')
+        .addEventListener('click', () => {
+          window.scroll({
+            top: 0,
+            behavior: "smooth"
+          });
         });
-      });
     }
   };
 
   Theme.showHeadBar = {
     register: function () {
-      const navToggle = document.getElementById('barWrap-toggle');
-      navToggle.addEventListener('click', () => {
-        let aboutContent = document.getElementById('barShow')
-        if (!aboutContent.classList.contains('barShow')) {
-          aboutContent.classList.add('barShow');
-          aboutContent.classList.remove('barShow-hide');
-        } else {
-          aboutContent.classList.add('barShow-hide');
-          aboutContent.classList.remove('barShow');
-        }
-      })
+      document.getElementById('barWrap-toggle')
+        .addEventListener('click', () => {
+          let bar = document.getElementById('barShow')
+
+          if (!bar.classList.contains('barShow')) {
+            bar.classList.add('barShow');
+            bar.classList.remove('barShow-hide');
+          }
+          else {
+            bar.classList.add('barShow-hide');
+            bar.classList.remove('barShow');
+          }
+        })
     }
   }
 

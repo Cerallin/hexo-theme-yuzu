@@ -1,12 +1,14 @@
-$(document).ready(function () {
+window.onload = function () {
   Theme.backToTop.register();
   Theme.showHeadBar.register();
 
-  $(".loading-wrapper").each((i, ele) => {
-    ele.style.display = 'none';
-  })
+  [].forEach.call(document.getElementsByClassName('loading-wrapper'),
+    element => {
+      element.style.display = 'none';
+    });
 
-  $(".page").each((i, ele) => {
-    $(ele).css("filter", 'none')
-  })
-});
+  [].forEach.call(document.getElementsByClassName('page'),
+    element => {
+      element.style.filter = 'none';
+    })
+};
