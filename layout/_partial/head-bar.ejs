@@ -2,8 +2,17 @@
   <ul class="barShow-ul">
     <% for (var i in config.menu){ %>
       <li class="barShow-item">
-        <a href="<%- url_for(config.menu[i].link) %>"><span>
-            <%= i %></span></a>
+        <a href="<%- url_for(config.menu[i].link) %>">
+          <span><%= i %></span>
+        </a>
+      </li>
+    <% } %>
+    <%  let otherMenu2 = config.otherMenu2 || theme.otherMenu2;
+        for (var item in otherMenu2){ %>
+      <li class="barShow-item">
+        <a href="<%- url_for(otherMenu2[item]) %>">
+          <span><%= item %></span>
+        </a>
       </li>
     <% } %>
   </ul>
