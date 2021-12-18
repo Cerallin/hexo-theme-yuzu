@@ -8,6 +8,12 @@
 - 支持分页（hexo-generator-*）
 - 支持显示 CC（Creative Commons）版权声明
 - 文章文字两端对齐
+- 适配学术写作（pandoc）
+
+## 禁止用户复制粘贴网页内容
+
+**注** 本选项仅为君子协定，通过插件可以轻易破解。
+将`@/theme/hexo-theme-yuzu/_config.yml`中的`selectable`值改为`false`。
 
 ## 学术写作指南
 ### 三线表格

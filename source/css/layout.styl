@@ -1,3 +1,5 @@
+$theme-selectable = hexo-config('selectable')
+
 html
   font-size: default-font-size
   box-sizing: border-box
@@ -15,10 +17,12 @@ body
   padding: 0px
   list-style: none
   text-decoration: none
-  user-select: none
-  -webkit-user-select: none
-  -ms-user-select: none
-  -moz-user-select: none
+
+  if (!$theme-selectable)
+    user-select: none
+    -webkit-user-select: none
+    -ms-user-select: none
+    -moz-user-select: none
 
 a, a:visited
   color: primary-gray
