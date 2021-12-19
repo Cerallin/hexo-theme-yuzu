@@ -1,21 +1,18 @@
 code-font-size = 16px
 code-font-family = 'Inconsolata', 'monospace', 'Open Sans', 'Microsoft Yahei', sans-serif
-$theme-color-map = {
-  Default: #4D89FB #F8F8F8,
-  'Mint Green': #16982B #f5f5f5,
-  'Cobalt Blue': #0047AB #f0f2f5,
-  'Hot Pink': #FF69B4 #f8f5f5,
-  'Dark Violet': #9932CC #f5f4fa
-}
 $theme-color-config = hexo-theme-config('theme.color')
-// $theme-color-list = map-get($theme-color-map, $theme-color-config);
-// $theme-color = nth($theme-color-list, 1);
-// $deputy-color = nth($theme-color-list, 2);
 theme-color = #f8f8f8
 deputy-color = #f5f5f5
-code-color = #000
-code-background = deputy-color
-// code-background = #f8f8f8;
+
+$dark-mode = hexo-config('dark_mode')
+
+if (!$dark-mode)
+  code-color = #000
+  code-background = deputy-color
+else
+  code-color = #fff
+  code-background = #333
+
 gray = #cacaca
 comment = #93a1a1
 keyword = #859900

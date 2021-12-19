@@ -2,18 +2,28 @@
 
 // Global settings
 default-font-size = 16px
-default-font-family = 'Noto Sans','Noto Sans SC'
+default-font-family = 'Noto Sans', 'Noto Sans SC'
 content-font-family = 'Noto Serif', 'Noto Serif SC', sans-serif
 title-font-size = 24px
 large-font-size = 30px
 content-font-size = 20px
 info-font-size = 14px
-// Colors
-background-color = #ffffff
-// Primary
-primary-color = #333333
-primary-gray = #AAAAAA
-secondary-color = #838383
-secondary-gray = #666666
-border-color = #CCCCCC
-border-gray = #EEEEEE
+
+if (!hexo-config('dark_mode'))
+  background-color = #ffffff
+  primary-color = #333333
+  primary-gray = #AAAAAA
+  secondary-color = #838383
+  secondary-gray = #666666
+  border-color = #CCCCCC
+  border-gray = #EEEEEE
+  border-table = #000000
+else
+  background-color = #101010
+  primary-color = #CDCDCD
+  primary-gray = #565656
+  secondary-color = #7D7D7D
+  secondary-gray = #9A9A9A
+  border-color = #343434
+  border-gray = #121212
+  border-table = #ffffff

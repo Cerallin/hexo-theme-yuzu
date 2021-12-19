@@ -15,6 +15,10 @@
 **注** 本选项仅为君子协定，通过插件可以轻易破解。
 将`@/theme/hexo-theme-yuzu/_config.yml`中的`selectable`值改为`false`。
 
+## 深色模式
+
+将`@/theme/hexo-theme-yuzu/_config.yml`中的`dark_mode`值改为`true`。
+
 ## 学术写作指南
 ### 三线表格
 

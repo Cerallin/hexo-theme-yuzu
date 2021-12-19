@@ -5,6 +5,10 @@
 # 是否允许用户复制网站上的内容，仅仅是君子协定
 selectable: true
 
+# Dark mode
+# Possible values: true, false
+dark_mode: false
+
 # Site creation time
 since: 2018
 
