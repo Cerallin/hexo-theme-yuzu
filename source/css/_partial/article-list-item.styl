@@ -26,14 +26,17 @@
 
   .table-container table, >table, div>table
     line-height: 2em
-    border-top: 2px solid border-table
-    border-bottom: 2px solid border-table
+    border-top: 2px solid
+    border-bottom: 2px solid
     border-collapse: collapse
+    border-color(border-table, border-table-light, border-table-dark)
     margin-bottom: 1em
 
     thead
       line-height: 3em
-      border-bottom: 1px solid border-table
+      border-bottom: 1px solid
+      border-color(border-table, border-table-light, border-table-dark)
+
 
     td
       padding-bottom: 0.25em
@@ -94,9 +97,9 @@
         display: inline-block
         vertical-align: middle
         overflow: hidden
-        color: primary-color
         text-decoration: none
         font-weight: 200
+        text-color(primary-color, primary-color-light, primary-color-dark)
 
   .post-item-datetag
     margin-bottom: 10px

@@ -10,23 +10,23 @@ content-text()
   padding-bottom: 0.5em
 
 primary-link-text()
-  color: primary-color
+  text-color(primary-color, primary-color-light, primary-color-dark)
   font-size: default-font-size
 
 info-link-text()
-  color: primary-gray
+  text-color(primary-gray, primary-gray-light, primary-gray-dark)
   font-size: default-font-size
 
 info-text()
-  color: primary-gray
+  text-color(primary-gray, primary-gray-light, primary-gray-dark)
   font-size: info-font-size
 
 quoted-text()
   padding-bottom: 0.5em
 
   p
-    color: secondary-color
     text-indent: 0
+    text-color(secondary-color, secondary-color-light, secondary-color-dark)
 
     quote-sign()
       font-family: fantasy

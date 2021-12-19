@@ -2,14 +2,15 @@
   float: left
   width: 19%
   padding-top: 40px
-  color: secondary-gray
+  text-color(secondary-gray, secondary-gray-light, secondary-gray-dark)
 
   .menu-nav-item
     info-text()
 
     .menu-nav-item-tit
       padding-bottom: 5px
-      border-bottom: 1px solid primary-gray
+      border-bottom: 1px solid
+      border-color(primary-gray, primary-gray-light, primary-gray-dark)
 
       a
         primary-link-text()
@@ -27,10 +28,10 @@
     word-wrap: break-word
 
     a
-      color: primary-color
+      text-color(primary-color, primary-color-light, primary-color-dark)
 
   .menu-nav-item.empty
-    color: secondary-gray
+    text-color(secondary-gray, secondary-gray-light, secondary-gray-dark)
 
 // Archive menu
 .menu-nav-item-cont.archives
@@ -39,7 +40,7 @@
     line-height: 2em
 
     a
-      color: primary-color
+      text-color(primary-color, primary-color-light, primary-color-dark)
 
 // Tag menu
 .menu-nav-item-cont.tags
@@ -48,10 +49,10 @@
     padding: 0px 10px 7px 0px
 
     a
-      color: primary-color
+      text-color(primary-color, primary-color-light, primary-color-dark)
 
     .tag-list-count
       vertical-align: super
       font-size: 0.6em
-      color: secondary-gray
       margin-top: -0.5em
+      text-color(secondary-gray, secondary-gray-light, secondary-gray-dark)

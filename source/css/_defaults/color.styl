@@ -1,0 +1,29 @@
+background-color(default-color, light-color, dark-color)
+  if (hexo-config('dark_mode') == 'auto')
+    @media (prefers-color-scheme: light)
+      background-color: light-color
+
+    @media (prefers-color-scheme: dark)
+      background-color: dark-color
+  else
+    background-color: default-color
+
+text-color(default-color, light-color, dark-color)
+  if (hexo-config('dark_mode') == 'auto')
+    @media (prefers-color-scheme: light)
+      color: light-color
+
+    @media (prefers-color-scheme: dark)
+      color: dark-color
+  else
+    color: default-color
+
+border-color(default-color, light-color, dark-color)
+  if (hexo-config('dark_mode') == 'auto')
+    @media (prefers-color-scheme: light)
+      border-color: light-color
+
+    @media (prefers-color-scheme: dark)
+      border-color: dark-color
+  else
+    border-color: default-color

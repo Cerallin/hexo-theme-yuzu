@@ -4,13 +4,13 @@ html
   font-size: default-font-size
   font-family: default-font-family
   box-sizing: border-box
-  background-color: background-color
+  background-color($background-color, background-color-light, background-color-dark)
   scroll-behavior: smooth
 
 body
   padding: 0
   margin: 0
-  color: primary-color
+  text-color(primary-color, primary-color-light, primary-color-dark)
   vertical-align: baseline
 
 *
@@ -26,10 +26,10 @@ body
     -moz-user-select: none
 
 a, a:visited
-  color: secondary-color
+  text-color(primary-gray, primary-gray-light, secondary-color-dark)
 
 a:hover
-  color: secondary-gray
+  text-color(secondary-gray, secondary-gray-light, secondary-gray-dark)
 
 img
   max-width: 100%
@@ -50,8 +50,9 @@ del
   top: 0
   right: 0
   left: 0
-  box-shadow: 0 0 1px border-color
-  background: background-color
+  box-shadow: 0 0 1px
+  border-color($border-color, border-color-light, border-color-dark)
+  background-color($background-color, background-color-light, background-color-dark)
 
 @media screen and (max-width: 750px)
   .head
@@ -77,10 +78,11 @@ del
     position: fixed
     left: 0px
     top: 65px
-    background: background-color
+    background-color($background-color, background-color-light, background-color-dark)
     width: 100%
-    border-top: 1px solid border-gray
-    box-shadow: 0px 2px 2px border-gray
+    border-top: 1px solid
+    box-shadow: 0px 2px 2px
+    border-color(border-gray, border-gray-light, border-gray-dark)
 
   #post
     width: 100%
@@ -131,7 +133,8 @@ del
     info-text()
     margin: 0 auto
     padding: 20px 0
-    border-top: 1px solid border-color
+    border-top: 1px solid
+    border-color(border-color, border-color-light, border-color-dark)
     max-width: 1000px
     width: 90%
     overflow: hidden

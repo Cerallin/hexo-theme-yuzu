@@ -6,8 +6,8 @@
 selectable: true
 
 # Dark mode
-# Possible values: true, false
-dark_mode: false
+# Possible values: true, false, auto
+dark_mode: auto
 
 # Site creation time
 since: 2018

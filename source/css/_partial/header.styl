@@ -15,7 +15,7 @@
     font-size: title-font-size
     font-weight: 200
     text-decoration: none
-    color: primary-color
+    text-color(primary-color, primary-color-light, primary-color-dark)
 
 .head-right
   float: right
@@ -28,14 +28,15 @@
       width: 0px
       width: 166px
       height: 38px
-      border-bottom: 1px solid border-gray
+      border-bottom: 1px solid
+      border-color(border-gray, border-gray-light, border-gray-dark)
 
       &:focus
         outline: none
 
     .head-searchT
       margin-left: 20px
-      color: secondary-gray
+      text-color(secondary-gray, secondary-gray-light, secondary-gray-dark)
 
   .head-about
     display: inline-block
@@ -43,7 +44,7 @@
 
     .head-aboutLink
       text-decoration: none
-      color: secondary-gray
+      text-color(secondary-gray, secondary-gray-light, secondary-gray-dark)
 
   .barWrap
     display: none
@@ -58,7 +59,7 @@
       display: block
       width: 22px
       height: 2px
-      background: secondary-gray
+      background-color(secondary-gray, secondary-gray-light, secondary-gray-dark)
       border-radius: 1px
 
     .bar + .bar

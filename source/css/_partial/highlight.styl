@@ -1,17 +1,19 @@
 code-font-size = 16px
 code-font-family = 'Inconsolata', 'monospace', 'Open Sans', 'Microsoft Yahei', sans-serif
-$theme-color-config = hexo-theme-config('theme.color')
-theme-color = #f8f8f8
-deputy-color = #f5f5f5
-
 $dark-mode = hexo-config('dark_mode')
+// Light
+$code-color-light = #000
+$code-background-light = #f5f5f5
+// Dark
+$code-color-dark = #fff
+$code-background-dark = #333
 
 if (!$dark-mode)
-  code-color = #000
-  code-background = deputy-color
+  $code-color = $code-color-light
+  $code-background = $code-background-light
 else
-  code-color = #fff
-  code-background = #333
+  $code-color = $code-color-dark
+  $code-background = $code-background-dark
 
 gray = #cacaca
 comment = #93a1a1
@@ -22,16 +24,15 @@ attribute = #b58900
 symbol = #cb4b16
 built_in = #dc32 2
 
-// }
 code, pre
   padding: 7px
   font-size: code-font-size
   font-family: code-font-family
-  background: code-background
+  background-color($code-background, $code-background-light, $code-background-dark)
 
 code
   padding: 3px 5px
-  color: code-color
+  text-color($code-color, $code-color-light, $code-color-dark)
 
 .highlight
   margin: 1em 0
@@ -43,6 +44,7 @@ code
     margin: 0 !important
 
     &::after
+      content: 'Code'
       position: absolute
       top: 0
       right: 0
@@ -51,8 +53,11 @@ code
       font-size: code-font-size
       font-weight: bold
       color: gray
-      background: darken(code-background, 3%)
-      content: 'Code'
+      background-color(
+        darken($code-background, 3%),
+        darken($code-background-light, 3%),
+        lighten($code-background-dark, 3%)
+      )
 
   .code
     pre

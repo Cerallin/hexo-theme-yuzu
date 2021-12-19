@@ -2,7 +2,8 @@
   max-width: 850px
   margin: 0 auto
   padding-top: 40px
-  color: primary-color
+  text-color(primary-color, primary-color-light, primary-color-dark)
+
 
   .tags
     padding-bottom: 5px
@@ -13,13 +14,13 @@
       line-height: 25px
 
       &:hover
-        color: primary-color
+        text-color(primary-color, primary-color-light, primary-color-dark)
 
   .one-tag-list
     .tag-text
       margin: 20px 0 10px 0
       font-size: title-font-size
-      color: primary-color
+      text-color(primary-color, primary-color-light, primary-color-dark)
 
     .post-preview
       line-height: 35px
@@ -27,9 +28,9 @@
       .tag-item-date
         display: block
         float: left
-        color: primary-gray
+        text-color(primary-gray, primary-gray-light, primary-gray-dark)
 
       .post-title
         display: inline-block
         text-indent: 2em
-        color: primary-color
+        text-color(primary-color, primary-color-light, primary-color-dark)

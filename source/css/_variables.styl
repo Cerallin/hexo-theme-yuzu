@@ -8,22 +8,40 @@ title-font-size = 24px
 large-font-size = 30px
 content-font-size = 20px
 info-font-size = 14px
+// Colors for light mode
+background-color-light = #ffffff
+primary-color-light = #333333
+primary-gray-light = #AAAAAA
+secondary-color-light = #838383
+secondary-gray-light = #666666
+border-color-light = #CCCCCC
+border-gray-light = #EEEEEE
+border-table-light = #000000
+// Colors for dark mode
+background-color-dark = #101010
+primary-color-dark = #CDCDCD
+primary-gray-dark = #565656
+secondary-color-dark = #7D7D7D
+secondary-gray-dark = #9A9A9A
+border-color-dark = #343434
+border-gray-dark = #121212
+border-table-dark = #ffffff
 
 if (!hexo-config('dark_mode'))
-  background-color = #ffffff
-  primary-color = #333333
-  primary-gray = #AAAAAA
-  secondary-color = #838383
-  secondary-gray = #666666
-  border-color = #CCCCCC
-  border-gray = #EEEEEE
-  border-table = #000000
+  $background-color = background-color-light
+  primary-color = primary-color-light
+  primary-gray = primary-gray-light
+  secondary-color = secondary-color-light
+  secondary-gray = secondary-gray-light
+  $border-color = border-color-light
+  border-gray = border-gray-light
+  border-table = border-table-light
 else
-  background-color = #101010
-  primary-color = #CDCDCD
-  primary-gray = #565656
-  secondary-color = #7D7D7D
-  secondary-gray = #9A9A9A
-  border-color = #343434
-  border-gray = #121212
-  border-table = #ffffff
+  $background-color = background-color-dark
+  primary-color = primary-color-dark
+  primary-gray = primary-gray-dark
+  secondary-color = secondary-color-dark
+  secondary-gray = secondary-gray-dark
+  $border-color = border-color-dark
+  border-gray = border-gray-dark
+  border-table = border-table-dark
