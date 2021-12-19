@@ -6,7 +6,7 @@
 selectable: true
 
 # Dark mode
-# Possible values: true, false, auto
+# Available values: true, false, auto
 dark_mode: auto
 
 # Site creation time
