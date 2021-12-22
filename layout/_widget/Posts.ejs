@@ -16,7 +16,9 @@
       </p>
   <% }) /* posts.each */ %>
   <% if (posts.length > showNum) { %>
-    <p class="menu-nav-item">...</p>
+    <p class="menu-nav-item">
+      <a style="color:inherit" href="<%- url_for(cat_link) %>">...</a>
+    </p>
 <% }
   } /* function renderPostList */
   renderPostList(category) %>

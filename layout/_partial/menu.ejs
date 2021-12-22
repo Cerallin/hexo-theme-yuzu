@@ -10,6 +10,7 @@
     <div class="menu-nav-item-cont <%- config.menu[item].widget.toLowerCase() %>">
       <%- partial('_widget/' + config.menu[item].widget, {
         category: config.menu[item].name,
+        cat_link: config.menu[item].link,
         showNum: config.menu[item].show_num || 3
       }) %>
     </div>
