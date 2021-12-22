@@ -17,3 +17,10 @@ post:
 
 search:
   search: search
+
+article:
+  copyright: "Copyright: "
+
+not_found: "404 Not found."
+
+icp: "icp Record"

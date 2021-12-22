@@ -17,7 +17,7 @@
 
   <% if (config.post_copy) { %>
     <div class="post-cc">
-      版权声明：
+      <%= __('article.copyright') %>
         <% if (config.post_copy.text && config.post_copy.text_en) { %>
           <%- config.post_copy.text %> | <a href="<%- config.post_copy.link %>"><%- config.post_copy.text_en %></a>
         <% } else { %>

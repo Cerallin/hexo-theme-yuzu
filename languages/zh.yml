@@ -14,3 +14,9 @@ post:
 search:
   search: 搜索
 
+article:
+  copyright: "版权声明："
+
+not_found: "404没找到咯~"
+
+icp: icp备案

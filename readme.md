@@ -71,6 +71,7 @@
 墙裂推荐：使用 [hexo-filter-text-autospace](https://github.com/cerallin/hexo-filter-text-autospace) 为中文段落中的英文自动添加间距
 
 ## 安装使用
+
 ```
 $ git clone https://github.com/Cerallin/hexo-theme-yuzu
 $ mv ./hexo-theme-yuzu $hexo_root/themes
@@ -117,7 +118,8 @@ toc: true
 ```
 
 ## TODOs
-- [X] 修复分类页面
-- [ ] 为 stylus 添加更多自定义变量
-- [ ] 生成分享链接
-- [ ] 本地化
+
+- [x] 本地化
+- [x] 深色模式
+- [ ] 更多图标
+- [ ] 代码一键复制
