@@ -64,11 +64,10 @@
 ![figure title](/path/to/figure.jpg)
 ```
 
-### Mathjax 插件
-推荐使用 hexo-filter-mathjax 渲染生成
+### 推荐插件
 
-### 中英文间距插件
-墙裂推荐：使用 [hexo-filter-text-autospace](https://github.com/cerallin/hexo-filter-text-autospace) 为中文段落中的英文自动添加间距
+- hexo-filter-mathjax: 渲染生成mathjax公式；
+- [hexo-filter-text-autospace](https://github.com/cerallin/hexo-filter-text-autospace): 为中文段落中的英文自动添加间距。
 
 ## 安装使用
 
@@ -121,5 +120,35 @@ toc: true
 
 - [x] 本地化
 - [x] 深色模式
-- [ ] 更多图标
+- [x] 优化图标
 - [ ] 代码一键复制
+- [ ] TOC移动到文章上方
+
+## License
+
+This project is under MIT License.
+
+    Copyright (c) 2018 XiaotaoNie
+    Copyright (c) 2021 Cerallin   <cerallin@cerallin.top>
+
+    Permission is hereby granted, free of charge, to any person obtaining a copy
+    of this software and associated documentation files (the "Software"), to deal
+    in the Software without restriction, including without limitation the rights
+    to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+    copies of the Software, and to permit persons to whom the Software is
+    furnished to do so, subject to the following conditions:
+
+    The above copyright notice and this permission notice shall be included in all
+    copies or substantial portions of the Software.
+
+    THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+    IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+    FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+    AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+    LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+    OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+    SOFTWARE.
+
+### Bootstrap icons
+
+Part of [Bootstrap opensource SVG icon library](https://github.com/twbs/icons) is used in this project, which is under MIT license.

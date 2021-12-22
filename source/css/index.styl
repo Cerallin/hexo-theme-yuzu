@@ -5,19 +5,19 @@
   .content-pagination
     padding-bottom: 36px
 
-    .prev
-      float: left
+    .nav-link
+      display: flex
+      flex-direction: row
+      align-items: center
 
-      .prev-icon
-        nav-icon()
-        background-image: url('/img/search-gt.png')
+      i
+        margin-bottom: -2px
 
-    .next
-      float: right
+      &.prev
+        float: left
 
-      .next-icon
-        nav-icon()
-        background-image: url('/img/search-lt.png')
+      &.next
+        float: right
 
   img
     max-width: 100%
