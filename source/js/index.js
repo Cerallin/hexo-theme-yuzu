@@ -1,6 +1,7 @@
 window.onload = function () {
   Theme.backToTop.register();
   Theme.showHeadBar.register();
+  Theme.clipboard.register();
 
   [].forEach.call(document.getElementsByClassName('loading-wrapper'),
     element => {

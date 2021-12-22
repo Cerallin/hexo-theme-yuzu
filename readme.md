@@ -121,8 +121,9 @@ toc: true
 - [x] 本地化
 - [x] 深色模式
 - [x] 优化图标
-- [ ] 代码一键复制
+- [x] 代码一键复制
 - [ ] TOC移动到文章上方
+- [ ] 平滑圆角
 
 ## License
 
@@ -152,3 +153,7 @@ This project is under MIT License.
 ### Bootstrap icons
 
 Part of [Bootstrap opensource SVG icon library](https://github.com/twbs/icons) is used in this project, which is under MIT license.
+
+### Clipboard.js
+
+[Clipboard.js](https://github.com/zenorocha/clipboard.js) is used in this project, which is under MIT license.
