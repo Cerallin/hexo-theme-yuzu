@@ -4,11 +4,8 @@ nav:
   archives: ARCHIVES
   about: ABOUT
   search: SEARCH
-#
-#post:
-#  postTime: 发布于
-#  tags: 标签
-#  visit: 访问
+  category: "Category:"
+
 post:
   postTime: Post
   tags: Tags
