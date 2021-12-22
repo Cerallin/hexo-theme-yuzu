@@ -23,22 +23,7 @@
     </div></section>
   <% } %>
 <% } %>
-<div class="pagination archive-pagination">
-    <% if (page.prev){ %>
-    <div class="nav-link prev">
-      <i class="icon icon-chevron-left"></i>
-      <a href="<%- config.root %><%- page.prev_link %>">
-        <span>Prev</span>
-      </a>
-    </div>
-    <% } %>
-    <% if (page.next){ %>
-    <div class="nav-link next">
-      <a href="<%- config.root %><%- page.next_link %>">
-        <span>Next</span>
-      </a>
-      <i class="icon icon-chevron-right"></i>
-    </div>
-    <% } %>
 
+<div class="pagination archive-pagination">
+  <%- partial('_partial/pagination', {page: page}) %>
 </div>

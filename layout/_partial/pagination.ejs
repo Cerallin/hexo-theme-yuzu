@@ -1,0 +1,16 @@
+<% if (page.prev){ %>
+  <div class="nav-link prev">
+    <i class="icon icon icon-chevron-left"></i>
+    <a href="<%= url_for(page.prev_link) %>">
+      <span>Prev</span>
+    </a>
+  </div>
+<% } %>
+<% if (page.next){ %>
+  <div class="nav-link next">
+    <a href="<%= url_for(page.next_link) %>">
+      <span>Next</span>
+    </a>
+    <i class="icon icon-chevron-right"></i>
+  </div>
+<% } %>
