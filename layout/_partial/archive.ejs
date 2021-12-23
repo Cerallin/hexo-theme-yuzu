@@ -12,9 +12,7 @@
       <% } %>
       <% last = year; %>
       <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <span class="archive-year"><%= year %></span>
-        </div>
+        <div class="archive-year"><%= year %></div>
         <div class="archives-year-cont">
     <% } %>
     <%- partial('_partial/archive-post', {post: post, even: i % 2 == 0}) %>

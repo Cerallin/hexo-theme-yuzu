@@ -1,9 +1,9 @@
 nav:
-  home: HOME
-  tags: TAGS
-  archives: ARCHIVES
-  about: ABOUT
-  search: SEARCH
+  home: Home
+  tags: Tags
+  archives: Archives
+  about: About
+  search: Search
   category: "Category:"
 
 post:
