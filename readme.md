@@ -1,8 +1,17 @@
 # Hexo-Theme-Yuzu
 本项目从 [hexo-theme-orange](https://github.com/Orange-way/hexo-theme-orange) fork 出来，鉴于无法找到原作者联系方式，本项目将由[Cerallin](https://github.com/Cerallin)继续维护。
 
+## 示例网站
+
+- 主题展示网站：[cerallin.github.io](https://cerallin.github.io)
+- 学术写作指南：[notes.cerallin.top](https://notes.cerallin.top/2021/12/12/%E5%A6%82%E4%BD%95%E9%85%8D%E7%BD%AE%E4%B8%80%E4%B8%AA%E5%AD%A6%E6%9C%AF%E5%86%99%E4%BD%9C%E5%8D%9A%E5%AE%A2/)
+
+什么？你问我小说站在哪？我才不会告诉你呢(/ω•＼*)。
+
 ## 特色
-黑白色调，风格质朴简约。针对文章创作优化。
+- 黑白色调，风格质朴简约。
+- 针对文章创作优化，学术博客也是可以的 (?)。
+- 支持深色模式，自适应电脑/手机深浅色模式。
 
 ## 功能
 - 支持分页（hexo-generator-*）
@@ -123,3 +132,29 @@ toc: true
 - [x] 深色模式
 - [ ] 更多图标
 - [ ] 代码一键复制
+
+
+## License
+
+This project is under MIT License.
+
+    Copyright (c) 2018 XiaotaoNie
+    Copyright (c) 2021 Cerallin   <cerallin@cerallin.top>
+
+    Permission is hereby granted, free of charge, to any person obtaining a copy
+    of this software and associated documentation files (the "Software"), to deal
+    in the Software without restriction, including without limitation the rights
+    to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+    copies of the Software, and to permit persons to whom the Software is
+    furnished to do so, subject to the following conditions:
+
+    The above copyright notice and this permission notice shall be included in all
+    copies or substantial portions of the Software.
+
+    THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+    IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+    FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+    AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+    LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+    OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+    SOFTWARE.
