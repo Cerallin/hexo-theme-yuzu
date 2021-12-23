@@ -13,6 +13,11 @@ dark_mode: auto
 # Warning: This feature is NOT fully tested on various browsers.
 smooth_corner: false
 
+# Code settings
+code:
+  # Force hide line numbers
+  line_number: false
+
 # Site creation time
 since: 2018
 
