@@ -58,8 +58,9 @@ code
       height: 1.2 * content-font-size
       padding: 0.25em
       margin: 0.5em
-      border: 1px solid primary-gray
+      border: 1px solid
       border-radius: 5px
+      border-color(primary-gray, primary-gray-light, primary-gray-dark)
       background-color(
         $code-background,
         $code-background-light,
@@ -79,9 +80,9 @@ code
 
         i
           text-color(
-            primary-color !important,
-            primary-color-light !important,
-            primary-color-dark !important
+            primary-color,
+            primary-color-light,
+            primary-color-dark
           )
 
   .code
