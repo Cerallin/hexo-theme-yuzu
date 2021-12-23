@@ -1,6 +1,8 @@
 # Hexo-Theme-Yuzu
 本项目从 [hexo-theme-orange](https://github.com/Orange-way/hexo-theme-orange) fork 出来，鉴于无法找到原作者联系方式，本项目将由[Cerallin](https://github.com/Cerallin)继续维护。
 
+**当前分支为 v1.x 版本**，该分支对于小说写作来说足矣，不会有太大的变动了。
+
 ## 示例网站
 
 - 主题展示网站：[cerallin.github.io](https://cerallin.github.io)
@@ -125,13 +127,6 @@ beian:
 # toc
 toc: true
 ```
-
-## TODOs
-
-- [x] 本地化
-- [x] 深色模式
-- [ ] 更多图标
-- [ ] 代码一键复制
 
 
 ## License
