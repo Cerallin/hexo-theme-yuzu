@@ -1,8 +1,19 @@
 # Hexo-Theme-Yuzu
 本项目从 [hexo-theme-orange](https://github.com/Orange-way/hexo-theme-orange) fork 出来，鉴于无法找到原作者联系方式，本项目将由[Cerallin](https://github.com/Cerallin)继续维护。
 
+**当前分支为 v2.x 版本**，正在开发对于学术博客来说更友好的功能。
+
+## 示例网站
+
+- 主题展示网站：[cerallin.github.io](https://cerallin.github.io)
+- 学术写作指南：[notes.cerallin.top](https://notes.cerallin.top/2021/12/12/%E5%A6%82%E4%BD%95%E9%85%8D%E7%BD%AE%E4%B8%80%E4%B8%AA%E5%AD%A6%E6%9C%AF%E5%86%99%E4%BD%9C%E5%8D%9A%E5%AE%A2/)
+
+什么？你问我小说站在哪？我才不会告诉你呢(/ω•＼*)。
+
 ## 特色
-黑白色调，风格质朴简约。针对文章创作优化。
+- 黑白色调，风格质朴简约。
+- 针对文章创作优化，学术博客也是可以的 (?)。
+- 支持深色模式，自适应电脑/手机深浅色模式。
 
 ## 功能
 - 支持分页（hexo-generator-*）
