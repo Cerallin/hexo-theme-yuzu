@@ -31,10 +31,6 @@ code, .code, .gutter, pre
   font-family: code-font-family
   background-color($code-background, $code-background-light, $code-background-dark)
 
-code
-  padding: 3px 5px
-  text-color($code-color, $code-color-light, $code-color-dark)
-
 .highlight
   margin: 1em 0
   overflow-x: auto
@@ -42,7 +38,7 @@ code
   border-radius: 5px
 
   if ($smooth-corner)
-    smooth-corner(100, 5)
+    smooth-corner(50)
 
   table
     position: relative
@@ -61,7 +57,7 @@ code
       width: 1.2 * content-font-size
       height: 1.2 * content-font-size
       padding: 0.25em
-      margin: 0.5em 1em
+      margin: 10px 1em
       border-radius: 5px
 
       if ($smooth-corner)
@@ -92,9 +88,13 @@ code
             primary-color-dark
           )
 
-  .code
-    pre
-      margin: 0
+    .code
+      if ($smooth-corner)
+        padding-left: 1em
+        padding-right: 1em
+
+      pre
+        margin: 0
 
   .gutter
     width: 10px

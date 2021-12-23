@@ -43,9 +43,14 @@
     content-text()
 
     code
-      border-radius: 5px
+      text-color($code-color, $code-color-light, $code-color-dark)
+      vertical-align: middle
+      padding: 3px 0.4em
+
       if (hexo-config('smooth_corner'))
         smooth-corner(100, 5)
+      else
+        border-radius: 5px
 
   blockquote
     quoted-text()
