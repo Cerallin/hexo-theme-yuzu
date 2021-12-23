@@ -133,8 +133,8 @@ toc: true
 - [x] 深色模式
 - [x] 优化图标
 - [x] 代码一键复制
+- [x] 平滑圆角
 - [ ] TOC移动到文章上方
-- [ ] 平滑圆角
 
 ## License
 
@@ -168,3 +168,7 @@ Part of [Bootstrap opensource SVG icon library](https://github.com/twbs/icons) i
 ### Clipboard.js
 
 [Clipboard.js](https://github.com/zenorocha/clipboard.js) is used in this project, which is under MIT license.
+
+### Smooth-corners.js
+
+[Smooth-corners.js](https://github.com/wopian/smooth-corners) is used in this project, which is under MIT license.
