@@ -9,6 +9,10 @@ selectable: true
 # Available values: true, false, auto
 dark_mode: auto
 
+# Round corner
+# Warning: This feature is NOT fully tested on various browsers.
+smooth_corner: false
+
 # Site creation time
 since: 2018
 

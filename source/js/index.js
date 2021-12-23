@@ -11,5 +11,5 @@ window.onload = function () {
   [].forEach.call(document.getElementsByClassName('page'),
     element => {
       element.style.filter = 'none';
-    })
+    });
 };

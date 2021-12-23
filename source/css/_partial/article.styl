@@ -41,6 +41,11 @@
   p
     content-text()
 
+    code
+      border-radius: 5px
+      if (hexo-config('smooth_corner'))
+        smooth-corner(100, 5)
+
   blockquote
     quoted-text()
 

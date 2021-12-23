@@ -17,3 +17,15 @@
 <%- js('js/clipboard/clipboard.min.js') %>
 <%- js('js/theme.js') %>
 <%- js('js/index.js') %>
+
+<% if (theme.smooth_corner) { %>
+<script>
+let ori_onload = window.onload;
+window.onload = function() {
+  if (CSS && 'paintWorklet' in CSS)
+    CSS.paintWorklet.addModule('https://unpkg.com/smooth-corners');
+
+  ori_onload();
+}
+</script>
+<% } %>
