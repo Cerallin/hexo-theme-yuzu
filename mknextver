@@ -1,0 +1,16 @@
+#!/bin/bash
+
+cur_branch=$(git branch --show-current)
+
+next_ver=$(git describe --tags --abbrev=0 $cur_branch | awk -F'.' '{printf $1"."$2+1}')
+
+sed -i "s_^version: .*\$_version: ${next_ver}_" _config.yml
+
+git add _config.yml
+git commit -m "Publish $next_ver"
+git tag $next_ver
+
+cat <<EOF
+Recent tags:
+$(git tag -n | tail -n5)
+EOF
