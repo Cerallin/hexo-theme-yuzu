@@ -133,7 +133,6 @@ toc: true
 
 This project is under MIT License.
 
-    Copyright (c) 2018 XiaotaoNie
     Copyright (c) 2021 Cerallin   <cerallin@cerallin.top>
 
     Permission is hereby granted, free of charge, to any person obtaining a copy
