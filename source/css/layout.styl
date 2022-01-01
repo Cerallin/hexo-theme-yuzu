@@ -36,6 +36,13 @@ img
   height: auto
   display: inline-block
   vertical-align: middle
+  $dark-mode = hexo-config('dark_mode')
+
+  if ($dark-mode == 'auto')
+    @media (prefers-color-scheme: dark)
+      filter: brightness(0.8)
+  else if ($dark-mode == true)
+    filter: brightness(0.8)
 
 del
   text-decoration: line-through
