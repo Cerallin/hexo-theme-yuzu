@@ -1,29 +1,33 @@
+@import './highlight-themes/atom-one-dark'
+@import './highlight-themes/atom-one-light'
+
 code-font-size = 16px
 code-font-family = 'Inconsolata', 'monospace', 'Open Sans', 'Microsoft Yahei', sans-serif
 $dark-mode = hexo-config('dark_mode')
 $smooth-corner = hexo-config('smooth_corner')
-// Light
-$code-color-light = #000
-$code-background-light = #f5f5f5
-// Dark
-$code-color-dark = #fff
-$code-background-dark = #333
 
 if (!$dark-mode)
-  $code-color = $code-color-light
+  $code-foreground = $code-foreground-light
   $code-background = $code-background-light
+  $code-attribute = $code-attribute-light
+  $code-built_in = $code-built_in-light
+  $code-comment = $code-comment-light
+  $code-keyword = $code-keyword-light
+  $code-number = $code-number-light
+  $code-string = $code-string-light
+  $code-symbol = $code-symbol-light
+  $code-title = $code-title-light
 else
-  $code-color = $code-color-dark
+  $code-foreground = $code-foreground-dark
   $code-background = $code-background-dark
-
-gray = #cacaca
-comment = #93a1a1
-keyword = #859900
-number = #2aa198
-name = #268bd2
-attribute = #b58900
-symbol = #cb4b16
-built_in = #dc32 2
+  $code-attribute = $code-attribute-dark
+  $code-built_in = $code-built_in-dark
+  $code-comment = $code-comment-dark
+  $code-keyword = $code-keyword-dark
+  $code-number = $code-number-dark
+  $code-string = $code-string-dark
+  $code-symbol = $code-symbol-dark
+  $code-title = $code-title-dark
 
 code, .code, .gutter, pre
   padding: 7px
@@ -98,8 +102,8 @@ code, .code, .gutter, pre
 
   .gutter
     width: 10px
-    color: gray
     text-align: right
+    text-color($code-comment, $code-comment-light, $code-comment-dark)
 
     if (!hexo-config('code.line_number'))
       display: none
@@ -118,22 +122,25 @@ code, .code, .gutter, pre
 
   .code
     .comment, .quote
-      color: comment
+      text-color($code-comment, $code-comment-light, $code-comment-dark)
 
     .keyword, .selector-tag, .addition
-      color: keyword
+      text-color($code-keyword, $code-keyword-light, $code-keyword-dark)
 
-    .number, .string, .meta .meta-string, .literal, .doctag, .regexp
-      color: number
+    .number
+      text-color($code-number, $code-number-light, $code-number-dark)
+
+    .string, .meta .meta-string, .literal, .doctag, .regexp
+      text-color($code-string, $code-string-light, $code-string-dark)
 
     .title, .section, .name, .selector-id, .selector-class
-      color: title
+      text-color($code-title, $code-title-light, $code-title-dark)
 
     .attribute, .attr, .variable, .template-variable, .class .title, .type
-      color: attribute
+      text-color($code-attribute, $code-attribute-light, $code-attribute-dark)
 
     .symbol, .bullet, .subst, .meta, .meta .keyword, .selector-attr, .selector-pseudo, .link
-      color: symbol
+      text-color($code-symbol, $code-symbol-light, $code-symbol-dark)
 
     .built_in, .deletion
-      color: built_in
+      text-color($code-built_in, $code-built_in-light, $code-built_in-dark)
