@@ -18,6 +18,15 @@ code:
   # Force hide line numbers
   line_number: false
 
+# Counting words
+word_count:
+  enable: true
+  mode: all # or en_only | zh_only
+  reading_time: false
+  reading_speed:
+    cn: 300
+    en: 160
+
 # Site creation time
 since: 2018
 

@@ -15,14 +15,20 @@
     </div>
   </div>
 
+  <% if (theme.word_count && theme.word_count.enable) { %>
+    <div class="post-word-count">
+      <%- partial('_partial/post/word-count', {post: post}) %>
+    </div>
+  <% } %>
+
   <% if (config.post_copy) { %>
     <div class="post-cc">
       <%= __('article.copyright') %>
-        <% if (config.post_copy.text && config.post_copy.text_en) { %>
-          <%- config.post_copy.text %> | <a href="<%- config.post_copy.link %>"><%- config.post_copy.text_en %></a>
-        <% } else { %>
-          <a href="<%- config.post_copy.link %>"><%- config.post_copy.text || config.post_copy.text_en %></a>
-        <% } %>
+      <% if (config.post_copy.text && config.post_copy.text_en) { %>
+        <%- config.post_copy.text %> | <a href="<%- config.post_copy.link %>"><%- config.post_copy.text_en %></a>
+      <% } else { %>
+        <a href="<%- config.post_copy.link %>"><%- config.post_copy.text || config.post_copy.text_en %></a>
+      <% } %>
     </div>
   <% } %>
 
