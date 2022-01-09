@@ -17,6 +17,7 @@ search:
   search: search
 
 article:
+  hits: hits
   copyright: "Copyright: "
 
 not_found: "404 Not found."

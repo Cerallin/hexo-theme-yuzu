@@ -7,6 +7,14 @@
       </a>
     </div>
   <% } %>
+  <div>
+    <span id="busuanzi_container_site_pv">
+      <span id="busuanzi_value_site_pv"></span> PV
+    </span>
+    <span id="busuanzi_container_site_uv">
+      <span id="busuanzi_value_site_uv"></span> UV
+    </span>
+  </div>
   <%- config.since_year %>
   <% let current = date(Date.now(), "YYYY") %>
   <% if (current != config.since_year ) { %>

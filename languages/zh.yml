@@ -17,6 +17,7 @@ search:
   search: 搜索
 
 article:
+  hits: 访问
   copyright: "版权声明："
 
 not_found: "404没找到咯~"
