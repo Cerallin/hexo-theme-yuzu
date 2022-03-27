@@ -1,10 +1,20 @@
+$toc-height = 2.25em + 1.75em * 4
+
 .post-widget
   info-text()
   padding-top: 1em
-  width: 20%
-  float: right
+  padding-bottom: 3em
+  width: 60%
+
+  .post-toc-toggle
+    primary-link-text()
+    font-size: info-font-size
 
   .post-toc-wrap
+    max-height: $toc-height
+    margin-bottom: 0.25em
+    overflow: hidden
+
     h4
       padding-bottom: 0.25em
       margin-bottom: 0.75em
@@ -19,3 +29,21 @@
         text-indent: -1em
         width: 100%
         white-space: normal
+
+@keyframes showToc
+  0%
+    max-height: 2000px
+  100%
+    max-height: $toc-height
+
+@keyframes hideToc
+  0%
+    max-height: $toc-height
+  100%
+    max-height: 2000px
+
+#post-toc
+  &.post-toc-show
+    animation: showToc 1s forwards
+  &.post-toc-hide
+    animation: hideToc 1s forwards

@@ -5,14 +5,24 @@
         })
     if(topic) {
     %>
-    <aside class="post-widget">
-        <nav class="post-toc-wrap" id="post-toc">
+    <div class="post-widget">
+        <nav class="post-toc-wrap post-toc-show" id="post-toc">
             <h4>TOC</h4>
             <%- toc(post.content, {
                 class: 'post-toc',
                 list_number: theme.toc.list_number
             }) %>
         </nav>
-    </aside>
+        <a class="post-toc-toggle" onclick="toggleToc(this, expend, collapse);" href="javascript:;">
+            <%= __('post.toc.expand') %>
+        </a>
+    </div>
+    <%- `
+    <script>
+        expend = "${__('post.toc.expand')}";
+        collapse = "${__('post.toc.collapse')}";
+    </script>
+    ` %>
+    <script src="/js/toc.js"></script>
    <% }
 } %>
