@@ -23,7 +23,7 @@
 let ori_onload = window.onload;
 window.onload = function() {
   if (CSS && 'paintWorklet' in CSS)
-    CSS.paintWorklet.addModule('https://unpkg.com/smooth-corners');
+    CSS.paintWorklet.addModule('/js/smooth-corners.js');
 
   ori_onload();
 }
