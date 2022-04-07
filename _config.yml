@@ -41,14 +41,11 @@ rss: default
 menu:
   Archives:
     widget: Archives
-    link: /archives
   Posts:
     name: posts # category name
     widget: Posts
-    link: /categories/posts
   Tags:
     widget: Tags
-    link: /tags
 
 #other menu1
 # otherMenu1: Search

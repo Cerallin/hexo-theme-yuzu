@@ -101,18 +101,14 @@ post_copy:
 menu:
   Archives:
     widget: Archives # 三种：Archives | Posts | Tags
-    link: /archives
   Posts1:
     name: Posts
     widget: Posts
-    link: /categories/posts1
   Posts2:
     name: Posts2
     widget: Posts
-    link: /categories/your-link
   Tags:
     widget: Tags
-    link: /tags
 
 # 右上角
 otherMenu2:

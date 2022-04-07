@@ -1,17 +1,22 @@
 <div class="menu-nav">
-  <% for (var item in config.menu) { %>
+  <% for (let name in config.menu) { %>
+  <% let item = config.menu[name] %>
   <div class="menu-nav-item">
     <div class="menu-nav-item-tit">
-      <a href="<%- url_for(config.menu[item].link) %>">
+      <% if (item.widget == "Posts") { %>
+        <a href="<%- url_for('/categories/' + item.name) %>">
+      <% } else { // archives and tags %>
+        <a href="<%- url_for(item.widget.toLowerCase()) %>">
+      <% } %>
         <span>
-          <%= item %></span>
+          <%= name %></span>
       </a>
     </div>
-    <div class="menu-nav-item-cont <%- config.menu[item].widget.toLowerCase() %>">
-      <%- partial('_widget/' + config.menu[item].widget, {
-        category: config.menu[item].name,
-        cat_link: config.menu[item].link,
-        showNum: config.menu[item].show_num || 3
+    <div class="menu-nav-item-cont <%- item.widget.toLowerCase() %>">
+      <%- partial('_widget/' + item.widget, {
+        category: item.name,
+        cat_link: item.link,
+        showNum: item.show_num || 3
       }) %>
     </div>
   </div>
