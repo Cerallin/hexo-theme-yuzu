@@ -50,8 +50,14 @@
   p
     content-text()
 
-    &.fin
+    .fin
+      display: block
       fin-text()
+
+    .warning-banner
+      display: block
+      warning-text()
+      banner-text()
 
     code
       text-color($code-color, $code-color-light, $code-color-dark)
