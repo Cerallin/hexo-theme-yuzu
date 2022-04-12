@@ -41,24 +41,22 @@ info-text()
   text-color(primary-gray, primary-gray-light, primary-gray-dark)
   font-size: info-font-size
 
-quoted-text()
-  padding-bottom: 0.5em
-
+quoted-text(size)
   p
     text-indent: 0
     text-color(secondary-color, secondary-color-light, secondary-color-dark)
-    font-size: default-font-size
+    font-size: size
 
-    quote-sign()
-      font-family: fantasy
-      font-size: 1.5 * content-font-size
+    quote-size = 1.5 * size
+
+    padding-left: quote-size
+    padding-right: quote-size
 
     &:before
-      content: '“'
-      padding-right: 0.25em
       quote-sign()
+      font-size: quote-size
 
-    &:after
-      content: '”'
-      padding-left: 0.25em
-      quote-sign()
+      offset = 0.1
+
+      margin-left: (-1 - offset) * quote-size
+      margin-right: offset * quote-size

@@ -3,6 +3,8 @@
     font-family: default-font-family
     text-indent: 0
     font-size: default-font-size
+    padding-top: 0
+    padding-bottom: 5px
 
   h1, h2, h3
     title()
@@ -121,10 +123,17 @@
     content-text()
 
   blockquote
-    quoted-text()
+    quoted-text(content-font-size)
 
-    p
-      font-size: content-font-size
+  code
+    text-color($code-color, $code-color-light, $code-color-dark)
+    vertical-align: middle
+    padding: 3px 0.4em
+
+    if (hexo-config('smooth_corner'))
+      smooth-corner(100, 5)
+    else
+      border-radius: 5px
 
 .post-item.condense
   padding: 10px 0

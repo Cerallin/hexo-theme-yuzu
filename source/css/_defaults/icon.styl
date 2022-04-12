@@ -6,10 +6,22 @@
   font-style: normal
   font-display: block
 
-.icon
+icon-font()
   font-family: 'icon'
   font-style: normal
   text-color(primary-gray, primary-gray-light, secondary-color-dark)
+
+.icon
+  icon-font()
+
+.icon-clipboard:before
+  content: '\e904'
+
+.icon-clipboard-check:before
+  content: '\e903'
+
+.icon-quote:before
+  content: '\e905'
 
 .icon-chevron-bar-up:before
   content: '\e900'
@@ -20,8 +32,6 @@
 .icon-chevron-left:before
   content: '\e902'
 
-.icon-clipboard-check:before
-  content: '\e903'
-
-.icon-clipboard:before
-  content: '\e904'
+quote-sign()
+  content: '\e905' // icon-quote
+  icon-font()
