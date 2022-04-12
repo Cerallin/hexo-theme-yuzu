@@ -15,8 +15,11 @@
 
   <% site.tags.map(function(tag){  %>
   <div class="one-tag-list">
-    <p class="tag-text" id="<%= tag.name %>">
-      <%= tag.name %></p>
+    <a href="<%- url_for(`/tags/${tag.name}`) %>">
+      <h2 class="tag-text" id="<%= tag.name %>">
+      <%= tag.name %>
+      </h2>
+    </a>
     <% tag.posts.map(function(post){  %>
     <p class="post-preview">
       <span class="tag-item-date">
