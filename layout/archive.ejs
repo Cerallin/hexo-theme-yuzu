@@ -1,5 +1,9 @@
 <h1 class="archive-title">
-  <%= __('nav.archives') %>
+  <% if (page.tag) { %>
+    <%= __('nav.tags') %><%= page.tag %>
+  <% } else if (page.archive) { %>
+    <%= __('nav.archives') %>
+  <% } %>
 </h1>
 
 <%- partial('_partial/archive', {pagination: config.archive, index: true}) %>
