@@ -15,14 +15,14 @@ fin-text()
   font-weight: 600
 
 warning-text()
-  color: #ffcf76
+  text-color(#ff542d, #ff542d, #ffcf76)
   font-size: title-font-size
 
   a
     text-color(primary-color, primary-color-light, primary-color-dark)
 
     &:hover
-      color: #ffcf76
+      text-color(#ff542d, #ff542d, #ffcf76)
 
 banner-text()
   text-indent: 0
@@ -60,3 +60,8 @@ quoted-text(size)
 
       margin-left: (-1 - offset) * quote-size
       margin-right: offset * quote-size
+
+text-align($option)
+  text-align: $option
+  & + figcaption
+    text-align: $option
