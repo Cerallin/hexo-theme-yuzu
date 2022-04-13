@@ -3,10 +3,12 @@
     <% for (let name in config.menu){ %>
       <% let item = config.menu[name] %>
       <li class="barShow-item">
-          <% if (item.widget == "Posts") { %>
-            <a href="<%- url_for('/categories/' + item.name) %>">
-          <% } else { // archives and tags %>
-            <a href="<%- url_for(item.widget.toLowerCase()) %>">
+          <% if (item.widget == "Archives") { %>
+            <a href="<%- url_for('/' + config.archive_dir) %>">
+          <% } else if (item.widget == "Tags") { %>
+            <a href="<%- url_for('/' + config.tag_dir) %>">
+          <% } else { %>
+              <a href="<%- url_for(`/${config.category_dir}/${item.name}/`) %>">
           <% } %>
               <span><%= name %></span>
             </a>
