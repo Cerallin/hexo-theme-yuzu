@@ -1,10 +1,15 @@
 <div class="barShow-head" id="barShow">
   <ul class="barShow-ul">
-    <% for (var i in config.menu){ %>
+    <% for (let name in config.menu){ %>
+      <% let item = config.menu[name] %>
       <li class="barShow-item">
-        <a href="<%- url_for(config.menu[i].link) %>">
-          <span><%= i %></span>
-        </a>
+          <% if (item.widget == "Posts") { %>
+            <a href="<%- url_for('/categories/' + item.name) %>">
+          <% } else { // archives and tags %>
+            <a href="<%- url_for(item.widget.toLowerCase()) %>">
+          <% } %>
+              <span><%= name %></span>
+            </a>
       </li>
     <% } %>
     <%  let otherMenu2 = config.otherMenu2 || theme.otherMenu2;
