@@ -80,6 +80,32 @@
 - hexo-filter-mathjax: 渲染生成mathjax公式；
 - [hexo-filter-text-autospace](https://github.com/cerallin/hexo-filter-text-autospace): 为中文段落中的英文自动添加间距。
 
+## 辅助类
+
+### 文字对齐
+
+为元素添加`text-align`控制文字对齐方向。
+
+使用pandoc：
+
+```html
+[文字文字文字]{.text-align data-align=right} <!-- 始终右对齐 -->
+[文字文字文字]{.text-align data-sm-align=right} <!-- 屏幕宽度小于750px时右对齐 -->
+[文字文字文字]{.text-align data-sm-align=right data-md-align=left} <!-- 屏幕宽度小于750px时右对齐，屏幕宽度大于750px时左对齐 -->
+
+![图片标题](/path/to/picture.jpg){.text-align data-align=justify} <!-- 设置图片标题两端对齐 -->
+```
+
+不使用pandoc：
+
+```html
+<p>
+  <span class="text-align" data-align="justify">
+    文字文字文字
+  </span>
+</p>
+```
+
 ## 安装使用
 
 ```
@@ -133,7 +159,6 @@ toc: true
 - [x] TOC移动到文章上方
 - [ ] 整理“otherMenu”
 - [ ] 添加搜索支持
-- [ ] 更好的引用
 
 ## License
 
