@@ -79,32 +79,15 @@
 
 - hexo-filter-mathjax: 渲染生成mathjax公式；
 - [hexo-filter-text-autospace](https://github.com/cerallin/hexo-filter-text-autospace): 为中文段落中的英文自动添加间距。
+- hexo-clean-css：缩小生成的CSS文件的体积。由于Stylus自身的限制，本主题的CSS文件大小有很大的缩减空间。
 
-## 辅助类
+## [辅助工具类](./docs/helpers.md)
 
-### 文字对齐
+本主题提供了一些类似tailwind css的辅助工具类。
 
-类似tailwind css。
+例如，通过`text-{left|right|justify}`控制文字对齐，使用 `m{t|r|b|l}-{size}` 功能类控制元素一侧的外边距等等。
 
-使用pandoc：
-
-```html
-[文字文字文字]{.text-right} <!-- 始终右对齐 -->
-[文字文字文字]{.sm:text-right} <!-- 屏幕宽度小于750px时右对齐 -->
-[文字文字文字]{.sm:text-right .md:text-left} <!-- 屏幕宽度小于750px时右对齐，屏幕宽度大于750px时左对齐 -->
-
-![图片标题](/path/to/picture.jpg){.text-justify} <!-- 设置图片标题两端对齐 -->
-```
-
-不使用pandoc：
-
-```html
-<p>
-  <span class="md:text-justify text-right">
-    文字文字文字
-  </span>
-</p>
-```
+详细介绍请移步[这里](./docs/helpers.md)。
 
 ## 安装使用
 

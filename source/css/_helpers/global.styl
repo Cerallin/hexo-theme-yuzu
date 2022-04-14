@@ -1,0 +1,102 @@
+@import '../_variables'
+
+// Text indent
+.text-indent-none
+  text-indent: 0
+
+// Display
+$display-list = block, inline, inline-block, table, none
+
+for $option in $display-list
+  .display-{$option}
+    display: $option
+
+  @media screen and (max-width: 768px)
+    .md\\:display-{$option}
+      display: $option
+
+    for $another in $display-list
+      .md\\:display-{$option}.display-{$another}
+        display: $option
+
+// Margins
+for $i in 0 .. 10
+  .ml-{$i}, .mx-{$i}
+    margin-left: $i * 0.25em
+
+  .mr-{$i}, .mx-{$i}
+    margin-right: $i * 0.25em
+
+  .mt-{$i}, .my-{$i}
+    margin-top: $i * 0.25em
+
+  .mb-{$i}, .my-{$i}
+    margin-bottom: $i * 0.25em
+
+  // Paddings
+  .pl-{$i}, .px-{$i}
+    padding-left: $i * 0.25em
+
+  .pr-{$i}, .px-{$i}
+    padding-right: $i * 0.25em
+
+  .pt-{$i}, .py-{$i}
+    padding-top: $i * 0.25em
+
+  .pb-{$i}, .py-{$i}
+    padding-bottom: $i * 0.25em
+
+// Margin auto
+.ml-auto, .mx-auto
+  margin-left: auto
+
+.mr-auto, .mx-auto
+  margin-right: auto
+
+.mt-auto, .my-auto
+  margin-top: auto
+
+.mb-auto, .my-auto
+  margin-bottom: auto
+
+// Padding auto
+.pl-auto, .px-auto
+  padding-left: auto
+
+.pr-auto, .px-auto
+  padding-right: auto
+
+.pt-auto, .py-auto
+  padding-top: auto
+
+.pb-auto, .py-auto
+  padding-bottom: auto
+
+// Line heights
+for $i in 3 .. 10
+  .leading-{$i}
+    line-height: $i * 0.25em
+
+.leading-none
+  line-height: 1em
+
+.leading-tight
+  line-height: 1.25em
+
+.leading-normal
+  line-height: 1.5em
+
+.leading-relaxed
+  line-height: 1.75em
+
+// Font size
+for $option in default title large content info
+  .fs-{$option}
+    font-size: $option + '-font-size'
+
+// Font weight
+for $i in 1 .. 9
+  $weight = $i * 100
+
+  .fw-{$weight}
+    font-weight: $weight

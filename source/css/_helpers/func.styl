@@ -1,0 +1,20 @@
+warning-text()
+  text-color(#ff542d, #ff542d, #ffcf76)
+  font-size: title-font-size
+
+  a
+    text-color(primary-color, primary-color-light, primary-color-dark)
+
+    &:hover
+      text-color(#ff542d, #ff542d, #ffcf76)
+
+banner-text()
+  text-indent: 0
+  text-align: center
+  margin: 2em 0 1.5em 0
+
+text-align-control($option)
+    text-align: $option
+
+    & + figcaption
+      text-align: $option

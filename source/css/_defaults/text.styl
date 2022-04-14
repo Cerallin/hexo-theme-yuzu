@@ -9,26 +9,6 @@ content-text()
   padding-top: 0.25em
   padding-bottom: 0.5em
 
-fin-text()
-  text-indent: 0
-  margin: 1em 0 0.5em 0
-  font-weight: 600
-
-warning-text()
-  text-color(#ff542d, #ff542d, #ffcf76)
-  font-size: title-font-size
-
-  a
-    text-color(primary-color, primary-color-light, primary-color-dark)
-
-    &:hover
-      text-color(#ff542d, #ff542d, #ffcf76)
-
-banner-text()
-  text-indent: 0
-  text-align: center
-  margin: 2em 0 1.5em 0
-
 primary-link-text()
   text-color(primary-color, primary-color-light, primary-color-dark)
   font-size: default-font-size
@@ -60,11 +40,3 @@ quoted-text(size)
 
       margin-left: (-1 - offset) * quote-size
       margin-right: offset * quote-size
-
-text-align-control($class-name, $option)
-  {$class-name}
-    text-align: $option
-    display: block
-
-    & + figcaption
-      text-align: $option

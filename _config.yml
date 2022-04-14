@@ -73,6 +73,9 @@ theme:
   fancybox: false
 excerpt_link: 更多
 
+# 辅助样式，默认开启
+helpers: true
+
 favicon: /img/favicon.ico
 
 # ===========================================
