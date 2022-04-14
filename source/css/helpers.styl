@@ -9,18 +9,12 @@
       warning-text()
       banner-text()
 
-  .text-align
-    display: block
+  .text-indent-0
     text-indent: 0
 
-    align-func($attr)
-      for $option in left right justify
-        text-align-control($attr, $option)
+  for $option in left right justify
+    text-align-control(s('.text-%s', $option), $option)
 
-    align-func(data-align)
-
-    @media screen and (max-width: 750px)
-      align-func(data-sm-align)
-
-    @media screen and (min-width: 750px)
-      align-func(data-md-align)
+  @media screen and (max-width: 768px)
+    for $option in left right justify
+      text-align-control(s('.md\:text-%s', $option), $option)

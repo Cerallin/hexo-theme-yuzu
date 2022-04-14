@@ -84,23 +84,23 @@
 
 ### 文字对齐
 
-为元素添加`text-align`控制文字对齐方向。
+类似tailwind css。
 
 使用pandoc：
 
 ```html
-[文字文字文字]{.text-align data-align=right} <!-- 始终右对齐 -->
-[文字文字文字]{.text-align data-sm-align=right} <!-- 屏幕宽度小于750px时右对齐 -->
-[文字文字文字]{.text-align data-sm-align=right data-md-align=left} <!-- 屏幕宽度小于750px时右对齐，屏幕宽度大于750px时左对齐 -->
+[文字文字文字]{.text-right} <!-- 始终右对齐 -->
+[文字文字文字]{.sm:text-right} <!-- 屏幕宽度小于750px时右对齐 -->
+[文字文字文字]{.sm:text-right .md:text-left} <!-- 屏幕宽度小于750px时右对齐，屏幕宽度大于750px时左对齐 -->
 
-![图片标题](/path/to/picture.jpg){.text-align data-align=justify} <!-- 设置图片标题两端对齐 -->
+![图片标题](/path/to/picture.jpg){.text-justify} <!-- 设置图片标题两端对齐 -->
 ```
 
 不使用pandoc：
 
 ```html
 <p>
-  <span class="text-align" data-align="justify">
+  <span class="md:text-justify text-right">
     文字文字文字
   </span>
 </p>

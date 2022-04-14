@@ -61,9 +61,10 @@ quoted-text(size)
       margin-left: (-1 - offset) * quote-size
       margin-right: offset * quote-size
 
-text-align-control($attr, $option)
-  &[{$attr}={$option}]
+text-align-control($class-name, $option)
+  {$class-name}
     text-align: $option
+    display: block
 
     & + figcaption
       text-align: $option
