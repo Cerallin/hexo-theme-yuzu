@@ -54,11 +54,10 @@
       text-color(primary-color, primary-color-light, primary-color-dark)
       vertical-align: middle
       padding: 3px 0.4em
+      border-radius: 3px
 
       if (hexo-config('smooth_corner'))
-        smooth-corner(100, 5)
-      else
-        border-radius: 5px
+        smooth-corner(5)
 
   blockquote
     quoted-text(default-font-size)
