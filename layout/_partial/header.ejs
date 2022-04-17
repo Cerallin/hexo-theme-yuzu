@@ -1,13 +1,13 @@
 <header class="head-header">
-  <div class="head-authorH">
-    <a href="<%- url_for() %>" class="head-authorLink">
+  <div class="head-author">
+    <a href="<%- url_for() %>" class="head-author-link">
       <%= config.title%></a>
     </div>
   <div class="head-right">
     <!-- <div class="head-search">
       <input class="head-searchK"></input>
       <span class="head-searchT">
-        <%= theme.otherMenu1 %></span>
+        Search</span>
     </div> -->
     <button class="bar-wrap" id="bar-wrap-toggle">
       <span class="bar"></span>
@@ -17,7 +17,7 @@
     <div class="head-about" id="head-about">
       <%  let otherMenu2 = config.otherMenu2 || theme.otherMenu2;
           for (var item in otherMenu2){ %>
-      <a class="head-aboutLink" href="<%- url_for(otherMenu2[item]) %>">
+      <a class="head-about-link" href="<%- url_for(otherMenu2[item]) %>">
         <%= item %></a>
       <% } %>
     </div>
