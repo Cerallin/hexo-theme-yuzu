@@ -18,6 +18,16 @@
 <%- js('js/theme.js') %>
 <%- js('js/index.js') %>
 
+<% if(theme.toc) { %>
+  <%- `
+  <script>
+      expend = "${__('post.toc.expand')}";
+      collapse = "${__('post.toc.collapse')}";
+  </script>
+  ` %>
+  <%- js('js/toc.js') %>
+<% } %>
+
 <% if (theme.smooth_corner) { %>
 <script>
 let ori_onload = window.onload;

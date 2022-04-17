@@ -33,17 +33,19 @@ $toc-height = 2.25em + 1.75em * 4
 @keyframes showToc
   0%
     max-height: 2000px
+
   100%
     max-height: $toc-height
 
 @keyframes hideToc
   0%
     max-height: $toc-height
+
   100%
     max-height: 2000px
 
 #post-toc
-  &.post-toc-show
-    animation: showToc 1s forwards
-  &.post-toc-hide
+  animation: showToc 1s forwards
+
+  &[data-expand=false]
     animation: hideToc 1s forwards

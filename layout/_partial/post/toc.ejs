@@ -6,7 +6,7 @@
     if(topic) {
     %>
     <div class="post-widget">
-        <nav class="post-toc-wrap post-toc-show" id="post-toc">
+        <nav class="post-toc-wrap" id="post-toc" data-expand="true">
             <h4>TOC</h4>
             <%- toc(post.content, {
                 class: 'post-toc',
@@ -17,12 +17,5 @@
             <%= __('post.toc.expand') %>
         </a>
     </div>
-    <%- `
-    <script>
-        expend = "${__('post.toc.expand')}";
-        collapse = "${__('post.toc.collapse')}";
-    </script>
-    ` %>
-    <script src="/js/toc.js"></script>
    <% }
 } %>
