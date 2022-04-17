@@ -3,14 +3,14 @@
 <%- partial('_partial/head', null, {cache: false}) %>
 
 <body>
-  <div class="loading-wrapper">
+  <div class="loading-wrapper" data-loading="true">
     <div class="loading">
       <span></span>
       <span></span>
       <span></span>
     </div>
   </div>
-  <div class="page">
+  <div class="page" data-filter="true">
     <div class="head">
       <%- partial('_partial/header', null, {cache: false}) %>
     </div>

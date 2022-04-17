@@ -9,7 +9,10 @@ size = 20px
   height: 100%
   align-items: center
 
-.page
+  &[data-loading=false]
+    display: none
+
+.page[data-filter=true]
   filter: blur(2px)
 
 .loading

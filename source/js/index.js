@@ -5,11 +5,11 @@ window.onload = function () {
 
   [].forEach.call(document.getElementsByClassName('loading-wrapper'),
     element => {
-      element.style.display = 'none';
+      element.setAttribute('data-loading', 'false');
     });
 
   [].forEach.call(document.getElementsByClassName('page'),
     element => {
-      element.style.filter = 'none';
+      element.setAttribute('data-filter', 'false');
     });
 };
