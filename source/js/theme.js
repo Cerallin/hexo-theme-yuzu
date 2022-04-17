@@ -19,16 +19,8 @@
     register: function () {
       document.getElementById('barWrap-toggle')
         .addEventListener('click', () => {
-          let bar = document.getElementById('barShow')
-
-          if (!bar.classList.contains('barShow')) {
-            bar.classList.add('barShow');
-            bar.classList.remove('barShow-hide');
-          }
-          else {
-            bar.classList.add('barShow-hide');
-            bar.classList.remove('barShow');
-          }
+          let bar = document.getElementById('menu-bar');
+          bar.setAttribute('data-show', !(bar.getAttribute('data-show') == "true"));
         })
     }
   };

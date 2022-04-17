@@ -14,30 +14,28 @@ animation-time = 0.4s
   100%
     opacity: 0
 
-.barShow-head
+.menu-bar-head
   display: none
-
-.barShow
   animation: showBlock animation-time forwards
   display: block !important
   z-index: 10
 
-.barShow-ul
+  &[data-show=false]
+    animation: hideBlock animation-time forwards
+    z-index: 10
+    display: block !important
+    opacity: 1
+    height: 150px
+
+.menu-bar-ul
   padding-left: 20px
   width: 100%
   margin-top: 10px
   margin-bottom: 10px
 
-  .barShow-item
+  .menu-bar-item
     a
       primary-link-text()
       display: inline-block
       margin: 8px auto
       padding-left: 0px
-
-.barShow-hide
-  animation: hideBlock animation-time forwards
-  z-index: 10
-  display: block !important
-  opacity: 1
-  height: 150px

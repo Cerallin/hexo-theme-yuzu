@@ -1,8 +1,8 @@
-<div class="barShow-head" id="barShow">
-  <ul class="barShow-ul">
+<div class="menu-bar-head" id="menu-bar" data-show="false">
+  <ul class="menu-bar-ul">
     <% for (let name in config.menu){ %>
       <% let item = config.menu[name] %>
-      <li class="barShow-item">
+      <li class="menu-bar-item">
           <% if (item.widget == "Archives") { %>
             <a href="<%- url_for('/' + config.archive_dir) %>">
           <% } else if (item.widget == "Tags") { %>
@@ -16,7 +16,7 @@
     <% } %>
     <%  let otherMenu2 = config.otherMenu2 || theme.otherMenu2;
         for (var item in otherMenu2){ %>
-      <li class="barShow-item">
+      <li class="menu-bar-item">
         <a href="<%- url_for(otherMenu2[item]) %>">
           <span><%= item %></span>
         </a>
