@@ -17,7 +17,7 @@
 
   Theme.showHeadBar = {
     register: function () {
-      document.getElementById('barWrap-toggle')
+      document.getElementById('bar-wrap-toggle')
         .addEventListener('click', () => {
           let bar = document.getElementById('menu-bar');
           bar.setAttribute('data-show', !(bar.getAttribute('data-show') == "true"));
