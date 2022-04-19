@@ -15,11 +15,7 @@
       <%- partial('_partial/post/tag') %>
     </div>
     |
-    <div class="post-visit">
-      <span id="busuanzi_container_page_pv">
-        <span id="busuanzi_value_page_pv"></span> <%= __('article.hits') %>
-      </span>
-    </div>
+    <%- partial('_partial/visit-count/page-container') %>
   </div>
 
   <% if (theme.word_count && theme.word_count.enable) { %>
