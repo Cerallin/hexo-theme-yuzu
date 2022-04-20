@@ -1,8 +1,8 @@
-<% if (config['visit-count'].type === "visitor-counter") { %>
+<% if (config.visit_count.type === "visitor-counter") { %>
 
 <%- `
 <script>
-    const counter_url = "${config['visit-count'].url}";
+    const counter_url = "${config.visit_count.url}";
 </script>
 ` %>
 
