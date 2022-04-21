@@ -6,6 +6,7 @@
       warning-text()
       banner-text()
 
+  // text-align
   $align-array = left, right, justify
 
   for $option in $align-array
@@ -19,3 +20,13 @@
       for $another in $align-array
         .md\\:text-{$option}.text-{$another}
           text-align-control($option)
+
+  // overflow
+  $overflow-array = hidden, auto, scroll
+
+  for $option in $overflow-array
+    .overflow-{$option}, .overflow-x-{$option}
+      overflow-x: $option
+
+    .overflow-{$option}, .overflow-y-{$option}
+      overflow-y: $option

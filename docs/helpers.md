@@ -88,3 +88,13 @@
 ## 字重
 
 使用 `fw-{weight}` 可以控制字重。其中 weight 为 100 到 900 的数字，且都是 100 的整数倍。
+
+## 溢出
+
+使用`overflow[-{x|y}]-{hidden|auto|scroll}`控制元素overflow属性。
+
+| 类名                | 样式                |
+| :------------------ | :------------------ |
+| `overflow-hidden`   | overflow: hidden;   |
+| `overflow-x-auto`   | overflow-x: auto;   |
+| `overflow-y-scroll` | overflow-y: scroll; |
