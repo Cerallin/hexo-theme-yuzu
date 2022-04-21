@@ -6,9 +6,9 @@
 </script>
 ` %>
 
-<script async>
+<script>
   let xhr = new XMLHttpRequest();
-  xhr.open('GET', counter_url + '/?page=' + encodeURI(window.location.href), false);
+  xhr.open('GET', counter_url + '/?page=' + encodeURI(window.location.href), true);
   xhr.onreadystatechange = function () {
     if (xhr.readyState == 4) {
       if (xhr.status == 200) {
