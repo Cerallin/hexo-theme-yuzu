@@ -106,6 +106,12 @@ beian:
 
 # toc
 toc: true
+
+visit_count:
+  type: busuanzi
+  # or
+  # type: visitor-counter
+  # url: //your.counter.site/count.php
 ```
 
 ## TODOs
