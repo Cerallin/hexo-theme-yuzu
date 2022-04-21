@@ -31,48 +31,24 @@
 将`@/theme/hexo-theme-yuzu/_config.yml`中的`dark_mode`值改为`true`。
 
 ## 学术写作指南
+
+请先安装`hexo-renderer-pandoc`。
+
 ### 三线表格
 
-使用非 pandoc 的渲染引擎：
-```md
-<div class="table-container">
-
-<p class="table-title">表格名，自动编号</p>
-
-| key          | value                    |  type   |
-| :----------- | :----------------------- | :-----: |
-| num          | 65535                    | integer |
-| post         | {id: 4, content: "text"} | object  |
-| article_list | [{id: 1}, {id: 2}]       |  array  |
-
-</div>
-```
-
-使用 pandoc：
 ```md
 | key          | value                    |  type   |
 | :----------- | :----------------------- | :-----: |
 | num          | 65535                    | integer |
 | post         | {id: 4, content: "text"} | object  |
 | article_list | [{id: 1}, {id: 2}]       |  array  |
-: 表格名，自动编号
+: 表格名 {#ref:tbl-name}
 ```
 
 ### 图
 
-使用非 pandoc 的渲染引擎：
 ```md
-<div class="figure-container">
-
-![](/images/xxx.jpg)
-
-<p class="figure-title">图名，自动编号</p>
-</div>
-```
-
-使用 pandoc：
-```md
-![figure title](/path/to/figure.jpg)
+![figure description](/path/to/figure.jpg){#ref:fig-name}
 ```
 
 ### 推荐插件
@@ -141,13 +117,12 @@ toc: true
 - [x] 平滑圆角
 - [x] TOC移动到文章上方
 - [ ] 整理“otherMenu”
-- [ ] 添加搜索支持
 
 ## License
 
 This project is under MIT License.
 
-    Copyright (c) 2021 Cerallin   <cerallin@cerallin.top>
+    Copyright (c) 2021-2022 Cerallin   <cerallin@cerallin.top>
 
     Permission is hereby granted, free of charge, to any person obtaining a copy
     of this software and associated documentation files (the "Software"), to deal
