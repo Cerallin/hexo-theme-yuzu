@@ -81,10 +81,10 @@ del, s
     width: 100%
 
   .main
-    margin-top: 65px !important
+    margin-top: 65px
 
   .menu-bar-head
-    display: block !important
+    display: block
     position: fixed
     left: 0px
     top: 65px
@@ -93,6 +93,9 @@ del, s
     border-top: 1px solid
     border-bottom: 2px solid
     border-color(border-gray, border-gray-light, border-gray-dark)
+
+    &[data-show=false]
+      display: none
 
   #post
     width: 100%
