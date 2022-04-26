@@ -49,6 +49,10 @@ code, .code, .gutter, pre
     margin: 0 !important
 
     .clipboard-btn
+      &[data-clicked=true]
+        .icon:before
+          @extend .icon-clipboard-check:before
+
       @media (max-width: 768px)
         display: none
 
@@ -75,7 +79,8 @@ code, .code, .gutter, pre
       )
       cursor: pointer
 
-      i
+      .icon:before
+        @extend .icon-clipboard:before
         font-size: content-font-size
 
       &:hover

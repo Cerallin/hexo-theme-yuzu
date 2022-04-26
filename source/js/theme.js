@@ -45,14 +45,11 @@
       clipboard.on('success', debounce(function (e) {
         (function (ele) {
           // show checked icon
-          ele.firstChild.classList.remove('icon-clipboard');
-          ele.firstChild.classList.add('icon-clipboard-check');
+          ele.setAttribute('data-clicked', true);
 
           // restore icon, delayed for 1s
-          setTimeout(() => {
-            ele.firstChild.classList.remove('icon-clipboard-check');
-            ele.firstChild.classList.add('icon-clipboard');
-          }, 1000)
+          setTimeout(() =>
+            ele.setAttribute('data-clicked', false), 1000)
         })(e.trigger);
 
         e.clearSelection();
@@ -71,7 +68,7 @@
           let i = document.createElement('i'),
             btn = document.createElement('div');
 
-          i.classList.add('icon', 'icon-clipboard');
+          i.classList.add('icon');
 
           btn.appendChild(i);
           btn.classList.add('clipboard-btn');
