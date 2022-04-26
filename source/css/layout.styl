@@ -48,18 +48,28 @@ del, s
   text-decoration: line-through
 
 .page
-  // display: none;
   margin-top: 0px
 
 .page .head
-  // display: none;
-  z-index: 9
+  z-index: 1
   top: 0
   right: 0
   left: 0
+  height: 65px
   border-bottom: 1px solid
   border-color($border-color, border-color-light, border-color-dark)
-  background-color($background-color, background-color-light, background-color-dark)
+
+  &::after
+    content: ''
+    position: absolute
+    top: -8px
+    left: 0
+    right: 0
+    height: 76px
+    z-index: 2
+    filter: blur(3px)
+    opacity: 0.96
+    background-color($background-color, background-color-light, background-color-dark)
 
 @media screen and (max-width: 768px)
   animation-time = 0.4s
