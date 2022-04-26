@@ -45,7 +45,8 @@ $toc-height = 2.25em + 1.75em * 4
     max-height: 2000px
 
 #post-toc
-  animation: showToc 1s forwards
+  &[data-expand=true]
+    animation: showToc 1s forwards
 
   &[data-expand=false]
     animation: hideToc 1s forwards

@@ -16,12 +16,13 @@ animation-time = 0.4s
 
 .menu-bar-head
   display: none
-  animation: showBlock animation-time forwards
   z-index: 10
+
+  &[data-show=true]
+    animation: showBlock animation-time forwards
 
   &[data-show=false]
     animation: hideBlock animation-time forwards
-    z-index: 10
     opacity: 1
     height: 150px
 

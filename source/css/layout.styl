@@ -91,7 +91,9 @@ del, s
   .page .head
     position: fixed
     top: 0
-    animation: showHead animation-time forwards
+
+    &[data-show=true]
+      animation: showHead animation-time forwards
 
     &[data-show=false]
       animation: hideHead animation-time forwards

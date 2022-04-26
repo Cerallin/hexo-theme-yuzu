@@ -11,11 +11,11 @@
     </div>
   </div>
   <div class="page" data-filter="true">
-    <div class="head" data-show="true">
+    <div class="head">
       <%- partial('_partial/header', null, {cache: false}) %>
+      <%- partial('_partial/head-bar') %>
     </div>
     <div class="main">
-      <%- partial('_partial/head-bar') %>
       <%- body %>
     </div>
     <footer class="footer-nav">
