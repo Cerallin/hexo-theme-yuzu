@@ -30,17 +30,21 @@
   Theme.menubar = {
     register: function () {
       let bar = document.getElementById('menu-bar');
+      let main = document.getElementsByClassName('main')[0];
 
       bar.addEventListener('animationend', function (e) {
-        if (e.animationName === "hideBlock")
+        if (e.animationName === "hideBlock") {
           bar.style.display = "none";
+          main.setAttribute('data-filter', false);
+        }
       });
 
       document.getElementById('bar-wrap-toggle')
         .addEventListener('click', function () {
           let isShow = !(bar.getAttribute('data-show') == "true")
-          bar.setAttribute('data-show', isShow);
           bar.style.display = null
+          bar.setAttribute('data-show', isShow);
+          main.setAttribute('data-filter', isShow);
         })
     }
   };

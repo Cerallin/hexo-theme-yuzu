@@ -19,6 +19,9 @@ body
   list-style: none
   text-decoration: none
 
+  &[data-filter=true]
+    filter: blur(2px)
+
   if (!$theme-selectable)
     user-select: none
     -webkit-user-select: none
@@ -62,12 +65,11 @@ del, s
   &::after
     content: ''
     position: absolute
-    top: -8px
+    top: 0
     left: 0
     right: 0
-    height: 76px
+    height: 65px
     z-index: 2
-    filter: blur(3px)
     opacity: 0.96
     background-color($background-color, background-color-light, background-color-dark)
 
@@ -118,14 +120,16 @@ del, s
 
   .menu-bar-head
     display: block
-    position: fixed
-    left: 0px
+    position: absolute
     top: 65px
-    background-color($background-color, background-color-light, background-color-dark)
+    left: 0
+    right: 0
     width: 100%
     border-top: 1px solid
-    border-bottom: 2px solid
-    border-color(border-gray, border-gray-light, border-gray-dark)
+    border-bottom: 1px solid
+    opacity: 0.96
+    border-color(border-color, border-color-light, border-color-dark)
+    background-color($background-color, background-color-light, background-color-dark)
 
   #post
     width: 100%
