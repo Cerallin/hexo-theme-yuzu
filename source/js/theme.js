@@ -1,7 +1,19 @@
 (function () {
   "use strict";
 
-  var Theme = {};
+  // Debounce based on timer
+  function debounce(fun, delay = 500) {
+    return function (...args) {
+      let that = this,
+        _args = args;
+      clearTimeout(fun.id)
+      fun.id = setTimeout(function () {
+        fun.call(that, ..._args)
+      }, delay)
+    }
+  }
+
+  var Theme = new Object;
 
   Theme.backToTop = {
     register: function () {
@@ -27,19 +39,6 @@
 
   Theme.clipboard = {
     register: function () {
-
-      // Debounce based on timer
-      function debounce(fun, delay = 500) {
-        return function (...args) {
-          let that = this,
-            _args = args;
-          clearTimeout(fun.id)
-          fun.id = setTimeout(function () {
-            fun.call(that, ..._args)
-          }, delay)
-        }
-      }
-
       // Clipboard instance
       let clipboard = new ClipboardJS('.clipboard-btn');
       // On success
@@ -82,6 +81,30 @@
           element.firstChild.appendChild(btn);
         }
       )
+    }
+  };
+
+  Theme.navbar = {
+    register: function () {
+      function getScrollTop() {
+        var scroll_top = 0;
+        if (document.documentElement && document.documentElement.scrollTop) {
+          scroll_top = document.documentElement.scrollTop;
+        }
+        else if (document.body) {
+          scroll_top = document.body.scrollTop;
+        }
+        return scroll_top;
+      }
+
+      let scrollHeight = getScrollTop();
+      let navbar = document.getElementsByClassName('head')[0];
+
+      document.addEventListener('scroll', debounce(function () {
+        let newScrollTop = getScrollTop();
+        navbar.setAttribute('data-show', scrollHeight + 50 > newScrollTop);
+        scrollHeight = newScrollTop;
+      }, 100));
     }
   };
 

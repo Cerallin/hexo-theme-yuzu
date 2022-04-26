@@ -62,8 +62,29 @@ del, s
   background-color($background-color, background-color-light, background-color-dark)
 
 @media screen and (max-width: 768px)
-  .head
+  animation-time = 0.4s
+
+  @keyframes showHead
+    0%
+      top: -65px
+
+    100%
+      top: 0
+
+  @keyframes hideHead
+    0%
+      top: 0
+
+    100%
+      top: -65px
+
+  .page .head
     position: fixed
+    top: 0
+    animation: showHead animation-time forwards
+
+    &[data-show=false]
+      animation: hideHead animation-time forwards
 
   .about, .post-item .post-item-head .post-item-title a, .head-author-link
     font-weight: 400 !important
@@ -80,7 +101,7 @@ del, s
   #index-content
     width: 100%
 
-  .main
+  .page .main
     margin-top: 65px
 
   .menu-bar-head
@@ -101,7 +122,8 @@ del, s
     width: 100%
 
 .page .main
-  margin: 0 auto
+  margin-left: auto
+  margin-right: auto
   width: 90%
   max-width: 1000px
 
