@@ -27,12 +27,20 @@
     }
   };
 
-  Theme.showHeadBar = {
+  Theme.menubar = {
     register: function () {
+      let bar = document.getElementById('menu-bar');
+
+      bar.addEventListener('animationend', function (e) {
+        if (e.animationName === "hideBlock")
+          bar.style.display = "none";
+      });
+
       document.getElementById('bar-wrap-toggle')
-        .addEventListener('click', () => {
-          let bar = document.getElementById('menu-bar');
-          bar.setAttribute('data-show', !(bar.getAttribute('data-show') == "true"));
+        .addEventListener('click', function () {
+          let isShow = !(bar.getAttribute('data-show') == "true")
+          bar.setAttribute('data-show', isShow);
+          bar.style.display = null
         })
     }
   };
@@ -96,10 +104,15 @@
 
       let scrollHeight = getScrollTop();
       let navbar = document.getElementsByClassName('head')[0];
+      let menubar = document.getElementById('menu-bar');
 
       document.addEventListener('scroll', debounce(function () {
         let newScrollTop = getScrollTop();
-        navbar.setAttribute('data-show', scrollHeight + 50 > newScrollTop);
+        let isShow = scrollHeight + 50 > newScrollTop;
+        navbar.setAttribute('data-show', isShow);
+        // Also hide menubar
+        if (!isShow)
+          menubar.setAttribute('data-show', isShow);
         scrollHeight = newScrollTop;
       }, 100));
     }

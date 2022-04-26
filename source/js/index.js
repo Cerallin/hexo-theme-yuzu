@@ -1,6 +1,6 @@
 window.onload = function () {
   Theme.backToTop.register();
-  Theme.showHeadBar.register();
+  Theme.menubar.register();
   Theme.clipboard.register();
   Theme.navbar.register();
 
