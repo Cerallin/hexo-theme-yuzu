@@ -8,6 +8,10 @@
     </div>
   <% } %>
 
+  <% if (config.footer_links) { %>
+    <%- partial('_partial/footer-links') %>
+  <% } %>
+
   <%- partial('_partial/visit-count/site-container') %>
 
   <%- config.since_year %>

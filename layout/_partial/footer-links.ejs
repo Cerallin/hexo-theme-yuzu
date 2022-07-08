@@ -1,0 +1,13 @@
+<div class="footer-links">
+    <% for (let list of config.footer_links) { %>
+        <div class="footer-links-column">
+            <% for (let item of list) { %>
+                <p>
+                    <a title="<%= item.text || '' %>" href="<%= item.url || '' %>">
+                        <%= item.text || item.url || '' %>
+                    </a>
+                </p>
+            <% } %>
+        </div>
+    <% } %>
+</div>
