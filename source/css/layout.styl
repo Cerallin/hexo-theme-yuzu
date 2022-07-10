@@ -182,9 +182,13 @@ del, s
       padding-bottom: 1em
       display: flex
       align-items: flex-start
+      flex-wrap: wrap
 
       .footer-links-column
         width: 25%
+        @media (max-width: 768px) {
+          width: 50%
+        }
 
         p
           padding-right: 1em
