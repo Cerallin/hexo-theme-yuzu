@@ -24,19 +24,19 @@ info-text()
 quoted-text(size)
   p
     text-indent: 0
-    text-color(secondary-color, secondary-color-light, secondary-color-dark)
     font-size: size
+    text-color(secondary-color, secondary-color-light, secondary-color-dark)
 
-    quote-size = 1.5 * size
+quoted-with-sign(size)
+  quote-size = 1.5 * size
+  offset = 0.1
 
+  p
     padding-left: quote-size
     padding-right: quote-size
 
     &:before
       quote-sign()
       font-size: quote-size
-
-      offset = 0.1
-
       margin-left: (-1 - offset) * quote-size
       margin-right: offset * quote-size
