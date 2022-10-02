@@ -96,11 +96,14 @@
 
       let scrollHeight = getScrollTop();
       let navbar = document.getElementsByClassName('head')[0];
+      let menubar = document.getElementById('menu-bar');
 
       document.addEventListener('scroll', debounce(function () {
         let newScrollTop = getScrollTop();
-        navbar.setAttribute('data-show', scrollHeight + 50 > newScrollTop);
-        scrollHeight = newScrollTop;
+        if (menubar.getAttribute('data-show') != "true") {
+          navbar.setAttribute('data-show', scrollHeight + 50 > newScrollTop);
+          scrollHeight = newScrollTop;
+        }
       }, 100));
     }
   };
