@@ -27,11 +27,15 @@ animation-time = 0.4s
 
 .menu-bar-ul
   padding-left: 20px
-  width: 100%
+  padding-right: 20px
   margin-top: 10px
   margin-bottom: 10px
 
   .menu-bar-item
+    &.border
+      border-top: 1px solid
+      border-color(border-gray, border-gray-light, border-gray-dark)
+
     a
       primary-link-text()
       display: inline-block

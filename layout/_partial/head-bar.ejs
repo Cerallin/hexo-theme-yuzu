@@ -1,8 +1,28 @@
+<%
+let menu = Object.keys(config.menu)
+    .map((key) => [key, config.menu[key]])
+    .sort((at, bt) => {
+      let a = at[1], b = bt[1];
+
+      // Others == Others > Archives > Tags
+      if (a.widget === "Archives")
+        return (b.widget === "Tags") ? -1 : 1;
+      else if (a.widget === "Tags")
+        return 1;
+      else {
+        if (b.widget === "Archives" || b.widget === "Tags")
+          return -1;
+        else
+          return 0;
+      }
+    });
+%>
+
 <div class="menu-bar-head" id="menu-bar" data-show="false">
   <ul class="menu-bar-ul">
-    <% for (let name in config.menu){ %>
-      <% let item = config.menu[name] %>
-      <li class="menu-bar-item">
+    <% for (let tuple of menu){ %>
+      <% let [name, item] = tuple %>
+      <li class="menu-bar-item <% if (item.widget == "Archives") {%> <%= "border" %> <% } %>">
           <% if (item.widget == "Archives") { %>
             <a href="<%- url_for('/' + config.archive_dir) %>">
           <% } else if (item.widget == "Tags") { %>
