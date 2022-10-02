@@ -5,9 +5,8 @@
 
   <div id='tag_cloud' class="tags">
     <% site.tags.map(function(tag){  %>
-    <a href="#<%= tag.name %>" title="<%= tag.name %>" rel="<%= tag.length %>">
-      #
-      <%= tag.name %></a>
+      <a href="#<%= tag.name %>" title="<%= tag.name %>" rel="<%= tag.length %>">
+        #<%= tag.name %>(<%= tag.posts.length %>)</a>
     <% }) %>
   </div>
 
@@ -22,7 +21,7 @@
     </a>
     <% tag.posts.map(function(post){  %>
     <p class="post-preview">
-      <span class="tag-item-date">
+      <span class="tag-item-date" title="<%= post.date.format("HH:mm:ss MMM DD, YYYY") %>">
         <%= post.date.format('YYYY-MM-DD') %>
       </span>
       <span class="post-title">

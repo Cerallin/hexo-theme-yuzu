@@ -1,6 +1,6 @@
 .tag-title
   max-width: content-max-width
-  margin: 0.5em auto 1em auto
+  margin: 0.5em auto 0.5em auto
 
 .tags-wrap
   max-width: content-max-width
@@ -8,24 +8,25 @@
   text-color(primary-color, primary-color-light, primary-color-dark)
 
   .tags
-    padding-bottom: 5px
+    padding-bottom: 0.5em
 
     a
       info-link-text()
       padding-right: 10px
       line-height: 25px
+      display: inline-block
 
       &:hover
         text-color(primary-color, primary-color-light, primary-color-dark)
 
   .one-tag-list
     .tag-text
-      margin: 20px 0 10px 0
+      margin: 1em 0 0.5em 0
       font-size: title-font-size
       text-color(primary-color, primary-color-light, primary-color-dark)
 
     .post-preview
-      line-height: 35px
+      margin-bottom: 0.5em
 
       .tag-item-date
         display: block
@@ -33,6 +34,6 @@
         text-color(primary-gray, primary-gray-light, primary-gray-dark)
 
       .post-title
-        display: inline-block
+        display: block
         text-indent: 2em
         text-color(primary-color, primary-color-light, primary-color-dark)
