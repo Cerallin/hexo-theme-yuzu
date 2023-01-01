@@ -10,23 +10,20 @@
       let xhr = new XMLHttpRequest();
       xhr.open('GET', counter_url + '/?page=' + encodeURI(window.location.href), true);
       xhr.onreadystatechange = function () {
-        if (xhr.readyState == 4) {
-          if (xhr.status == 200) {
-            try {
-              const counter = JSON.parse(xhr.response);
-              window.addEventListener('load', (event) => {
-                for (let key in counter) {
-                  let dom = document.getElementById(key);
-                  if (dom)
-                    dom.innerText = counter[key];
-                }
-              })
-            } catch (e) {
-              console.error("Cannot parse JSON.")
+        if (xhr.readyState == 4 && xhr.status == 200) {
+          try {
+            const counter = JSON.parse(xhr.response);
+            for (let key in counter) {
+              let dom = document.getElementById(key);
+              if (dom)
+                dom.innerText = counter[key];
             }
+          } catch (e) {
+            console.error("Cannot parse JSON.")
           }
         }
       }
+
       xhr.send();
     </script>
   <% } else { %>
