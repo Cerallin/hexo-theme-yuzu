@@ -27,3 +27,13 @@ border-color(default-color, light-color, dark-color)
       border-color: dark-color
   else
     border-color: default-color
+
+decoration-color(default-color, light-color, dark-color)
+  if (hexo-config('dark_mode') == 'auto')
+    @media (prefers-color-scheme: light)
+      text-decoration-color: light-color
+
+    @media (prefers-color-scheme: dark)
+      text-decoration-color: dark-color
+  else
+    text-decoration-color: default-color
