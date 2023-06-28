@@ -39,5 +39,9 @@
 
   <div class="article-entry" itemprop="articleBody">
     <%- post.content %>
+    <% if (theme.comment.enable) { %>
+      <h3 id="comments"><%= __('post.comments') %></h3>
+      <%- partial('_partial/comment/valine') %>
+    <% } %>
   </div>
 </article>
