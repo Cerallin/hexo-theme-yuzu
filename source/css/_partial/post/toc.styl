@@ -1,17 +1,19 @@
-$toc-height = 2.25em + 1.75em * 4
-
 .post-widget
+  @media screen and (max-width: 768px)
+    display: none
+
   info-text()
-  padding-top: 1em
-  padding-bottom: 3em
-  width: 60%
+  width: calc(13.5% - 2em)
+  position: fixed
+  top: 122px
+  left: @css{calc(min(81.5%, calc(50% + 350px)) + 1.5em)}
 
   .post-toc-toggle
     primary-link-text()
     font-size: info-font-size
 
   .post-toc-wrap
-    max-height: $toc-height
+    max-height: 40vh
     margin-bottom: 1em
     overflow: hidden
 
@@ -23,12 +25,20 @@ $toc-height = 2.25em + 1.75em * 4
       text-color(secondary-gray, secondary-gray-light, secondary-gray-dark)
 
     .post-toc
+      margin-left: -0.5em
+
       .post-toc-item
         line-height: 1.75em
-        margin-left: 1em
-        text-indent: -1em
-        width: 100%
+        margin-left: 0.5em
         white-space: normal
+
+        .post-toc-link
+          display: grid
+          grid-template-columns: auto 1fr
+          grid-gap: 3px
+
+          &[data-active]
+            text-color(primary-color, primary-color-light, primary-color-dark)
 
 @keyframes showToc
   0%

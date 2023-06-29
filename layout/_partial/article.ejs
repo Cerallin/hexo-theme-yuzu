@@ -35,9 +35,9 @@
     </div>
   <% } %>
 
-  <%- partial('_partial/post/toc', {post: page}) %>
-
   <div class="article-entry" itemprop="articleBody">
     <%- post.content %>
   </div>
 </article>
+
+<%- partial('_partial/post/toc', {post: page}) %>
