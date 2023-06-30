@@ -1,0 +1,23 @@
+.menu-nav
+  - for (const name in config.menu)
+    - const item = config.menu[name];
+    .menu-nav-item
+      .menu-nav-item-tit
+        -
+          if (item.widget == "Archives")
+            url = url_for('/' + config.archive_dir)
+          else if (item.widget == "Tags")
+            url = url_for('/' + config.tag_dir)
+          else
+            url = url_for(`/${config.category_dir}/${item.name}/`)
+        a(href= url)
+          span= name
+
+      .menu-nav-item-cont(class= item.widget.toLowerCase())
+        -
+          const menuHtml = partial('_widget/' + item.widget, {
+            category: item.name,
+            cat_link: item.link,
+            showNum: item.show_num || 3,
+          })
+        | !{ menuHtml }

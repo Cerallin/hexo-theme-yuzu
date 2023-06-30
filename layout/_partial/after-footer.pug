@@ -1,0 +1,15 @@
+| !{ js('js/clipboard/clipboard.min.js') }
+| !{ js('js/theme.js') }
+| !{ js('js/index.js') }
+
+if theme.toc
+  | !{ js('js/toc.js') }
+
+if theme.smooth_corner
+  script.
+    let ori_onload = window.onload;
+    window.onload = function() {
+      if (CSS && 'paintWorklet' in CSS)
+        CSS.paintWorklet.addModule('/js/smooth-corners.js');
+      ori_onload();
+    }

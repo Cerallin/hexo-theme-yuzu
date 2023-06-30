@@ -1,0 +1,11 @@
+div#valine-comments
+
+script(src='//unpkg.com/valine/dist/Valine.min.js')
+script.
+  window.valine = new Valine({
+    el: '#valine-comments',
+    path: window.location.pathname,
+    placeholder: '#{theme.comment.placeholder}',
+    appId: '#{theme.comment.app_id}',
+    appKey: '#{theme.comment.app_key}',
+  })

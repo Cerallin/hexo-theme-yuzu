@@ -1,0 +1,10 @@
+h1.archive-title
+  if page.tag
+    = __('nav.tags')
+    |
+    |#
+    = page.tag
+  else if page.archive
+    = __('nav.archives')
+
+| !{ partial('_partial/archive', {index: true}) }

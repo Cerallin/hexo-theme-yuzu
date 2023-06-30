@@ -1,0 +1,14 @@
+header.head-header
+  .head-author
+    a.head-author-link(href= url_for())
+      = config.title
+  .head-right
+    button#bar-wrap-toggle.bar-wrap
+      span.bar
+      span.bar
+      span.bar
+    #head-about.head-about
+      - const otherMenu2 = config.otherMenu2 || theme.otherMenu2;
+      - for (const item in otherMenu2)
+        a.head-about-link(href= url_for(otherMenu2[item]))
+          = item

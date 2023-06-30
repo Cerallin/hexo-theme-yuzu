@@ -123,16 +123,14 @@ del, s
   #post
     width: 100%
 
-.page .main
+.main
   margin-left: auto
   margin-right: auto
   width: 90%
-  max-width: 1080px
-
-.main
-  padding: 40px 0
+  max-width: content-max-width
 
   &:has(.post-widget)
+    padding: 40px 0
     display: grid
     grid-template-columns: @css{minmax(75%, 800px)} auto
     grid-column-gap: 20px
@@ -185,7 +183,7 @@ del, s
     padding: 20px 0
     border-top: 1px solid
     border-color(border-color, border-color-light, border-color-dark)
-    max-width: 1080px
+    max-width: content-max-width
     width: 90%
     overflow: hidden
 

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+html(lang= config.language)
+  | !{ partial('_partial/head', null, {cache: false}) }
+
+  body
+    .loading-wrapper(data-loading="true")
+      .loading
+        span
+        span
+        span
+
+    .page(data-filter="true")
+      .head(data-show="true")
+        | !{ partial('_partial/header', null, {cache: true}) }
+        | !{ partial('_partial/head-bar') }
+
+      .main
+        | !{ body }
+
+      footer.footer-nav
+        .footer
+          #back-top.back-top(title="Back to top")
+            i.icon.icon-chevron-bar-up
+          | !{ partial('_partial/footer', null, {cache: true}) }
+
+      | !{ partial('_partial/after-footer', null, {cache: true}) }

@@ -1,0 +1,8 @@
+| !{ partial('_partial/menu', {pagination: 2, index: true}) }
+
+#index-content.content
+  - for (const post of page.posts.toArray())
+    | !{ partial('_partial/article-list-item', {post: post, condense: false}) }
+
+  .pagination
+    | !{ partial('_partial/pagination', {page: page}) }

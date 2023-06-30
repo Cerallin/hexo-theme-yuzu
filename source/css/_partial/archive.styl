@@ -1,10 +1,11 @@
 .archive-title
   max-width: content-max-width
-  margin: 0.5em auto 1em auto
+  margin: 1em auto 0.5em auto
+  font-size: content-font-size
 
 .archives-wrap
   max-width: content-max-width
-  margin: 0 auto
+  margin-top: 1em
 
   .archive-year
     font-size: title-font-size
@@ -16,30 +17,31 @@
     )
 
   .archives-year-cont
-    padding-top: 5px
-
     .archive-item
-      margin: 15px 0px
-      padding-left: 0px
+      margin: 0.5em 0
+      padding-left: 0
       transition: all linear 0.2s
 
-      .archive-artDate
+      &:first-child
+        margin-top: 0.25
+
+      .article-date
         info-text()
         display: block
         float: left
         line-height: 25px
 
-      .archive-arttitle
+      .article-title
         display: block
         margin-left: 85px
 
         a
           text-color(primary-color, primary-color-light, primary-color-dark)
-
+          transition: all linear 0.1s
       &:hover
         padding-left: 5px
 
-        .archive-arttitle
+        .article-title
           a:hover
             text-color(secondary-color, secondary-color-light, secondary-color-dark)
 

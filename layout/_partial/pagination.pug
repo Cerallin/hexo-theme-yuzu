@@ -1,0 +1,11 @@
+if page.prev
+  .nav-link.prev
+    i.icon.icon-chevron-left
+    a(href= url_for(page.prev_link))
+      span Prev
+
+if page.next
+  .nav-link.next
+    a(href= url_for(page.next_link))
+      span Next
+    i.icon.icon-chevron-right

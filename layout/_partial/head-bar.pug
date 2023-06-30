@@ -1,0 +1,36 @@
+-
+  let menu = Object.keys(config.menu)
+    .map((key) => [key, config.menu[key]])
+    .sort((at, bt) => {
+      let a = at[1], b = bt[1];
+
+      // Others == Others > Archives > Tags
+      if (a.widget === "Archives")
+        return (b.widget === "Tags") ? -1 : 1;
+      else if (a.widget === "Tags")
+        return 1;
+      else {
+        if (b.widget === "Archives" || b.widget === "Tags")
+          return -1;
+        else
+          return 0;
+      }
+    });
+
+#menu-bar.menu-bar-head(data-show="false")
+  ul.menu-bar-ul
+    - for (const tuple of menu)
+      - const [name, item] = tuple;
+      li.menu-bar-item(class= (item.widget == "Archives") ? " border" : "")
+        -
+          if (item.widget == "Archives") url = url_for('/' + config.archive_dir);
+          else if (item.widget == "Tags") url = url_for('/' + config.tag_dir);
+          else url = `/${config.category_dir}/${item.name}/`;
+
+        a(href= url)
+          span= name
+    - let otherMenu2 = config.otherMenu2 || theme.otherMenu2;
+    - for (const item in otherMenu2)
+      li.menu-bar-item
+        a(href= url_for(otherMenu2[item]))
+          span= item

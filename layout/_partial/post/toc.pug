@@ -1,0 +1,12 @@
+-
+  const tocHtml = toc(
+    post.content, {
+      class: 'post-toc',
+      list_number: theme.toc.list_number
+    })
+
+if tocHtml
+  aside.post-widget
+    nav#post-toc.post-toc-wrap
+      h4 TOC
+      | !{tocHtml}

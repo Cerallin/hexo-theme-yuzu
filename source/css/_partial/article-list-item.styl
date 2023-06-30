@@ -134,10 +134,14 @@
       smooth-corner(5)
 
 .post-item.condense
-  padding: 10px 0
+  padding: 2em 0
+
+  &:first-child
+    padding-top: 0
 
   & + .post-item
-    padding-top: 0
+    border-top: 1px solid
+    border-color(border-gray, border-gray-light, border-gray-dark)
 
   .post-item-head
     .post-item-title
@@ -147,6 +151,5 @@
     font-size: info-font-size
 
   p
-    font-size: default-font-size
-    padding-top: 2px
-    padding-bottom: 5px
+    line-height: 1.25em
+    font-family: initial

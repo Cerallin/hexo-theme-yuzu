@@ -1,0 +1,9 @@
+if config.visit_count.type
+  .post-visit
+    if config.visit_count.type === "visitor-counter"
+      span#page_pv ?
+      = __('article.hits')
+    else
+      span#busuanzi_container_page_pv
+        span#busuanzi_value_page_pv
+        = __('article.hits')

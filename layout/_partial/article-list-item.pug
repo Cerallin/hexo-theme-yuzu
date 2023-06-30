@@ -1,0 +1,19 @@
+article.post-item(class= condense ? "condense" : "")
+  header.post-item-head
+    h2.post-item-title(class= condense ? "condense" : "")
+      a.title(href= url_for(post.path))
+        = post.title
+  .post-item-datetag(class= condense ? "condense" : "")
+    .post-item-date
+      | !{ partial('_partial/post/date') }
+    .post-item-tag
+      | !{ partial('_partial/post/tag') }
+
+  .article-entry(class= condense ? "condense" : "" itemprop="articleBody")
+      if post.excerpt
+        | !{ post.excerpt }
+
+        if theme.excerpt_link
+          p.article-more-link
+            a(href= url_for(post.path))
+              = theme.excerpt_link

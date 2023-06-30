@@ -1,0 +1,13 @@
+- const cat = site.categories.findOne({ name: category })
+if !cat || !cat.posts || !cat.posts.length
+  p.menu-nav-item.empty Empty~
+else
+  - const posts = cat.posts.sort('date', -1)
+  - for (post of posts.slice(0, showNum).toArray())
+    p.menu-nav-item
+      a(href= url_for(post.path))
+        span= post.title
+  if posts.length > showNum
+    p.menu-nav-item
+      a(title= __('nav.more')
+        href= url_for(`/categories/${cat.name}/`)) ...

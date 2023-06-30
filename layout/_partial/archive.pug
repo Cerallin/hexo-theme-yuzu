@@ -1,0 +1,28 @@
+if pagination == 2
+  - for (const post of page.posts.toArray())
+    | !{ partial('_partial/article', {post: post}) }
+else
+  -
+    const groupedPosts = page.posts.reduce((group, post) => {
+      const year = post.date.year();
+
+      group[year] = group[year] ?? [];
+      group[year].push(post);
+
+      if (group.years.includes(year)) {} else group.years.push(year);
+
+      return group;
+    }, {years: []});
+
+  - for (const year of groupedPosts.years)
+    - const posts = groupedPosts[year];
+    section.archives-wrap
+      a(href= url_for(`/archives/${year}/`))
+        h2.archive-year
+          = year
+      .archives-year-cont
+        - for (const post of posts)
+          | !{ partial('_partial/archive-post', {post: post})}
+
+.pagination.archive-pagination
+  | !{ partial('_partial/pagination', {page: page})}

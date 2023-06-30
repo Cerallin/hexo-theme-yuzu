@@ -1,0 +1,9 @@
+.category
+  p.signature
+    = config.signature || theme.signature
+  h1= __('nav.category') + page.category
+  .post-item-cont
+    - for (const post of page.posts.toArray())
+      | !{ partial('_partial/article-list-item', {post: post, condense: true})}
+
+  .pagination !{ partial('_partial/pagination', {page: page}) }

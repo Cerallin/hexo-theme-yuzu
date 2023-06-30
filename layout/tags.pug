@@ -1,0 +1,23 @@
+.tags-wrap
+  h1.tag-title= __('nav.tags')
+
+  #tag-cloud.tags
+    -
+      const tagCloudHtml = tagcloud({
+        orderby: 'random',
+      })
+    | !{ tagCloudHtml }
+
+  //- Tag list
+  - for (const tag of site.tags.toArray())
+    .one-tag-list
+      a(href= url_for(`/tags/${tag.name}`))
+        h2.tag-text(id= tag.name)= tag.name
+      - for (const post of tag.posts.toArray())
+        p.post-preview
+          span.tag-item-date(
+            title= post.date.format("HH:mm:ss MMM DD, YYYY"))
+            = post.date.format('YYYY-MM-DD')
+          span.post-title
+            a(href= url_for(post.path))
+              = post.title || "Untitled"

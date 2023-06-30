@@ -1,0 +1,22 @@
+if config.visit_count.type
+  if config.visit_count.type === "visitor-counter"
+    div
+      span#site_pv ?
+      |
+      | PV
+      |
+      span#site_uv ?
+      |
+      | UV
+
+  else
+    div
+      span#busuanzi_container_site_pv
+        span#busuanzi_value_site_pv ?
+        |
+        | PV
+        |
+      span#busuanzi_container_site_uv
+        span#busuanzi_value_site_uv ?
+        |
+        | UV
