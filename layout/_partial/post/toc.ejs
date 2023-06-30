@@ -1,21 +1,13 @@
-<% if(theme.toc){
-    var topic = toc(post.content, {
-            class: 'post-toc',
-            list_number: theme.toc.list_number
-        })
-    if(topic) {
-    %>
-    <div class="post-widget">
-        <nav class="post-toc-wrap" id="post-toc" data-expand="true">
-            <h4>TOC</h4>
-            <%- toc(post.content, {
-                class: 'post-toc',
-                list_number: theme.toc.list_number
-            }) %>
-        </nav>
-        <a class="post-toc-toggle" onclick="toggleToc(this, expend, collapse);" href="javascript:;">
-            <%= __('post.toc.expand') %>
-        </a>
-    </div>
-   <% }
-} %>
+<% const tocHtml = toc(post.content, {
+    class: 'post-toc',
+    list_number: theme.toc.list_number
+}) %>
+
+<% if (tocHtml) { %>
+  <aside class="post-widget">
+    <nav class="post-toc-wrap" id="post-toc">
+      <h4>TOC</h4>
+      <%- tocHtml %>
+    </nav>
+  </aside>
+<% } %>

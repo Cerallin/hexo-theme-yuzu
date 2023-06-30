@@ -13,9 +13,6 @@ post:
   visit: Visit
   donate: donate
   comments: Comments
-  toc:
-    expand: Expand
-    collapse: Collapse
 
 search:
   search: search
