@@ -19,12 +19,6 @@
 <%- js('js/index.js') %>
 
 <% if(theme.toc) { %>
-  <%- `
-  <script>
-      expend = "${__('post.toc.expand')}";
-      collapse = "${__('post.toc.collapse')}";
-  </script>
-  ` %>
   <%- js('js/toc.js') %>
 <% } %>
 

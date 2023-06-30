@@ -1,21 +1,22 @@
 .post-widget
-  @media screen and (max-width: 768px)
+  @media (max-width: 768px)
     display: none
 
   info-text()
-  width: calc(13.5% - 2em)
-  position: fixed
-  top: 122px
-  left: @css{calc(min(81.5%, calc(50% + 350px)) + 1.5em)}
+  max-width: 150px
+  position: sticky
+  align-self: flex-start
+  justify-self: flex-end
+  margin-top: 16px
+  top: 65px
+  right: 0
 
   .post-toc-toggle
     primary-link-text()
     font-size: info-font-size
 
   .post-toc-wrap
-    max-height: 40vh
     margin-bottom: 1em
-    overflow: hidden
 
     h4
       padding-bottom: 0.25em
@@ -27,35 +28,22 @@
     .post-toc
       margin-left: -0.5em
 
+      .post-toc-child
+        padding-top: 0.5em
+
+
       .post-toc-item
-        line-height: 1.75em
-        margin-left: 0.5em
+        line-height: 1.25em
+        padding: 0 0 0.5em 0.5em
         white-space: normal
+
+        &:last-child
+          padding-bottom: 0
+
+        &[data-active] > .post-toc-link
+          text-color(primary-color, primary-color-light, primary-color-dark)
 
         .post-toc-link
           display: grid
           grid-template-columns: auto 1fr
           grid-gap: 3px
-
-          &[data-active]
-            text-color(primary-color, primary-color-light, primary-color-dark)
-
-@keyframes showToc
-  0%
-    max-height: 2000px
-
-  100%
-    max-height: $toc-height
-
-@keyframes hideToc
-  0%
-    max-height: $toc-height
-
-  100%
-    max-height: 2000px
-
-#post-toc
-  animation: showToc 1s forwards
-
-  &[data-expand=false]
-    animation: hideToc 1s forwards

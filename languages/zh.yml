@@ -12,9 +12,6 @@ post:
   tags: 标签
   visit: 访问
   donate: 赞赏
-  toc:
-    expand: 展开
-    collapse: 收起
 
 search:
   search: 搜索

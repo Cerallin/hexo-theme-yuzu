@@ -3,12 +3,12 @@ window.addEventListener('DOMContentLoaded', () => {
     entries.forEach(entry => {
       const id = entry.target.getAttribute('id');
       if (entry.intersectionRatio > 0) {
-          document.
-            querySelector(`.post-toc-item a[href="#${encodeURIComponent(id)}"]`).
-            setAttribute('data-active', true);
+        document.
+          querySelector(`.post-toc-item a[href="#${encodeURIComponent(id)}"]`).parentNode.
+          setAttribute('data-active', '');
       } else {
         document.
-          querySelector(`.post-toc-item a[href="#${encodeURIComponent(id)}"]`).
+          querySelector(`.post-toc-item a[href="#${encodeURIComponent(id)}"]`).parentNode.
           removeAttribute('data-active');
       }
     });
@@ -19,16 +19,3 @@ window.addEventListener('DOMContentLoaded', () => {
     observer.observe(section);
   });
 });
-
-const tocWrap = document.getElementById('post-toc');
-
-function toggleToc(button, expend, collapse) {
-  let expaned = tocWrap.getAttribute('data-expand') == "true";
-  tocWrap.setAttribute('data-expand', !expaned);
-
-  if (expaned) {
-    button.innerText = collapse;
-  } else {
-    button.innerText = expend;
-  }
-}

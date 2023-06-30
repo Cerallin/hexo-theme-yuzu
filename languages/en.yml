@@ -12,9 +12,6 @@ post:
   tags: Tags
   visit: Visit
   donate: donate
-  toc:
-    expand: Expand
-    collapse: Collapse
 
 search:
   search: search
