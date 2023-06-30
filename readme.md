@@ -1,7 +1,7 @@
 # Hexo-Theme-Yuzu
 本项目从 [hexo-theme-orange](https://github.com/Orange-way/hexo-theme-orange) fork 出来，鉴于无法找到原作者联系方式，本项目将由[Cerallin](https://github.com/Cerallin)继续维护。
 
-**当前分支为 v2.x 版本**，正在开发对于学术博客来说更友好的功能。
+**当前分支为 v3.x 版本**，使用pug代替ejs作为模板引擎。
 
 ## 示例网站
 
@@ -67,9 +67,11 @@
 
 ## 安装使用
 
-```
+```shell
+# 在hexo网站源码目录下执行
+$ npm i hexo-renderer-pug
+$ mkdir -p themes && cd themes
 $ git clone https://github.com/Cerallin/hexo-theme-yuzu
-$ mv ./hexo-theme-yuzu $hexo_root/themes
 ```
 
 将 `config.yml` 中 `theme` 字段改为 `hexo-theme-yuzu`，在 `config.yml` 中添加如下内容：
@@ -116,19 +118,17 @@ visit_count:
 
 ## TODOs
 
-- [x] 本地化
-- [x] 深色模式
-- [x] 优化图标
-- [x] 代码一键复制
-- [x] 平滑圆角
-- [x] TOC移动到文章上方
-- [ ] 整理“otherMenu”
+- [ ] 整理主题变量
+- [ ] 重构模板布局，优化模板缓存
+- [ ] 开发“关于”页的模板
+- [ ] 更多动画
+- [ ] 更多的helpers类
 
 ## License
 
 This project is under MIT License.
 
-    Copyright (c) 2021-2022 Cerallin   <cerallin@cerallin.top>
+    Copyright (c) 2021-2023 Cerallin   <cerallin@cerallin.top>
 
     Permission is hereby granted, free of charge, to any person obtaining a copy
     of this software and associated documentation files (the "Software"), to deal
