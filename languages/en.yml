@@ -12,6 +12,7 @@ post:
   tags: Tags
   visit: Visit
   donate: donate
+  comments: Comments
 
 search:
   search: search
