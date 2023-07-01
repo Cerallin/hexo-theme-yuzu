@@ -3,6 +3,61 @@
 
 **当前分支为 v3.x 版本**，使用pug代替ejs作为模板引擎。
 
+<div style="color: orange">
+  **注意** 从v2.x迁移到v3.x需要安装`hexo-renderer-pug`。将鼠标悬停在网页页脚`Theme Yuzu`上可以查看当前主题版本。
+</div>
+
+## 安装使用
+
+```shell
+# 在hexo网站源码目录下执行
+$ npm i hexo-renderer-pug
+$ mkdir -p themes && cd themes
+$ git clone https://github.com/Cerallin/hexo-theme-yuzu
+```
+
+将 `config.yml` 中 `theme` 字段改为 `hexo-theme-yuzu`，在 `config.yml` 中添加如下内容：
+
+```yml
+since_year: 2020
+
+post_copy:
+  text: 署名-非商业性使用-相同方式共享
+  text_en: CC BY-NC-SA 2.5 CN
+  link: https://creativecommons.org/licenses/by-nc-sa/2.5/cn/
+
+# 自定义侧边栏
+menu:
+  Archives:
+    widget: Archives # 三种：Archives | Posts | Tags
+  Posts1:
+    name: Posts
+    widget: Posts
+  Posts2:
+    name: Posts2
+    widget: Posts
+  Tags:
+    widget: Tags
+
+# 右上角
+otherMenu2:
+  关于: /about
+
+# 备案
+beian:
+  enable: true
+  icp: 京ICP备2021005293号
+
+# toc
+toc: true
+
+visit_count:
+  type: busuanzi
+  # or
+  # type: visitor-counter
+  # url: //your.counter.site/count.php
+```
+
 ## 示例网站
 
 - 主题展示网站：[cerallin.github.io](https://cerallin.github.io)
@@ -64,57 +119,6 @@
 例如，通过`text-{left|right|justify}`控制文字对齐，使用 `m{t|r|b|l}-{size}` 功能类控制元素一侧的外边距等等。
 
 详细介绍请移步[这里](./docs/helpers.md)。
-
-## 安装使用
-
-```shell
-# 在hexo网站源码目录下执行
-$ npm i hexo-renderer-pug
-$ mkdir -p themes && cd themes
-$ git clone https://github.com/Cerallin/hexo-theme-yuzu
-```
-
-将 `config.yml` 中 `theme` 字段改为 `hexo-theme-yuzu`，在 `config.yml` 中添加如下内容：
-
-```yml
-since_year: 2020
-
-post_copy:
-  text: 署名-非商业性使用-相同方式共享
-  text_en: CC BY-NC-SA 2.5 CN
-  link: https://creativecommons.org/licenses/by-nc-sa/2.5/cn/
-
-# 自定义侧边栏
-menu:
-  Archives:
-    widget: Archives # 三种：Archives | Posts | Tags
-  Posts1:
-    name: Posts
-    widget: Posts
-  Posts2:
-    name: Posts2
-    widget: Posts
-  Tags:
-    widget: Tags
-
-# 右上角
-otherMenu2:
-  关于: /about
-
-# 备案
-beian:
-  enable: true
-  icp: 京ICP备2021005293号
-
-# toc
-toc: true
-
-visit_count:
-  type: busuanzi
-  # or
-  # type: visitor-counter
-  # url: //your.counter.site/count.php
-```
 
 ## TODOs
 
