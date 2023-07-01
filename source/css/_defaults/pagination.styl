@@ -1,6 +1,8 @@
 .pagination
   margin-top: 20px
   margin-bottom: 36px
+  display: grid
+  grid-template-columns: 1fr 1fr
 
   .nav-link
     display: flex
@@ -11,7 +13,9 @@
       margin-bottom: -2px
 
     &.prev
-      float: left
+      justify-self: flex-start
+      grid-column: 1
 
     &.next
-      float: right
+      justify-self: flex-end
+      grid-column: 2

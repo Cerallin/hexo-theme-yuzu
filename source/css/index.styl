@@ -1,7 +1,12 @@
-.content
-  width: 73%
-  float: right
+.main:has(.menu-nav)
+  display: grid
+  grid-template-columns: 20% 1fr
+  grid-column-gap: 8%
 
+  @media (max-width: 768px)
+    grid-template-columns: 1fr
+
+.content
   img
     max-width: 100%
     height: auto
