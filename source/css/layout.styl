@@ -154,19 +154,20 @@ del, s
     font-size: 20px
     line-height: 2rem
 
-    if (hexo-config('text_indent'))
-      text-indent: 2em
-
   ul
+    margin-left: 2em
+    padding-left: 2em
     padding-bottom: 0.75em
 
     li
-      list-style: disc inside
+      list-style: disc
+
+      p
+        text-indent: 0
 
     ul
       li
-        list-style: circle inside
-        padding-left: 2em
+        list-style: circle
 
   ol
     padding-bottom: 0.75em
