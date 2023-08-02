@@ -19,6 +19,10 @@ $ git clone https://github.com/Cerallin/hexo-theme-yuzu
 ```yml
 since_year: 2020
 
+# 此处的theme_config.root请设置与root相一致（一般在url下一行）
+theme_config:
+  root: /
+
 post_copy:
   text: 署名-非商业性使用-相同方式共享
   text_en: CC BY-NC-SA 2.5 CN
@@ -44,7 +48,7 @@ otherMenu2:
 # 备案
 beian:
   enable: true
-  icp: 京ICP备2021005293号
+  icp: 京ICP备xxxxxxxx号
 
 # toc
 toc: true
@@ -55,6 +59,8 @@ visit_count:
   # type: visitor-counter
   # url: //your.counter.site/count.php
 ```
+
+**In case you didn't know** 你可以创建一个`_config.[theme name].yml`文件来覆盖主题的默认设置。对于上述安装方法来说，就是`_config.hexo-theme-yuzu.yml`。
 
 ## 示例网站
 
@@ -77,11 +83,11 @@ visit_count:
 ## 禁止用户复制粘贴网页内容
 
 **注** 本选项仅为君子协定，通过插件可以轻易破解。
-将`@/theme/hexo-theme-yuzu/_config.yml`中的`selectable`值改为`false`。
+将主题配置文件中的`selectable`值改为`false`。
 
 ## 深色模式
 
-将`@/theme/hexo-theme-yuzu/_config.yml`中的`dark_mode`值改为`true`。
+将主题配置文件中的`dark_mode`值改为`true`。
 
 ## 学术写作指南
 

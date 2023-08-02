@@ -1,7 +1,7 @@
 span.footer-msg
   if config.beian && config.beian.enable
     .icp
-      img(src="/img/icp.png" alt= __('icp'))
+      img(src=(config.root + "img/icp.png") alt= __('icp'))
       a.icp-text(
         target="_blank"
         href="https://beian.miit.gov.cn/")
