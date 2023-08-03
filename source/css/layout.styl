@@ -131,6 +131,10 @@ del, s
 
   &:has(article)
     padding: 40px 0
+
+    &:has(.menu-nav)
+      padding: unset
+
     display: grid
     grid-template-columns: @css{minmax(75%, 800px)} auto
     grid-column-gap: 20px
