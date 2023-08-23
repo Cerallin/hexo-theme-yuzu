@@ -73,10 +73,17 @@ signature: 热爱生活，然后发现，处处都是阳光
 
 comment:
   enable: false
-  type: 'valine' # 目前仅支持这一种所以不生效
+  type: 'gitalk' # gitalk or valine
+  # config for valine
   placeholder: 'Just go go.'
   app_id:
   app_key:
+  # config for gitalk
+  clientid: 
+  clientsecret: 
+  repo: 
+  owner: 
+  admin: []
 
 theme:
   color: Default
