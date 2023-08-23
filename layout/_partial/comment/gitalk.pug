@@ -1,0 +1,15 @@
+div#gitalk-comments
+
+link(rel='stylesheet', href='https://unpkg.com/gitalk/dist/gitalk.css')
+
+script(src='//unpkg.com/gitalk/dist/gitalk.min.js')
+script.
+  window.gitalk = new Gitalk({
+    clientID: '#{theme.comment.clientid}',
+    clientSecret: '#{theme.comment.clientsecret}',
+    repo: '#{theme.comment.repo}',
+    owner: '#{theme.comment.repoonwer}',
+    admin: '#{theme.comment.admin}',
+    distractionFreeMode: false  // Facebook-like distraction free mode
+  });
+  window.gitalk.render('gitalk-comments'); // Render Gitalk in the element with ID 'gitalk-container'

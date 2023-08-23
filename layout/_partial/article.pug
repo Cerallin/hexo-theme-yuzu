@@ -29,5 +29,10 @@ article#post.post
   .article-entry(itemprop="articleBody")
     | !{ post.content }
     if theme.comment.enable
-      h3#comments= __('post.comments')
-      | !{ partial('_partial/comment/valine') }
+      if theme.comment.type === "gitalk"
+        h3#comments= __('post.comments')
+        | !{ partial('_partial/comment/gitalk') }
+      else if theme.comment.type === "valine"
+        h3#comments= __('post.comments')
+        | !{ partial('_partial/comment/valine') }
+
