@@ -8,8 +8,8 @@ script.
     clientID: '#{theme.comment.clientid}',
     clientSecret: '#{theme.comment.clientsecret}',
     repo: '#{theme.comment.repo}',
-    owner: '#{theme.comment.repoonwer}',
-    admin: '#{theme.comment.admin}',
+    owner: '#{theme.comment.owner}',
+    admin: '#{theme.comment.admin}'.split(','),
     distractionFreeMode: false  // Facebook-like distraction free mode
   });
   window.gitalk.render('gitalk-comments'); // Render Gitalk in the element with ID 'gitalk-container'
