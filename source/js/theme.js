@@ -155,7 +155,8 @@
             element.setAttribute('data-filter', 'false');
           });
         // enable body scroll
-        document.body.style.overflow = "auto";
+        if (window.innerWidth <= 768)
+          document.body.style.overflow = "auto";
       }
     },
     openSearchModal(modal) {
@@ -171,7 +172,8 @@
         // set focus
         inputElement.focus();
         // disable body scroll
-        document.body.style.overflow = "hidden";
+        if (window.innerWidth <= 768)
+          document.body.style.overflow = "hidden";
       }
     },
     registerSearchButton(modal) {
