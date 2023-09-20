@@ -198,43 +198,46 @@
     },
     filterResults() {
       // split keywords by spaces
-      const keywords = document.getElementById('search-input').value;
+      const keywords = document.getElementById('search-input').value.trim();
       if (!keywords) {
         this.watcher.list = [];
         return;
       }
-      const regex = new RegExp(keywords.split(/\s+/).join('|'), 'i')
+      const regex = new RegExp(keywords.split(/\s+/).join('|'), 'ig')
       // deep clone
       const meta = structuredClone(this.fetchMeta())
       // items matched
       const items = meta
         .map(function (item) {
-          item.matched = 0;
+          let matchResult;
+          item.matchCount = 0;
 
           function insertHighlight(str) {
             return str.replace(regex,
               match => `<span class="highlight">${match}</span>`);
           }
 
-          if ((item.title || '').match(regex)) {
-            item.matched++;
+          if (matchResult = (item.title || '').match(regex)) {
+            item.matchCount += matchResult.length;
             item.title = insertHighlight(item.title);
-            console.log(item.title)
           }
 
           if ((item.categories || []).find(str => str.match(regex))) {
-            item.matched++;
+            item.matchCount += item.categories
+              .reduce((sum, item) => sum + (item.match(regex) || []).length, 0);
             item.categories = item.categories.map(insertHighlight);
           }
 
           if ((item.tags || []).find(str => str.match(regex))) {
-            item.matched++;
+            item.matchCount += item.tags
+              .reduce((sum, item) => sum + (item.match(regex) || []).length, 0);
             item.tags = item.tags.map(insertHighlight);
           }
 
           return item;
         })
-        .filter(item => item.matched);
+        .filter(item => item.matchCount > 0)
+        .sort((a, b) => (b.matchCount - a.matchCount));
 
       this.watcher.list = items;
     },
