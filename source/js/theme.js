@@ -145,41 +145,50 @@
       this.registerSearchButton(modal);
       this.registerSearchBox(modal);
     },
+    closeSearchModal(modal) {
+      return function () {
+        // hide modal
+        modal.setAttribute('data-show', "false");
+        // no filter
+        [].forEach.call(document.getElementsByClassName('page'),
+          element => {
+            element.setAttribute('data-filter', 'false');
+          });
+      }
+    },
+    openSearchModal(modal) {
+      const inputElement = document.getElementById('search-input');
+      return function () {
+        // show modal
+        modal.setAttribute('data-show', "true");
+        // filter page
+        [].forEach.call(document.getElementsByClassName('page'),
+          element => {
+            element.setAttribute('data-filter', 'true');
+          });
+        // set focus
+        inputElement.focus();
+      }
+    },
     registerSearchButton(modal) {
       const searchButton = document.getElementById("search");
       if (!searchButton) return;
-
-      searchButton
-        .addEventListener('click', function () {
-          // show modal
-          modal.setAttribute('data-show', "true");
-          // filter page
-          [].forEach.call(document.getElementsByClassName('page'),
-            element => {
-              element.setAttribute('data-filter', 'true');
-            });
-        })
+      searchButton.addEventListener('click', this.openSearchModal(modal))
     },
     registerSearchBox(modal) {
+      const closeModal = this.closeSearchModal(modal);
       // close button
       [].forEach.call(document.getElementsByClassName('close-button'),
-        function (button) {
-          button.addEventListener('click', () => {
-            // hide modal
-            modal.setAttribute('data-show', "false");
-            // no filter
-            [].forEach.call(document.getElementsByClassName('page'),
-              element => {
-                element.setAttribute('data-filter', 'false');
-              });
-          })
-        });
+        button => button.addEventListener('click', closeModal));
       // search listeners
       const searchFunc = debounce(() => this.filterResults(), 200);
       // listen input
-      const inputElement = document.getElementById('search-input')
-      // inputElement.addEventListener('keyup',
-      //   ({ key }) => (key === "Enter") && searchFunc())
+      const inputElement = document.getElementById('search-input');
+      inputElement.addEventListener('keyup',
+        ({ key }) => {
+          if (key === "Enter") searchFunc();
+          else if (key === "Escape") closeModal();
+        })
       inputElement
         .addEventListener('input', searchFunc);
       // search button
