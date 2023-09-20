@@ -211,7 +211,7 @@
           throw Error(`Failed fetching search meta, got status ${response.status}`);
 
         const contentType = response.headers.get('content-type');
-        if (contentType === 'application/json')
+        if (contentType.includes('application/json'))
           this.meta = await response.json();
         else
           throw TypeError(`Unsupported content type: ${contentType}, use json instead.`);
