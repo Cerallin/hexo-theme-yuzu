@@ -111,7 +111,7 @@
   Theme.search = {
     meta: [],
     watcher: {},
-    register: function () {
+    register() {
       const resultCount = document.getElementById('search-count-num')
       const resultBox = document.getElementById('search-result')
       this.watcher = {
@@ -146,8 +146,10 @@
       this.registerSearchBox(modal);
     },
     registerSearchButton(modal) {
-      document
-        .getElementById("search")
+      const searchButton = document.getElementById("search");
+      if (!searchButton) return;
+
+      searchButton
         .addEventListener('click', function () {
           // show modal
           modal.setAttribute('data-show', "true");
@@ -184,15 +186,20 @@
       document.getElementById('search-button')
         .addEventListener('click', searchFunc)
     },
-    fetchMeta() {
+    async fetchMeta() {
       if (!this.meta.length) {
-        const xhr = new XMLHttpRequest();
-        xhr.open('GET', window.url_root + 'meta.json', false);
-        xhr.send();
-        if (xhr.status !== 200) {
-          // TODO handle error
-        }
-        this.meta = JSON.parse(xhr.responseText);
+        const config = window.config;
+        const response = await fetch(config.url_root + config.meta_path);
+        if (response.status === 404)
+          throw Error('Search meta file not found. Please install hexo-search-generator first.');
+        else if (response.status !== 200)
+          throw Error(`Failed fetching search meta, got status ${response.status}`);
+
+        const contentType = response.headers.get('content-type');
+        if (contentType === 'application/json')
+          this.meta = await response.json();
+        else
+          throw TypeError(`Unsupported content type: ${contentType}, use json instead.`);
       }
       return this.meta;
     },
@@ -204,42 +211,47 @@
         return;
       }
       const regex = new RegExp(keywords.split(/\s+/).join('|'), 'ig')
-      // deep clone
-      const meta = structuredClone(this.fetchMeta())
-      // items matched
-      const items = meta
-        .map(function (item) {
-          let matchResult;
-          item.matchCount = 0;
+      this.fetchMeta()
+        .then(data => {
+          // deep clone
+          const meta = structuredClone(data);
+          // items matched
+          const items = meta.map(function (item) {
+            var matchResult;
+            item.matchCount = 0;
 
-          function insertHighlight(str) {
-            return str.replace(regex,
-              match => `<span class="highlight">${match}</span>`);
-          }
+            function insertHighlight(str) {
+              return str.replace(regex,
+                match => `<span class="highlight">${match}</span>`);
+            }
 
-          if (matchResult = (item.title || '').match(regex)) {
-            item.matchCount += matchResult.length;
-            item.title = insertHighlight(item.title);
-          }
+            if (matchResult = (item.title || '').match(regex)) {
+              item.matchCount += matchResult.length;
+              item.title = insertHighlight(item.title);
+            }
 
-          if ((item.categories || []).find(str => str.match(regex))) {
-            item.matchCount += item.categories
-              .reduce((sum, item) => sum + (item.match(regex) || []).length, 0);
-            item.categories = item.categories.map(insertHighlight);
-          }
+            if ((item.categories || []).find(str => str.match(regex))) {
+              item.matchCount += item.categories
+                .reduce((sum, item) => sum + (item.match(regex) || []).length, 0);
+              item.categories = item.categories.map(insertHighlight);
+            }
 
-          if ((item.tags || []).find(str => str.match(regex))) {
-            item.matchCount += item.tags
-              .reduce((sum, item) => sum + (item.match(regex) || []).length, 0);
-            item.tags = item.tags.map(insertHighlight);
-          }
+            if ((item.tags || []).find(str => str.match(regex))) {
+              item.matchCount += item.tags
+                .reduce((sum, item) => sum + (item.match(regex) || []).length, 0);
+              item.tags = item.tags.map(insertHighlight);
+            }
 
-          return item;
+            return item;
+          })
+            .filter(item => item.matchCount > 0)
+            .sort((a, b) => (b.matchCount - a.matchCount));
+
+          this.watcher.list = items;
         })
-        .filter(item => item.matchCount > 0)
-        .sort((a, b) => (b.matchCount - a.matchCount));
-
-      this.watcher.list = items;
+        .catch(err => {
+          console.error(err);
+        })
     },
   };
 

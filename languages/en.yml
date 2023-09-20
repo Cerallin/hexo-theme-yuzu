@@ -16,7 +16,7 @@ post:
 
 search:
   search: search
-  total:
+  total: ''
   counts: search result(s) in total.
 
 article:
