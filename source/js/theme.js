@@ -127,7 +127,7 @@
           resultBox.innerHTML = this._resultList.map(function (item) {
             const { title, categories, tags, url } = item;
             return [
-              `<a class="search-result-item" href="${url}">`,
+              `<a class="search-result-item" href="${url}" target="_blank">`,
               `  <div class="search-result-title">${title}</div>`,
               '  <div class="search-result-tags">',
               (tags || []).map(tag => `<span>${tag}</span>`).join(''),
