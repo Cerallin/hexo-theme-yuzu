@@ -1,15 +1,15 @@
-article.post-item(class= condense ? "condense" : "")
+article.post-item(data-condense= condense)
   header.post-item-head
-    h2.post-item-title(class= condense ? "condense" : "")
+    h2.post-item-title
       a.title(href= url_for(post.path))
         = post.title
-  .post-item-datetag(class= condense ? "condense" : "")
+  .post-item-datetag
     .post-item-date
       | !{ partial('_partial/post/date') }
     .post-item-tag
       | !{ partial('_partial/post/tag') }
 
-  .article-entry(class= condense ? "condense" : "" itemprop="articleBody")
+  .article-entry(itemprop="articleBody")
       if post.excerpt
         | !{ post.excerpt }
 

@@ -73,16 +73,6 @@
       margin-left: 25%
       text-align: center
 
-.article-entry.condense
-  .article-more-link
-    font-size: info-font-size
-
-  h1, h2, h3
-    font-size: content-font-size
-
-  ul, li
-    font-size: default-font-size
-
 .post-item
   padding: 40px 0
   margin: auto
@@ -133,23 +123,36 @@
     if (hexo-config('smooth_corner'))
       smooth-corner(5)
 
-.post-item.condense
-  padding: 2em 0
+.post-item[data-condense]
+  padding: 0.5em 0
 
   &:first-child
     padding-top: 0
 
   & + .post-item
     border-top: 1px solid
-    border-color(border-gray, border-gray-light, border-gray-dark)
+    border-color(border-color, border-color-light, border-color-dark)
 
   .post-item-head
     .post-item-title
       font-size: title-font-size
+      margin: 0
 
   .post-item-datetag
     font-size: info-font-size
+    margin-bottom: 0
 
   p
     line-height: 1.25em
     font-family: initial
+    font-size: default-font-size
+
+  .article-entry
+    .article-more-link
+      font-size: info-font-size
+
+    h1, h2, h3
+      font-size: content-font-size
+
+    ul, li
+      font-size: default-font-size
