@@ -1,3 +1,9 @@
+script.
+  window.config = {
+    url_root: '#{config.root}',
+    meta_path: '#{(config.search || {}).path || undefined}',
+  };
+
 | !{ js('js/clipboard/clipboard.min.js') }
 | !{ js('js/theme.js') }
 | !{ js('js/index.js') }

@@ -29,6 +29,10 @@
 
         a(href= url)
           span= name
+    if config.search
+      li.menu-bar-item
+        a.search-button
+          span= __('nav.search')
     - let otherMenu2 = config.otherMenu2 || theme.otherMenu2;
     - for (const item in otherMenu2)
       li.menu-bar-item

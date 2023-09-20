@@ -16,6 +16,8 @@ post:
 
 search:
   search: search
+  total: ''
+  counts: search result(s) in total.
 
 article:
   hits: hits

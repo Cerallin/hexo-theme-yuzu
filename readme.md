@@ -53,11 +53,16 @@ beian:
 # toc
 toc: true
 
+# visit count
 visit_count:
   type: busuanzi
-  # or
-  # type: visitor-counter
-  # url: //your.counter.site/count.php
+
+# hexo-generator-search
+# Please see https://github.com/wzpan/hexo-generator-search/tree/master for detail.
+search:
+  path: meta.json # changeable
+  field: post
+  content: false # currently unsupported
 ```
 
 **In case you didn't know** 你可以创建一个`_config.[theme name].yml`文件来覆盖主题的默认设置。对于上述安装方法来说，就是`_config.hexo-theme-yuzu.yml`。
@@ -76,6 +81,7 @@ visit_count:
 
 ## 功能
 - 支持分页（hexo-generator-*）
+- 适配搜索（hexo-generator-search）
 - 支持显示 CC（Creative Commons）版权声明
 - 文章文字两端对齐
 - 适配学术写作（pandoc）
