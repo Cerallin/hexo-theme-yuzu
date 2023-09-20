@@ -50,7 +50,7 @@
 
     .card-body
       height: 'calc(60vh - %s)' % head-height
-      overflow-y: scroll
+      overflow-y: auto
 
       .search-count
         margin-bottom: 1em
@@ -65,6 +65,10 @@
           padding: 0.5em 1em
           border-radius: 10px
           background-color(#0000000A, #0000000A, #FFFFFF0A)
+
+          .highlight
+            background: #fff7a0
+            box-shadow: none
 
           .search-result-title
             font-size: content-font-size

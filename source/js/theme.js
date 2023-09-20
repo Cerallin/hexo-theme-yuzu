@@ -204,15 +204,38 @@
         return;
       }
       const regex = new RegExp(keywords.split(/\s+/).join('|'), 'i')
+      // deep clone
+      const meta = structuredClone(this.fetchMeta())
       // items matched
-      const items = this.fetchMeta().filter(function (item) {
-        return (
-          (item.title || '').match(regex) ||
-          (item.categories || []).find(str => str.match(regex)) ||
-          (item.tags || []).find(str => str.match(regex)) ||
-          (item.url || '').match(regex)
-        );
-      })
+      const items = meta
+        .map(function (item) {
+          item.matched = 0;
+
+          function insertHighlight(str) {
+            return str.replace(regex,
+              match => `<span class="highlight">${match}</span>`);
+          }
+
+          if ((item.title || '').match(regex)) {
+            item.matched++;
+            item.title = insertHighlight(item.title);
+            console.log(item.title)
+          }
+
+          if ((item.categories || []).find(str => str.match(regex))) {
+            item.matched++;
+            item.categories = item.categories.map(insertHighlight);
+          }
+
+          if ((item.tags || []).find(str => str.match(regex))) {
+            item.matched++;
+            item.tags = item.tags.map(insertHighlight);
+          }
+
+          return item;
+        })
+        .filter(item => item.matched);
+
       this.watcher.list = items;
     },
   };
