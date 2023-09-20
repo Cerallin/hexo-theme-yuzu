@@ -8,6 +8,7 @@
   margin-top: 1em
 
   .archive-year
+    margin-bottom: 0.25em
     font-size: title-font-size
     font-weight: 400
     text-color(
@@ -18,12 +19,14 @@
 
   .archives-year-cont
     .archive-item
+      display: flex
+      flex-direction: row
       margin: 0.5em 0
       padding-left: 0
       transition: all linear 0.2s
 
       &:first-child
-        margin-top: 0.25
+        margin-top: 0.25em
 
       .article-date
         info-text()
