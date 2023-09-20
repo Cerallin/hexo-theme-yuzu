@@ -1,0 +1,90 @@
+.search-modal
+  position: fixed
+  top: 0
+  left: 0
+  width: 100vw
+  height: 100vh
+  display: flex
+
+  &[data-show=false]
+    display: none
+
+  head-height = 60px
+
+  .card
+    width: 60vw
+    height: 60vh
+    position: relative
+    margin-left: 20vw
+    margin-right: 20vw
+    margin-top: 20vh
+    background-color($background-color, background-color-light, background-color-dark)
+    border-color($border-color, border-color-light, border-color-dark)
+    border: 1px solid
+    border-radius: 10px
+    padding: 1em
+
+    .card-head
+      height: head-height
+
+      .search-box
+        display: flex
+        justify-content: center
+        align-items: center
+        font-size: title-font-size
+
+        .search-input
+          padding: 0.25em 0.75em
+          margin: 0.5em
+          border-radius: 100px // large enough
+          border-color($border-color, border-color-light, border-color-dark)
+          border: 1px solid
+          font-size: content-font-size
+
+          &:focus
+            outline: none // remove the default focus outline
+            box-shadow: 0 0 5px #3498db
+
+        .search-button
+          cursor: pointer
+
+    .card-body
+      height: 'calc(60vh - %s)' % head-height
+      overflow-y: scroll
+
+      .search-count
+        margin-bottom: 1em
+        margin-left: 1em // align with 'search-result-item's
+
+      .search-result
+        margin-right: 1em
+
+        .search-result-item
+          display: block
+          margin: 0.5em auto
+          padding: 0.5em 1em
+          border-radius: 10px
+          background-color(#0000000A, #0000000A, #FFFFFF0A)
+
+          .search-result-title
+            font-size: content-font-size
+            text-color(primary-color, primary-color-light, primary-color-dark)
+
+          .search-result-tags
+            text-color(primary-gray, primary-gray-light, secondary-color-dark)
+            font-size: info-font-size
+
+            span + span
+              &:before
+                content: '|'
+                margin-right: 0.25em
+
+              margin-left: 0.25em
+
+    .close-button
+      position: absolute
+      top: 0
+      right: 0
+      margin: 0.5em
+      font-size: 20px
+      cursor: pointer

@@ -16,6 +16,8 @@ post:
 
 search:
   search: 搜索
+  total: 共
+  counts: 条搜索结果。
 
 article:
   hits: 访问

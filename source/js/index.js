@@ -3,6 +3,7 @@ window.onload = function () {
   Theme.showHeadBar.register();
   Theme.clipboard.register();
   Theme.navbar.register();
+  Theme.search.register();
 
   [].forEach.call(document.getElementsByClassName('loading-wrapper'),
     element => {

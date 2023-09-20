@@ -108,5 +108,114 @@
     }
   };
 
+  Theme.search = {
+    meta: [],
+    watcher: {},
+    register: function () {
+      const resultCount = document.getElementById('search-count-num')
+      const resultBox = document.getElementById('search-result')
+      this.watcher = {
+        _resultList: [],
+        get list() {
+          return this._resultList;
+        },
+        set list(newValue) {
+          this._resultList = newValue;
+          // update result count
+          resultCount.innerText = this.length;
+          // update result box
+          resultBox.innerHTML = this._resultList.map(function (item) {
+            const { title, categories, tags, url } = item;
+            return [
+              `<a class="search-result-item" href="${url}">`,
+              `  <div class="search-result-title">${title}</div>`,
+              '  <div class="search-result-tags">',
+              (tags || []).map(tag => `<span>${tag}</span>`).join(''),
+              '  </div>',
+              '</a>',
+            ].map(s => s.trim()).join('');
+          }).join('');
+        },
+        get length() {
+          return this._resultList.length;
+        },
+      };
+
+      const modal = document.getElementById('search-modal');
+      this.registerSearchButton(modal);
+      this.registerSearchBox(modal);
+    },
+    registerSearchButton(modal) {
+      document
+        .getElementById("search")
+        .addEventListener('click', function () {
+          // show modal
+          modal.setAttribute('data-show', "true");
+          // filter page
+          [].forEach.call(document.getElementsByClassName('page'),
+            element => {
+              element.setAttribute('data-filter', 'true');
+            });
+        })
+    },
+    registerSearchBox(modal) {
+      // close button
+      [].forEach.call(document.getElementsByClassName('close-button'),
+        function (button) {
+          button.addEventListener('click', () => {
+            // hide modal
+            modal.setAttribute('data-show', "false");
+            // no filter
+            [].forEach.call(document.getElementsByClassName('page'),
+              element => {
+                element.setAttribute('data-filter', 'false');
+              });
+          })
+        });
+      // search listeners
+      const searchFunc = debounce(() => this.filterResults(), 200);
+      // listen input
+      const inputElement = document.getElementById('search-input')
+      // inputElement.addEventListener('keyup',
+      //   ({ key }) => (key === "Enter") && searchFunc())
+      inputElement
+        .addEventListener('input', searchFunc);
+      // search button
+      document.getElementById('search-button')
+        .addEventListener('click', searchFunc)
+    },
+    fetchMeta() {
+      if (!this.meta.length) {
+        const xhr = new XMLHttpRequest();
+        xhr.open('GET', window.url_root + 'meta.json', false);
+        xhr.send();
+        if (xhr.status !== 200) {
+          // TODO handle error
+        }
+        this.meta = JSON.parse(xhr.responseText);
+      }
+      return this.meta;
+    },
+    filterResults() {
+      // split keywords by spaces
+      const keywords = document.getElementById('search-input').value;
+      if (!keywords) {
+        this.watcher.list = [];
+        return;
+      }
+      const regex = new RegExp(keywords.split(/\s+/).join('|'), 'i')
+      // items matched
+      const items = this.fetchMeta().filter(function (item) {
+        return (
+          (item.title || '').match(regex) ||
+          (item.categories || []).find(str => str.match(regex)) ||
+          (item.tags || []).find(str => str.match(regex)) ||
+          (item.url || '').match(regex)
+        );
+      })
+      this.watcher.list = items;
+    },
+  };
+
   this.Theme = Theme;
 }.call(this));
