@@ -2,8 +2,8 @@
   position: fixed
   top: 0
   left: 0
-  width: 100vw
-  height: 100vh
+  width: 100dvw
+  height: 100dvh
   display: flex
 
   &[data-show=false]
@@ -12,12 +12,12 @@
   head-height = 60px
 
   .card
-    width: 60vw
-    height: 60vh
     position: relative
-    margin-left: 20vw
-    margin-right: 20vw
-    margin-top: 20vh
+    width: 60dvw
+    height: 60dvh
+    margin-left: 20dvw
+    margin-right: 20dvw
+    margin-top: 20dvh
     background-color($background-color, background-color-light, background-color-dark)
     border-color($border-color, border-color-light, border-color-dark)
     border: 1px solid
@@ -49,7 +49,7 @@
           cursor: pointer
 
     .card-body
-      height: 'calc(60vh - %s)' % head-height
+      height: 'calc(60dvh - %s)' % head-height
       overflow-y: auto
 
       .search-count
@@ -61,10 +61,13 @@
 
         .search-result-item
           display: block
-          margin: 0.5em auto
+          margin: 0.5em 0
           padding: 0.5em 1em
           border-radius: 10px
           background-color(#0000000a, #0000000a, #ffffff0a)
+
+          &:last-child
+            margin-bottom: 2em
 
           .highlight
             background-color(#fff7a0, #fff7a0, #4e4828)
@@ -92,3 +95,23 @@
       margin: 0.5em
       font-size: 20px
       cursor: pointer
+
+    // .card
+    @media (max-width: 768px)
+      width: 100dvw
+      height: 100dvh
+      margin: 0
+      border: none
+
+      .card-head
+        margin-top: 40px
+
+      .card-body
+        height: 'calc(100dvh - %s)' % (head-height + 40px)
+
+      .close-button
+        font-size: 32px
+        right: unset
+        margin-top: 16px
+        border-radius: 40px
+        background-color(#0000000a, #0000000a, #ffffff0a)

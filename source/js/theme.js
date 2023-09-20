@@ -154,6 +154,8 @@
           element => {
             element.setAttribute('data-filter', 'false');
           });
+        // enable body scroll
+        document.body.style.overflow = "auto";
       }
     },
     openSearchModal(modal) {
@@ -168,12 +170,14 @@
           });
         // set focus
         inputElement.focus();
+        // disable body scroll
+        document.body.style.overflow = "hidden";
       }
     },
     registerSearchButton(modal) {
-      const searchButton = document.getElementById("search");
-      if (!searchButton) return;
-      searchButton.addEventListener('click', this.openSearchModal(modal))
+      [].forEach.call(document.getElementsByClassName("search-button"),
+        button =>
+          button.addEventListener('click', this.openSearchModal(modal)));
     },
     registerSearchBox(modal) {
       const closeModal = this.closeSearchModal(modal);
