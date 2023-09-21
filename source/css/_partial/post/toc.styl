@@ -3,13 +3,19 @@
     display: none
 
   info-text()
-  max-width: 150px
+  max-width: 200px
   position: sticky
   align-self: flex-start
-  justify-self: flex-end
+  justify-self: center
   margin-top: 16px
   top: 65px
   right: 0
+
+  h4
+    padding-bottom: 0.25em
+    margin-bottom: 0.75em
+    margin-left: -2px // align with post-toc-wrap's border
+    text-color(secondary-gray, secondary-gray-light, secondary-gray-dark)
 
   .post-toc-toggle
     primary-link-text()
@@ -17,19 +23,16 @@
 
   .post-toc-wrap
     margin-bottom: 1em
-
-    h4
-      padding-bottom: 0.25em
-      margin-bottom: 0.75em
-      border-bottom: 1px solid
-      border-color(border-gray, border-gray-light, border-gray-dark)
-      text-color(secondary-gray, secondary-gray-light, secondary-gray-dark)
+    padding-left: 1em
+    border-left: 2px solid
 
     .post-toc
       margin-left: -0.5em
 
       .post-toc-child
+        margin-left: 0.25em
         padding-top: 0.5em
+        border-left: 1px solid
 
       .post-toc-item
         line-height: 1.25em

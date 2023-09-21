@@ -7,6 +7,9 @@ nav:
   search: 搜索
   category: "分类："
 
+toc:
+  title: 目录
+
 post:
   postTime: 发布于
   tags: 标签

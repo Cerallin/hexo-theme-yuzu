@@ -7,6 +7,9 @@ nav:
   search: Search
   category: "Category:"
 
+toc:
+  title: In this article
+
 post:
   postTime: Post
   tags: Tags
