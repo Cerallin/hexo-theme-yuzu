@@ -17,24 +17,45 @@
       }
     });
 
+-
+  function itemURL(item) {
+    if (item.widget === "Archives") return url_for('/' + config.archive_dir);
+    else if (item.widget === "Tags") return url_for('/' + config.tag_dir);
+    else return url_for(`/${config.category_dir}/${item.name}/`);
+  }
+
+-
+  function itemIcon(item) {
+    if (item.widget === "Archives") return "icon-archive";
+    else if (item.widget === "Tags") return "icon-tags";
+    else return "icon-chevron-right";
+  }
+
 #menu-bar.menu-bar-head(data-show="false")
   ul.menu-bar-ul
-    - for (const tuple of menu)
-      - const [name, item] = tuple;
-      li.menu-bar-item(class= (item.widget == "Archives") ? " border" : "")
-        -
-          if (item.widget == "Archives") url = url_for('/' + config.archive_dir);
-          else if (item.widget == "Tags") url = url_for('/' + config.tag_dir);
-          else url = url_for(`/${config.category_dir}/${item.name}/`);
+    - for (const [name, item] of menu)
+      if item.widget === "Archives"
+        li.menu-bar-item(data-border)
 
-        a(href= url)
-          span= name
-    if config.search
       li.menu-bar-item
-        a.search-button
-          span= __('nav.search')
-    - let otherMenu2 = config.otherMenu2 || theme.otherMenu2;
+        i.icon(class= itemIcon(item))
+        |
+        |
+        a.menu-bar-link(href= itemURL(item))= name
+
+    - const otherMenu2 = config.otherMenu2 || theme.otherMenu2;
+
+    if otherMenu2
+      li.menu-bar-item(data-border)
+
     - for (const item in otherMenu2)
       li.menu-bar-item
-        a(href= url_for(otherMenu2[item]))
+        a.menu-bar-link(href= url_for(otherMenu2[item]))
           span= item
+
+  if config.search
+    div.menu-search-box.search-button
+      div= __('nav.search')
+      |
+      |
+      i.icon.icon-search

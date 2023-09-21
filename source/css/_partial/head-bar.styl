@@ -32,12 +32,33 @@ animation-time = 0.4s
   margin-bottom: 10px
 
   .menu-bar-item
-    &.border
-      border-top: 1px solid
-      border-color(border-gray, border-gray-light, border-gray-dark)
+    font-size: content-font-size
+    line-height: 1
+    display: grid
+    grid-template-columns: auto 1fr
+    align-items: baseline
+    column-gap: 0.25em
+    margin: 0.75em auto
 
-    a
-      primary-link-text()
+    &[data-border]
+      margin-top: 1em
+
+    .icon
+      font-size: default-font-size
+
+    .menu-bar-link
+      text-color(primary-color, primary-color-light, primary-color-dark)
       display: inline-block
-      margin: 8px auto
       padding-left: 0px
+      width: 100%
+
+.menu-search-box
+  margin: 60px 20px 30px 21px
+  padding: 10px 10px
+  display: flex
+  align-items: center
+  justify-content: space-between
+  border: 1px solid
+  border-radius: 5px
+  border-color(primary-gray, primary-gray-light, secondary-color-dark)
+  text-color(primary-gray, primary-gray-light, secondary-color-dark)
