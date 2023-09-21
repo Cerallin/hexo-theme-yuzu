@@ -4,6 +4,7 @@ window.onload = function () {
   Theme.clipboard.register();
   Theme.navbar.register();
   Theme.search.register();
+  Theme.toc.register();
 
   [].forEach.call(document.getElementsByClassName('loading-wrapper'),
     element => {
