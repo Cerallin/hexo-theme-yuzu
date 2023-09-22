@@ -31,7 +31,7 @@
     else return "icon-chevron-right";
   }
 
-#menu-bar.menu-bar-head(data-show="false")
+#menu-bar.menu-bar-head
   ul.menu-bar-ul
     - for (const [name, item] of menu)
       if item.widget === "Archives"

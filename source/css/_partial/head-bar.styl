@@ -19,7 +19,7 @@ animation-time = 0.4s
   animation: showBlock animation-time forwards
   z-index: 10
 
-  &[data-show=false]
+  &:not([data-show])
     animation: hideBlock animation-time forwards
     z-index: 10
     opacity: 1

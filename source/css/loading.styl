@@ -10,10 +10,10 @@ size = 20px
   z-index: 1
   background: rgba(0, 0, 0, 5%)
 
-  &[data-loading=false]
+  &:not([data-loading])
     display: none
 
-.page[data-filter=true]
+.page[data-filter]
   filter: blur(2px)
 
 .loading

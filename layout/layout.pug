@@ -3,14 +3,14 @@ html(lang= config.language)
   | !{ partial('_partial/head', null, {cache: false}) }
 
   body
-    .loading-wrapper(data-loading="true")
+    .loading-wrapper(data-loading)
       .loading
         span
         span
         span
 
-    .page(data-filter="true")
-      .head(data-show="true")
+    .page(data-filter)
+      .head(data-show)
         | !{ partial('_partial/header', null, {cache: true}) }
         | !{ partial('_partial/head-bar') }
 
@@ -25,7 +25,7 @@ html(lang= config.language)
 
       | !{ partial('_partial/after-footer', null, {cache: true}) }
 
-    #search-modal.search-modal(data-show="false")
+    #search-modal.search-modal
       .card
         .card-head
           .search-box

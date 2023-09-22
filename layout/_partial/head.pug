@@ -19,4 +19,8 @@ head
   if theme.helpers
     | !{ css('css/helpers') }
 
+  //- javascript
+  | !{ js('js/clipboard/clipboard.min.js') }
+  | !{ js('js/bootstrap') }
+  //- visit-count
   | !{ partial('_partial/visit-count/script') }

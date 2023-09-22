@@ -83,7 +83,7 @@ del, s
     top: 0
     animation: showHead animation-time forwards
 
-    &[data-show=false]
+    &:not([data-show])
       animation: hideHead animation-time forwards
 
   .about, .post-item .post-item-head .post-item-title a, .head-author-link
@@ -118,7 +118,7 @@ del, s
     box-shadow: 0 5px 10px
     text-color(border-gray, border-gray-light, border-gray-dark)
 
-    &[data-show=false]
+    &:not([data-show])
       display: none
 
   #post
