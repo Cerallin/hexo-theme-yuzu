@@ -19,10 +19,6 @@ $ git clone https://github.com/Cerallin/hexo-theme-yuzu
 ```yml
 since_year: 2020
 
-# 此处的theme_config.root请设置与root相一致（一般在url下一行）
-theme_config:
-  root: /
-
 post_copy:
   text: 署名-非商业性使用-相同方式共享
   text_en: CC BY-NC-SA 2.5 CN
