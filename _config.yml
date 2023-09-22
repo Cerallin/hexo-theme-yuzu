@@ -38,35 +38,16 @@ since: 2018
 # default: use `atom.xml`, generator for `hexo-generator-feed`
 rss: default
 
-# ===========================================
-# Menu Settings
-# ===========================================
-menu:
-  Archives:
-    widget: Archives
-  Posts:
-    name: posts # category name
-    widget: Posts
-  Tags:
-    widget: Tags
-
 #other menu1
 # otherMenu1: Search
 #other Menu2
 otherMenu2:
   About: /about
 
-# menu
-archive_type: 'yearly'
-tag_type: 'monthly'
-show_count: false
-
-# 是否开启toc
-# toc: true
+# 文章右侧TOC导航
 toc:
+  enable: true
   list_number: true  # 是否显示数字排序
-#Tag 页面的标题
-tagTitle: Tags
 
 # A sentense to show
 signature: 热爱生活，然后发现，处处都是阳光
@@ -79,18 +60,16 @@ comment:
   app_id:
   app_key:
   # config for gitalk
-  clientid: 
-  clientsecret: 
-  repo: 
-  owner: 
+  client_id:
+  client_secret:
+  repo:
+  owner:
   admin: []
 
-theme:
-  color: Default
-  fancybox: false
-excerpt_link: 更多
+# 是否显示“更多”按钮
+excerpt_link: true
 
-# 辅助样式，默认开启
+# 是否加载辅助样式
 helpers: true
 
 favicon: /img/favicon.ico

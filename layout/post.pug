@@ -1,4 +1,4 @@
 | !{ partial('_partial/article', {post: page}) }
 
-if theme.toc
+if theme.toc.enable
   | !{ partial('_partial/post/toc', {post: page}) }

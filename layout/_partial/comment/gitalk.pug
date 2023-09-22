@@ -5,8 +5,8 @@ link(rel='stylesheet', href='https://unpkg.com/gitalk/dist/gitalk.css')
 script(src='//unpkg.com/gitalk/dist/gitalk.min.js')
 script.
   window.gitalk = new Gitalk({
-    clientID: '#{theme.comment.clientid}',
-    clientSecret: '#{theme.comment.clientsecret}',
+    clientID: '#{theme.comment.client_id}',
+    clientSecret: '#{theme.comment.client_secret}',
     repo: '#{theme.comment.repo}',
     owner: '#{theme.comment.owner}',
     admin: '#{theme.comment.admin}'.split(','),

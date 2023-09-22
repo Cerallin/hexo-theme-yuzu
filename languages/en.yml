@@ -16,6 +16,7 @@ post:
   visit: Visit
   donate: donate
   comments: Comments
+  excerpt_link: more
 
 search:
   search: search

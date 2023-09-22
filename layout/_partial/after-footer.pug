@@ -12,7 +12,7 @@ script.
 
 if config.search
   | !{ js('js/theme/search') }
-if theme.toc
+if theme.toc.enable
   | !{ js('js/theme/toc') }
 if theme.smooth_corner
   | !{ js('js/theme/smooth-corners') }
