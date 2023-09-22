@@ -39,7 +39,7 @@
           btn.setAttribute('data-clipboard-text',
             element.querySelector(':scope .code > pre').innerText);
 
-          element.firstChild.appendChild(btn);
+          element.appendChild(btn);
         }
       )
     }

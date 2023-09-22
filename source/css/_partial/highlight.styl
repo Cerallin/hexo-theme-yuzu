@@ -37,7 +37,6 @@ code, .code, .gutter, pre
 
 .highlight
   margin: 1em 0
-  overflow-x: auto
   box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.125)
   border-radius: 5px
 
@@ -45,57 +44,10 @@ code, .code, .gutter, pre
     smooth-corner(5, 5, 5)
 
   table
+    display: block
     position: relative
     margin: 0 !important
-
-    .clipboard-btn
-      &[data-clicked=true]
-        .icon:before
-          @extend .icon-clipboard-check:before
-
-      @media (max-width: 768px)
-        display: none
-
-      position: absolute
-      top: 0
-      right: 0
-      display: flex
-      align-items: center
-      justify-content: center
-      width: 1.2 * content-font-size
-      height: 1.2 * content-font-size
-      padding: 0.25em
-      margin: 10px 1em
-      border-radius: 5px
-
-      if ($smooth-corner)
-        smooth-corner(5, 5, 100)
-
-      border-color(primary-gray, primary-gray-light, primary-gray-dark)
-      background-color(
-        $background-color,
-        background-color-light,
-        background-color-dark
-      )
-      cursor: pointer
-
-      .icon:before
-        @extend .icon-clipboard:before
-        font-size: content-font-size
-
-      &:hover
-        background-color(
-          primary-gray,
-          primary-gray-light,
-          primary-gray-dark
-        )
-
-        i
-          text-color(
-            primary-color,
-            primary-color-light,
-            primary-color-dark
-          )
+    overflow-x: auto
 
     .code
       if ($smooth-corner)
@@ -104,17 +56,56 @@ code, .code, .gutter, pre
 
       pre
         margin: 0
+        // avoid cover by the button
+        max-width: calc(100% - 64px)
 
-  .gutter
-    width: 10px
-    text-align: right
-    text-color($code-comment, $code-comment-light, $code-comment-dark)
+    .gutter
+      width: 10px
+      text-align: right
+      text-color($code-comment, $code-comment-light, $code-comment-dark)
 
-    if (!hexo-config('code.line_number'))
+      if (!hexo-config('code.line_number'))
+        display: none
+
+      pre
+        margin: 0
+
+  .clipboard-btn
+    &[data-clicked=true]
+      .icon:before
+        @extend .icon-clipboard-check:before
+
+    @media (max-width: 768px)
       display: none
 
-    pre
-      margin: 0
+    position: absolute
+    top: 0
+    right: 0
+    display: flex
+    align-items: center
+    justify-content: center
+    width: 1.2 * content-font-size
+    height: 1.2 * content-font-size
+    padding: 0.25em
+    margin: 10px 1em
+    border-radius: 5px
+
+    if ($smooth-corner)
+      smooth-corner(5, 5, 100)
+
+    border-color(primary-gray, primary-gray-light, primary-gray-dark)
+    background-color($background-color, background-color-light, background-color-dark)
+    cursor: pointer
+
+    .icon:before
+      @extend .icon-clipboard:before
+      font-size: content-font-size
+
+    &:hover
+      background-color(primary-gray, primary-gray-light, primary-gray-dark)
+
+      .icon
+        text-color(primary-color, primary-color-light, primary-color-dark)
 
   .line
     line-height: 1.45em
@@ -126,6 +117,11 @@ code, .code, .gutter, pre
     border-collapse: collapse
 
   .code
+    .line
+      // TODO 代码自动换行并对齐行号
+      // if (hexo-config('code.line_number'))
+      // white-space: pre-wrap
+
     .comment, .quote
       text-color($code-comment, $code-comment-light, $code-comment-dark)
 
