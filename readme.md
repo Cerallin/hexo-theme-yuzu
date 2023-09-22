@@ -63,6 +63,10 @@ search:
   path: meta.json # changeable
   field: post
   content: false # currently unsupported
+
+# google_site_verification
+# See: https://developers.google.com/search
+google_site_verification: ""
 ```
 
 **In case you didn't know** 你可以创建一个`_config.[theme name].yml`文件来覆盖主题的默认设置。对于上述安装方法来说，就是`_config.hexo-theme-yuzu.yml`。
