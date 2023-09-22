@@ -26,20 +26,19 @@
       });
 
       // Insert clipboard icons to code blocks
-      [].forEach.call(
-        document.getElementsByClassName('highlight'),
-        element => {
-          let i = document.createElement('i'),
-            btn = document.createElement('div');
+      document.getElementsByClassName('highlight').forEach(
+        function (element) {
+          const icon = document.createElement('i'),
+            button = document.createElement('div');
 
-          i.classList.add('icon');
+          icon.classList.add('icon');
 
-          btn.appendChild(i);
-          btn.classList.add('clipboard-btn');
-          btn.setAttribute('data-clipboard-text',
+          button.appendChild(i);
+          button.classList.add('clipboard-btn');
+          button.setAttribute('data-clipboard-text',
             element.querySelector(':scope .code > pre').innerText);
 
-          element.appendChild(btn);
+          element.appendChild(button);
         }
       )
     }

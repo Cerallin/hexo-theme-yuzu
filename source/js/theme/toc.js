@@ -16,14 +16,13 @@
         const scrollTop = node.offsetTop - (tocWrapper.clientHeight - node.clientHeight) / 2;
         tocWrapper.scrollTop = scrollTop;
         // reset all "data-actives"
-        [].map.call(sections,
-          function (item) {
-            const id = item.getAttribute('id');
-            const parentNode = document.querySelector(
-              `.post-toc-item a[href="#${encodeURIComponent(id)}"]`)
-              .parentNode;
-            parentNode.removeAttribute('data-active');
-          })
+        sections.map(function (item) {
+          const id = item.getAttribute('id');
+          const parentNode = document.querySelector(
+            `.post-toc-item a[href="#${encodeURIComponent(id)}"]`)
+            .parentNode;
+          parentNode.removeAttribute('data-active');
+        })
       }
 
       // Track all sections

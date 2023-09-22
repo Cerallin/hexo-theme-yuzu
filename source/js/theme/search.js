@@ -49,10 +49,8 @@
         // hide modal
         modal.removeAttribute('data-show');
         // no filter
-        [].forEach.call(document.getElementsByClassName('page'),
-          element => {
-            element.removeAttribute('data-filter');
-          });
+        document.getElementsByClassName('page')
+          .forEach(element => element.removeAttribute('data-filter'));
         // enable body scroll
         if (window.innerWidth <= 768)
           document.body.style.overflow = "auto";
@@ -65,10 +63,8 @@
         // show modal
         modal.setAttribute('data-show', true);
         // filter page
-        [].forEach.call(document.getElementsByClassName('page'),
-          element => {
-            element.setAttribute('data-filter', true);
-          });
+        document.getElementsByClassName('page').forEach(
+          element => element.setAttribute('data-filter', true));
         // set focus
         inputElement.focus();
         // disable body scroll
@@ -78,16 +74,16 @@
     };
 
     function registerSearchButton(modal) {
-      [].forEach.call(document.getElementsByClassName("search-button"),
-        button =>
+      document.getElementsByClassName("search-button")
+        .forEach(button =>
           button.addEventListener('click', openSearchModal(modal)));
     };
 
     function registerSearchBox(modal) {
       const closeModal = closeSearchModal(modal);
       // close button
-      [].forEach.call(document.getElementsByClassName('close-button'),
-        button => button.addEventListener('click', closeModal));
+      document.getElementsByClassName('close-button')
+        .forEach(button => button.addEventListener('click', closeModal));
       // search listeners
       const searchFunc = debounce(() => filterResults(), 200);
       // listen input

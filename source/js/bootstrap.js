@@ -9,6 +9,14 @@
     return [].map.call(this, callback);
   }
 
+  NodeList.prototype.forEach = function (callback) {
+    return [].forEach.call(this, callback);
+  }
+
+  NodeList.prototype.map = function (callback) {
+    return [].map.call(this, callback);
+  }
+
   this.request = async function (url, options = {
     headers: {
       'X-Requested-With': 'XMLHttpRequest'
