@@ -16,7 +16,7 @@
   }
 
   Theme.navbar = {
-    register: function () {
+    register() {
       let scrollHeight = getScrollTop();
 
       document.addEventListener('scroll', debounce(function () {
@@ -27,6 +27,15 @@
           scrollHeight = newScrollTop;
         }
       }, 100));
+    },
+    registerButton() {
+      const toggleButton = document.getElementById('bar-wrap-toggle');
+      toggleButton.addEventListener('click', function () {
+        if (bar.getAttribute('data-show'))
+          bar.removeAttribute('data-show')
+        else
+          bar.setAttribute('data-show', true);
+      })
     }
   };
 }.call(this));
