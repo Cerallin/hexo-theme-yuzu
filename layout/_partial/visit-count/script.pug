@@ -3,7 +3,9 @@ if config.visit_count.type
     script.
       Theme.counter = {
         register: function() {
-          request("#{config.visit_count.url}")
+          request("#{config.visit_count.url}" + '/?page=' + encodeURI(window.location.href), {
+            method: "GET"
+          })
             .then(counter => {
               for (const key in counter) {
                 const dom = document.getElementById(key);
