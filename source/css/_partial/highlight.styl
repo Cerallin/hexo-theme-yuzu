@@ -1,33 +1,8 @@
-@import './highlight-themes/atom-one-dark'
-@import './highlight-themes/atom-one-light'
-
 code-font-size = 16px
 code-font-family = 'Inconsolata', 'monospace', 'Open Sans', 'Microsoft Yahei', sans-serif
 $dark-mode = hexo-config('dark_mode')
 $smooth-corner = hexo-config('smooth_corner')
-
-if (!$dark-mode)
-  $code-foreground = $code-foreground-light
-  $code-background = $code-background-light
-  $code-attribute = $code-attribute-light
-  $code-built_in = $code-built_in-light
-  $code-comment = $code-comment-light
-  $code-keyword = $code-keyword-light
-  $code-number = $code-number-light
-  $code-string = $code-string-light
-  $code-symbol = $code-symbol-light
-  $code-title = $code-title-light
-else
-  $code-foreground = $code-foreground-dark
-  $code-background = $code-background-dark
-  $code-attribute = $code-attribute-dark
-  $code-built_in = $code-built_in-dark
-  $code-comment = $code-comment-dark
-  $code-keyword = $code-keyword-dark
-  $code-number = $code-number-dark
-  $code-string = $code-string-dark
-  $code-symbol = $code-symbol-dark
-  $code-title = $code-title-dark
+code-border-color = rgba(0, 0, 0, 0.125)
 
 code, .code, .gutter, pre
   padding: 7px
@@ -37,8 +12,25 @@ code, .code, .gutter, pre
 
 .highlight
   margin: 1em 0
-  box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.125)
+  box-shadow: 1px 1px 2px 2px rgba(0, 0, 0, 0.125)
   border-radius: 5px
+
+  if ($dark-mode == false)
+    @import './highlight-themes/atom-one-light'
+  else if ($dark-mode == true)
+    @import './highlight-themes/atom-one-dark-reasonable'
+  else // auto
+    @import './highlight-themes/atom-one-light'
+
+    &
+      @extend .hljs
+
+    @media (prefers-color-scheme: dark)
+      @import './highlight-themes/atom-one-dark-reasonable'
+
+      &
+        @extend .hljs
+
 
   if ($smooth-corner)
     smooth-corner(5, 5, 5)
@@ -62,7 +54,6 @@ code, .code, .gutter, pre
     .gutter
       width: 10px
       text-align: right
-      text-color($code-comment, $code-comment-light, $code-comment-dark)
 
       if (!hexo-config('code.line_number'))
         display: none
@@ -71,6 +62,9 @@ code, .code, .gutter, pre
         margin: 0
 
   .clipboard-btn
+    border: 1px solid
+    border-color(code-border-color, code-border-color, code-border-color)
+
     &[data-clicked=true]
       .icon:before
         @extend .icon-clipboard-check:before
@@ -108,6 +102,7 @@ code, .code, .gutter, pre
         text-color(primary-color, primary-color-light, primary-color-dark)
 
   .line
+    // TODO 代码自动换行并对齐行号
     line-height: 1.45em
 
   table, tr
@@ -115,33 +110,3 @@ code, .code, .gutter, pre
     padding: 0
     width: 100%
     border-collapse: collapse
-
-  .code
-    .line
-      // TODO 代码自动换行并对齐行号
-      // if (hexo-config('code.line_number'))
-      // white-space: pre-wrap
-
-    .comment, .quote
-      text-color($code-comment, $code-comment-light, $code-comment-dark)
-
-    .keyword, .selector-tag, .addition
-      text-color($code-keyword, $code-keyword-light, $code-keyword-dark)
-
-    .number
-      text-color($code-number, $code-number-light, $code-number-dark)
-
-    .string, .meta .meta-string, .literal, .doctag, .regexp
-      text-color($code-string, $code-string-light, $code-string-dark)
-
-    .title, .section, .name, .selector-id, .selector-class
-      text-color($code-title, $code-title-light, $code-title-dark)
-
-    .attribute, .attr, .variable, .template-variable, .class .title, .type
-      text-color($code-attribute, $code-attribute-light, $code-attribute-dark)
-
-    .symbol, .bullet, .subst, .meta, .meta .keyword, .selector-attr, .selector-pseudo, .link
-      text-color($code-symbol, $code-symbol-light, $code-symbol-dark)
-
-    .built_in, .deletion
-      text-color($code-built_in, $code-built_in-light, $code-built_in-dark)
