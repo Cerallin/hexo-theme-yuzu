@@ -127,17 +127,17 @@ del, s
   width: 90%
   max-width: content-max-width
 
-  &:has(article)
+  &[data-page="post"]
     padding: 40px 0
 
-    &:has(.menu-nav)
-      padding: unset
+  &[data-page="home"]
+    padding: unset
 
-    display: grid
-    grid-template-columns: @css{minmax(75%, 800px)} auto
-    grid-column-gap: 20px
+  display: grid
+  grid-template-columns: @css{minmax(75%, 800px)} auto
+  grid-column-gap: 20px
 
-  &:has(.category)
+  &[data-page="category"], &[data-page="archive"]
     display: block
 
   .post

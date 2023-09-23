@@ -14,7 +14,16 @@ html(lang= config.language)
         | !{ partial('_partial/header', null, {cache: true}) }
         | !{ partial('_partial/head-bar') }
 
-      .main
+      -
+        const page = (function () {
+          if (is_home()) return "home";
+          else if (is_post()) return "post";
+          else if (is_category()) return "category";
+          else if (is_archive()) return "archive";
+          return null
+        })()
+
+      .main(data-page= page)
         | !{ body }
 
       footer.footer-nav
