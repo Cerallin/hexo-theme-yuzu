@@ -33,15 +33,8 @@ word_count:
 # Site creation time
 since: 2018
 
-# Set feed link (false | default | your feed link)
-# false: disable
-# default: use `atom.xml`, generator for `hexo-generator-feed`
-rss: default
-
-#other menu1
-# otherMenu1: Search
-#other Menu2
-otherMenu2:
+# key: link text, value: URL link
+header_menu:
   About: /about
 
 # 文章右侧TOC导航
@@ -49,7 +42,7 @@ toc:
   enable: true
   list_number: true  # 是否显示数字排序
 
-# A sentense to show
+# A sentence to show
 signature: 热爱生活，然后发现，处处都是阳光
 
 comment:

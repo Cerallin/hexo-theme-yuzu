@@ -38,7 +38,7 @@ menu:
     widget: Tags
 
 # 右上角
-otherMenu2:
+header_menu:
   关于: /about
 
 # 备案

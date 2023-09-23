@@ -43,15 +43,14 @@
         |
         a.menu-bar-link(href= itemURL(item))= name
 
-    - const otherMenu2 = config.otherMenu2 || theme.otherMenu2;
-
-    if otherMenu2
+    - const header_menu = config.header_menu;
+    if header_menu
       li.menu-bar-item(data-border)
 
-    - for (const item in otherMenu2)
-      li.menu-bar-item
-        a.menu-bar-link(href= url_for(otherMenu2[item]))
-          span= item
+      - for (const item in header_menu)
+        li.menu-bar-item
+          a.menu-bar-link(href= url_for(header_menu[item]))
+            span= item
 
   if config.search
     div.menu-search-box.search-button
