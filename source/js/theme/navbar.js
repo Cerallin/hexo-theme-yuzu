@@ -17,6 +17,10 @@
 
   Theme.navbar = {
     register() {
+      this.registerScroll();
+      this.registerButton();
+    },
+    registerScroll() {
       let scrollHeight = getScrollTop();
 
       document.addEventListener('scroll', debounce(function () {
@@ -31,10 +35,10 @@
     registerButton() {
       const toggleButton = document.getElementById('bar-wrap-toggle');
       toggleButton.addEventListener('click', function () {
-        if (bar.getAttribute('data-show'))
-          bar.removeAttribute('data-show')
+        if (menubar.getAttribute('data-show'))
+          menubar.removeAttribute('data-show')
         else
-          bar.setAttribute('data-show', true);
+          menubar.setAttribute('data-show', true);
       })
     }
   };
