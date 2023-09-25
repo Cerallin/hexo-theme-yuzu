@@ -1,20 +1,8 @@
 .archive-item
   .article-date
-    time.post-time(
-      title= full_date(post.date)
-      datetime= date_xml(post.date)
-      itemprop="datePublished")
+    time.post-time(title= full_date(post.date) datetime= date_xml(post.date))
+      //- TODO: user defined format
       = post.date.format('MMM DD')
-
   .article-title
-    if post.link
-      a(href= url_for(post.link)
-        target="_blank"
-        itemprop="url")= post.title
-    else if post.title
-      if index
-        a(href= url_for(post.path)
-          target="_blank"
-          itemprop="url")= post.title
-      else
-        = post.title
+    a(href= url_for(post.path) target="_blank" itemprop="url")
+      = post.title
