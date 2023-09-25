@@ -28,6 +28,9 @@
         if (!menubar.getAttribute('data-show')) {
           if (scrollHeight + 50 > newScrollTop)
             navbar.setAttribute('data-show', 'true');
+          else
+            navbar.removeAttribute('data-show');
+
           scrollHeight = newScrollTop;
         }
       }, 100));
