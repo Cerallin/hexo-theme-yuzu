@@ -1,3 +1,5 @@
+include ../_function/itemURL.pug
+
 -
   const menu = Object.keys(config.menu)
     .map((key) => [key, config.menu[key]])
@@ -16,13 +18,6 @@
           return 0;
       }
     });
-
--
-  function itemURL(item) {
-    if (item.widget === "Archives") return url_for('/' + config.archive_dir);
-    else if (item.widget === "Tags") return url_for('/' + config.tag_dir);
-    else return url_for(`/${config.category_dir}/${item.name}/`);
-  }
 
 -
   function itemIcon(item) {
