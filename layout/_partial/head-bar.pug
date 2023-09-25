@@ -31,25 +31,25 @@
     else return "icon-chevron-right";
   }
 
-#menu-bar.menu-bar-head
-  ul.menu-bar-ul
+#menubar.menubar-head
+  ul.menubar-ul
     - for (const [name, item] of menu)
       if item.widget === "Archives"
-        li.menu-bar-item(data-border)
+        li.menubar-item(data-border)
 
-      li.menu-bar-item
+      li.menubar-item
         i.icon(class= itemIcon(item))
         |
         |
-        a.menu-bar-link(href= itemURL(item))= name
+        a.menubar-link(href= itemURL(item))= name
 
     - const header_menu = config.header_menu;
     if header_menu
-      li.menu-bar-item(data-border)
+      li.menubar-item(data-border)
 
       - for (const item in header_menu)
-        li.menu-bar-item
-          a.menu-bar-link(href= url_for(header_menu[item]))
+        li.menubar-item
+          a.menubar-link(href= url_for(header_menu[item]))
             span= item
 
   if config.search

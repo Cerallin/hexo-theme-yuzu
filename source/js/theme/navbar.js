@@ -2,7 +2,7 @@
   "use strict";
 
   const navbar = document.getElementsByClassName('head')[0];
-  const menubar = document.getElementById('menu-bar');
+  const menubar = document.getElementById('menubar');
 
   function getScrollTop() {
     var scroll_top = 0;
