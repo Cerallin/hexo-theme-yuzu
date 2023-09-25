@@ -1,7 +1,11 @@
-if post.tags && post.tags.length
-  -
-    const tagsHtml = list_tags( post.tags, {
-      show_count: false,
-      class: 'article-tag'
-    })
-  | !{tagsHtml}
+.post-tag
+  if post.tags && post.tags.length
+    -
+      const tagsHtml = list_tags( post.tags, {
+        show_count: false,
+        class: 'article-tag'
+      })
+    | !{tagsHtml}
+
+//- separator
+| |

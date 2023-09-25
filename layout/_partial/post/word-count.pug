@@ -1,10 +1,12 @@
-//- Count words.
-//-
-//- @param content HTML string to count.
-//- @returns .cn words count of CJK words.
-//- @returns .en words count of latin words.
-//-
 -
+  /**
+   * Count words.
+   *
+   * @param content HTML string to count.
+   *
+   * @returns .cn words count of CJK words.
+   * @returns .en words count of latin words.
+   */
   function counter(content) {
     content = strip_html(content);
     return {
@@ -13,8 +15,7 @@
     };
   };
 
-  const mode = theme.word_count.mode;
-  const reading_speed = theme.word_count.reading_speed;
+  const { mode, reading_speed } = theme.word_count;
 
   const words = counter(post.content);
 
@@ -33,12 +34,8 @@
     return time < 1 ? 1 : parseInt(time, 10);
   }
 
-//- Text starts here
-|本文共
-=word_count(words).toLocaleString()
-|字
-if theme.word_count.reading_time
-  |，阅读完需要约
-  =reading_time(words)
-  |分钟
-|。
+if theme.word_count.enable
+  .post-word-count
+    = _p('article.word_count', word_count(words).toLocaleString())
+    if theme.word_count.reading_time
+      = _p('article.reading_time', reading_time(words))

@@ -1,0 +1,13 @@
+if config.post_copy
+  .post-cc
+    = __('article.copyright')
+    if config.post_copy.text && config.post_copy.text_en
+      | !{ config.post_copy.text }
+      |
+      ||
+      |
+      a(href= config.post_copy.link)
+        = config.post_copy.text_en
+    else
+      a(href= config.post_copy.link)
+        = config.post_copy.text || config.post_copy.text_en

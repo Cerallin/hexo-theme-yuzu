@@ -24,6 +24,8 @@ search:
   counts: search result(s) in total.
 
 article:
+  word_count: This article contains %s words.
+  reading_time: It may takes you about %d minutes to read.
   hits: hits
   copyright: "Copyright: "
 

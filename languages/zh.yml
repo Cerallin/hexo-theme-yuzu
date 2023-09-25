@@ -24,6 +24,8 @@ search:
   counts: 条搜索结果。
 
 article:
+  word_count: 本文共%s字。
+  reading_time: 阅读完需要约%d分钟。
   hits: 访问
   copyright: "版权声明："
 

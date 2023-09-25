@@ -3,36 +3,24 @@ article#post.post
     h1.post-title
       a.title(href= url_for(post.path))
         = post.title
+
   .post-datetag
-    .post-date !{ partial('_partial/post/date') }
-    | |
-    .post-tag !{ partial('_partial/post/tag') }
-    | |
-    | !{ partial('_partial/visit-count/page-container') }
+    | !{ partial('_partial/post/date') }
+    | !{ partial('_partial/post/tag') }
+    | !{ partial('_partial/visit-count/page-container', null, {cache: true}) }
 
-  if theme.word_count && theme.word_count.enable
-    .post-word-count !{ partial('_partial/post/word-count', {post: post}) }
-
-  if config.post_copy
-    .post-cc
-      = __('article.copyright')
-      if config.post_copy.text && config.post_copy.text_en
-        | !{ config.post_copy.text }
-        |
-        ||
-        |
-        a(href= config.post_copy.link)
-          | !{config.post_copy.text_en}
-      else
-        <a href="<%- config.post_copy.link %>"><%- config.post_copy.text || config.post_copy.text_en %></a>
+  .post-info
+    | !{ partial('_partial/post/word-count', {post: post}) }
+    | !{ partial('_partial/post/copyright', {post: post}) }
 
   .article-entry(itemprop="articleBody")
+    //- post content
     | !{ post.content }
+    //- comments
     if theme.comment.enable
+      h3#comments
+        = __('post.comments')
       if theme.comment.type === "gitalk"
-        h3#comments= __('post.comments')
-        | !{ partial('_partial/comment/gitalk') }
+        | !{ partial('_partial/comment/gitalk', null, {cache: true}) }
       else if theme.comment.type === "valine"
-        h3#comments= __('post.comments')
-        | !{ partial('_partial/comment/valine') }
-
+        | !{ partial('_partial/comment/valine', null, {cache: true}) }
