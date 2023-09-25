@@ -3,11 +3,10 @@ article.post-item(data-condense= condense)
     h2.post-item-title
       a.title(href= url_for(post.path))
         = post.title
-  .post-item-datetag
-    .post-item-date
-      | !{ partial('_partial/post/date') }
-    .post-item-tag
-      | !{ partial('_partial/post/tag') }
+  //- post meta
+  .post-datetag
+    | !{ partial('_partial/post/date') }
+    | !{ partial('_partial/post/tag') }
 
   .article-entry(itemprop="articleBody")
       if post.excerpt
