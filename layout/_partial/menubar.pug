@@ -1,5 +1,5 @@
 -
-  let menu = Object.keys(config.menu)
+  const menu = Object.keys(config.menu)
     .map((key) => [key, config.menu[key]])
     .sort((at, bt) => {
       let a = at[1], b = bt[1];

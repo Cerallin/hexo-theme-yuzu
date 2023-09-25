@@ -1,4 +1,12 @@
-<!DOCTYPE html>
+-
+  const page = (function () {
+    if (is_home()) return "home";
+    else if (is_post()) return "post";
+    else if (is_category()) return "category";
+    else if (is_archive()) return "archive";
+    return null
+  })()
+
 html(lang= config.language)
   | !{ partial('_partial/head', null, {cache: false}) }
 
@@ -12,43 +20,11 @@ html(lang= config.language)
     .page(data-filter)
       .head(data-show)
         | !{ partial('_partial/header', null, {cache: true}) }
-        | !{ partial('_partial/head-bar') }
+        | !{ partial('_partial/menubar', null, {cache: true}) }
 
-      -
-        const page = (function () {
-          if (is_home()) return "home";
-          else if (is_post()) return "post";
-          else if (is_category()) return "category";
-          else if (is_archive()) return "archive";
-          return null
-        })()
+      .main(data-page= page) !{ body }
 
-      .main(data-page= page)
-        | !{ body }
-
-      footer.footer-nav
-        .footer
-          #back-top.back-top(title="Back to top")
-            i.icon.icon-chevron-bar-up
-          | !{ partial('_partial/footer', null, {cache: true}) }
-
+      | !{ partial('_partial/footer', null, {cache: true}) }
       | !{ partial('_partial/after-footer', null, {cache: true}) }
 
-    if config.search
-      #search-modal.search-modal
-        .card
-          .card-head
-            .search-box
-              input#search-input.search-input(placeholder= __('search.search'))
-              #search-button.search-button
-                .icon.icon-search
-            .close-button
-              .icon.icon-x
-          .card-body
-            .search-count
-              = __('search.total')
-              |
-              span#search-count-num=0
-              |
-              = __('search.counts')
-            #search-result.search-result
+    | !{ partial('_partial/search-modal', null, {cache: true}) }

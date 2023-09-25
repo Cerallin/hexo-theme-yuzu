@@ -1,44 +1,49 @@
-.footer-content
-  if config.beian && config.beian.enable
-    .icp
-      img(src=(config.root + "img/icp.png") alt= __('icp'))
-      a.icp-text(
+
+footer.footer-nav
+  .footer
+    #back-top.back-top(title="Back to top")
+      i.icon.icon-chevron-bar-up
+    .footer-content
+      if config.beian && config.beian.enable
+        .icp
+          img(src=(config.root + "img/icp.png") alt= __('icp'))
+          a.icp-text(
+            target="_blank"
+            href="https://beian.miit.gov.cn/")
+            | !{ config.beian.icp }
+
+      if config.footer_links
+        | !{ partial('_partial/footer-links') }
+
+      | !{ partial('_partial/visit-count/site-container') }
+      |
+      | Copyright &copy;
+      |
+      = config.since_year
+      |
+      - let current = date(Date.now(), "YYYY");
+      if current != config.since_year
+        span.time-divide -
+        |
+        = current
+      |
+      |
+      = config.author
+      |.
+      |
+      |Power by
+      |
+      a(
+        href="https://hexo.io/"
         target="_blank"
-        href="https://beian.miit.gov.cn/")
-        | !{ config.beian.icp }
-
-  if config.footer_links
-    | !{ partial('_partial/footer-links') }
-
-  | !{ partial('_partial/visit-count/site-container') }
-  |
-  | Copyright &copy;
-  |
-  = config.since_year
-  |
-  - let current = date(Date.now(), "YYYY");
-  if current != config.since_year
-    span.time-divide -
-    |
-    = current
-  |
-  |
-  = config.author
-  |.
-  |
-  |Power by
-  |
-  a(
-    href="https://hexo.io/"
-    target="_blank"
-    rel="external nofollow") Hexo
-  |
-  | and
-  |
-  a(
-    href="https://github.com/Cerallin/hexo-theme-yuzu"
-    target="_blank"
-    rel="external nofollow"
-    title= theme.version)
-    | Theme Yuzu
-  |.
+        rel="external nofollow") Hexo
+      |
+      | and
+      |
+      a(
+        href="https://github.com/Cerallin/hexo-theme-yuzu"
+        target="_blank"
+        rel="external nofollow"
+        title= theme.version)
+        | Theme Yuzu
+      |.

@@ -1,0 +1,18 @@
+if config.search
+  #search-modal.search-modal
+    .card
+      .card-head
+        .search-box
+          input#search-input.search-input(placeholder= __('search.search'))
+          #search-button.search-button
+            .icon.icon-search
+        .close-button
+          .icon.icon-x
+      .card-body
+        .search-count
+          = __('search.total')
+          |
+          span#search-count-num=0
+          |
+          = __('search.counts')
+        #search-result.search-result
