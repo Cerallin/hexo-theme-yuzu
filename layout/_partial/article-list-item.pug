@@ -1,18 +1,18 @@
 article.post-item(data-condense= condense)
-  header.post-item-head
-    h2.post-item-title
-      a.title(href= url_for(post.path))
-        = post.title
+  //- post title
+  h2.post-item-title
+    a.title(href= url_for(post.path))
+      = post.title
   //- post meta
-  .post-datetag
+  .post-meta
     | !{ partial('_partial/post/date') }
     | !{ partial('_partial/post/tag') }
+  //- post excerpt
+  if post.excerpt
+    .article-entry
+      | !{ post.excerpt }
 
-  .article-entry(itemprop="articleBody")
-      if post.excerpt
-        | !{ post.excerpt }
-
-        if theme.excerpt_link
-          p.article-more-link
-            a(href= url_for(post.path))
-              = __('post.excerpt_link')
+      if theme.excerpt_link
+        p.article-more-link
+          a(href= url_for(post.path))
+            = __('post.excerpt_link')

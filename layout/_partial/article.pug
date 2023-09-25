@@ -4,7 +4,7 @@ article#post.post
       a.title(href= url_for(post.path))
         = post.title
 
-  .post-datetag
+  .post-meta
     | !{ partial('_partial/post/date') }
     | !{ partial('_partial/post/tag') }
     | !{ partial('_partial/visit-count/page-container', null, {cache: true}) }
