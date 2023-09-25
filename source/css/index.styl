@@ -1,4 +1,4 @@
-.main[data-page="home"]
+.main[data-page='home']
   display: grid
   grid-template-columns: 20% 1fr
   grid-column-gap: 8%
@@ -7,17 +7,19 @@
     grid-template-columns: 1fr
 
 .content
+  width: 100%
+  margin: 0 auto
+
   img
     max-width: 100%
     height: auto
     display: inline-block
     vertical-align: middle
 
-#index-content
-  width: 100%
-  max-width: content-max-width
-  margin: 0 auto
+  .post-item
+    p
+      text-indent: 0
 
-  .post-item + .post-item
-    border-top: 1px solid
-    border-color(border-gray, border-gray-light, border-gray-dark)
+    & + .post-item
+      border-top: 1px solid
+      border-color(border-gray, border-gray-light, border-gray-dark)
