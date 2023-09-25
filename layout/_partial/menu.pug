@@ -1,12 +1,9 @@
-include ../_function/itemURL.pug
-include ../_function/itemWidget.pug
-
 .menu-nav
   - for (const name in config.menu)
     - const item = config.menu[name];
     .menu-nav-item
       .menu-nav-title
-        a(href= itemURL(item))
+        a(href= item_url(item))
           span= name
       .menu-nav-content
-        | !{ itemWidget(item) }
+        | !{ item_widget(item) }

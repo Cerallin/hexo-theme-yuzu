@@ -1,38 +1,14 @@
 -
-  /**
-   * Count words.
-   *
-   * @param content HTML string to count.
-   *
-   * @returns .cn words count of CJK words.
-   * @returns .en words count of latin words.
-   */
-  function counter(content) {
-    content = strip_html(content);
-    return {
-      cn: (content.match(/[\u4E00-\u9FA5]/g) || []).length,
-      en: (content.replace(/[\u4E00-\u9FA5]/g, '').match(/[a-zA-Z0-9_\u0392-\u03c9\u0400-\u04FF]+|[\u4E00-\u9FFF\u3400-\u4dbf\uf900-\ufaff\u3040-\u309f\uac00-\ud7af\u0400-\u04FF]+|[\u00E4\u00C4\u00E5\u00C5\u00F6\u00D6]+|\w+/g) || []).length,
-    };
-  };
-
-  const { mode, reading_speed } = theme.word_count;
-
-  const words = counter(post.content);
-
-  const word_count = ((mode, words) => {
+  const words = word_counter(post.content);
+  const word_count = (function (words) {
+    const { mode } = theme.word_count;
     if (mode === "all")
       return (str) => (words.cn + words.en);
     else if (mode === "en_only")
-      return (str) => words[1];
+      return (str) => words.en;
     else
-      return (str) => words[0];
-  })(mode, words);
-
-  function reading_time(words) {
-    time = (words.cn / reading_speed.cn) +
-      (words.en / reading_speed.en);
-    return time < 1 ? 1 : parseInt(time, 10);
-  }
+      return (str) => words.cn;
+  })(words);
 
 if theme.word_count.enable
   .post-word-count

@@ -1,5 +1,3 @@
-include ../_function/itemURL.pug
-
 -
   const menu = Object.keys(config.menu)
     .map((key) => [key, config.menu[key]])
@@ -19,13 +17,6 @@ include ../_function/itemURL.pug
       }
     });
 
--
-  function itemIcon(item) {
-    if (item.widget === "Archives") return "icon-archive";
-    else if (item.widget === "Tags") return "icon-tags";
-    else return "icon-chevron-right";
-  }
-
 #menubar.menubar-head
   ul.menubar-ul
     - for (const [name, item] of menu)
@@ -33,10 +24,10 @@ include ../_function/itemURL.pug
         li.menubar-item(data-border)
 
       li.menubar-item
-        i.icon(class= itemIcon(item))
+        i.icon(class= item_icon(item))
         |
         |
-        a.menubar-link(href= itemURL(item))= name
+        a.menubar-link(href= item_url(item))= name
 
     - const header_menu = config.header_menu;
     if header_menu

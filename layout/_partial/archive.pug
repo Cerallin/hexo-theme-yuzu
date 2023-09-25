@@ -1,6 +1,4 @@
-include ../_function/groupPostsByYear.pug
-
-- const groupedPosts = groupPostsByYear(page.posts)
+- const groupedPosts = group_posts(page.posts)
 - for (const year of groupedPosts.years)
   - const posts = groupedPosts[year];
   section.archives-wrap

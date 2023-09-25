@@ -1,12 +1,3 @@
--
-  const page = (function () {
-    if (is_home()) return "home";
-    else if (is_post()) return "post";
-    else if (is_category()) return "category";
-    else if (is_archive()) return "archive";
-    return null
-  })()
-
 html(lang= config.language)
   | !{ partial('_partial/head', null, {cache: false}) }
 
@@ -22,7 +13,7 @@ html(lang= config.language)
         | !{ partial('_partial/header', null, {cache: true}) }
         | !{ partial('_partial/menubar', null, {cache: true}) }
 
-      .main(data-page= page) !{ body }
+      .main(data-page= current_page()) !{ body }
 
       | !{ partial('_partial/footer', null, {cache: true}) }
       | !{ partial('_partial/after-footer', null, {cache: true}) }
