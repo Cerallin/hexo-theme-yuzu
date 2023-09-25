@@ -1,8 +1,30 @@
 #!/bin/bash
 
+flag_major=0
+
+if [ $# -lt 1 ]; then
+    echo "No arguments given, will make minor version by default." >&2
+else
+    case $1 in
+    major)
+        flag_major=1
+        ;;
+    minor)
+        flag_major=0
+        ;;
+    esac
+fi
+
+
 cur_branch=$(git branch --show-current)
 
-next_ver=$(git describe --tags --abbrev=0 $cur_branch | awk -F'.' '{printf $1"."$2+1}')
+if [ $flag_major -eq 1 ]; then
+    version_str='$1"."$2+1'
+else
+    version_str='$1"."$2"."$3+1'
+fi
+
+next_ver=$(git describe --tags --abbrev=0 $cur_branch | awk -F'.' "{printf $version_str}")
 
 sed -i "s_^version: .*\$_version: ${next_ver}_" _config.yml
 
