@@ -1,4 +1,4 @@
-| !{ partial('_partial/menu', {pagination: 2, index: true}) }
+| !{ partial('_partial/menu', null, {cache: true}) }
 
 #index-content.content
   - for (const post of page.posts.toArray())
