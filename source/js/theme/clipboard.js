@@ -33,7 +33,7 @@
 
           icon.classList.add('icon');
 
-          button.appendChild(i);
+          button.appendChild(icon);
           button.classList.add('clipboard-btn');
           button.setAttribute('data-clipboard-text',
             element.querySelector(':scope .code > pre').innerText);
