@@ -4,13 +4,7 @@ $dark-mode = hexo-config('dark_mode')
 $smooth-corner = hexo-config('smooth_corner')
 code-border-color = rgba(0, 0, 0, 0.125)
 
-code, .code, .gutter, pre
-  padding: 7px
-  font-size: code-font-size
-  font-family: code-font-family
-  background-color($code-background, $code-background-light, $code-background-dark)
-
-.highlight
+figure.highlight
   margin: 1em 0
   box-shadow: 1px 1px 2px 2px rgba(0, 0, 0, 0.125)
   border-radius: 5px
@@ -31,6 +25,11 @@ code, .code, .gutter, pre
       &
         @extend .hljs
 
+
+  code, .code, .gutter, pre, figcaption
+    padding: 7px
+    font-size: code-font-size
+    font-family: code-font-family
 
   if ($smooth-corner)
     smooth-corner(5, 5, 5)
@@ -61,7 +60,7 @@ code, .code, .gutter, pre
       pre
         margin: 0
 
-  .clipboard-btn
+  & > .clipboard-btn
     border: 1px solid
     border-color(code-border-color, code-border-color, code-border-color)
 
@@ -110,3 +109,36 @@ code, .code, .gutter, pre
     padding: 0
     width: 100%
     border-collapse: collapse
+
+  // If has a caption
+  figcaption
+    padding-caption = 1em
+    padding-x = 2 * padding-caption
+
+    font-weight: normal
+    display: grid
+    grid-template-columns: 1fr auto auto
+    column-gap: 1em
+    justify-items: start
+    width: 'calc(100% - %s)' % padding-x
+    padding: 0.5em padding-caption 0.25em padding-caption
+    margin: 0
+
+    @extend .comment
+
+    .clipboard-btn
+      cursor: pointer
+
+  &.c
+    figcaption
+      span
+        &:before
+          content: '/* '
+        &:after
+          content: ' */'
+
+  &.cpp
+    figcaption
+      span
+        &:before
+          content: '// '

@@ -28,17 +28,31 @@
       // Insert clipboard icons to code blocks
       document.getElementsByClassName('highlight').forEach(
         function (element) {
-          const icon = document.createElement('i'),
-            button = document.createElement('div');
+          const hasCaption = element.childNodes[0].tagName === 'FIGCAPTION';
+          if (hasCaption) {
+            const button = document.createElement('a');
+            button.innerText = 'copy';
+            button.setAttribute('data-clipboard-text',
+              element.querySelector(':scope .code > pre').innerText);
+            button.classList.add('clipboard-btn');
+            const caption = element.childNodes[0];
+            const nodeList = caption.childNodes;
+            const lastNode = nodeList[nodeList.length - 1];
+            caption.insertBefore(button, lastNode);
+          } else {
+            const icon = document.createElement('i');
+            const button = document.createElement('div');
 
-          icon.classList.add('icon');
+            icon.classList.add('icon');
 
-          button.appendChild(icon);
-          button.classList.add('clipboard-btn');
-          button.setAttribute('data-clipboard-text',
-            element.querySelector(':scope .code > pre').innerText);
+            button.appendChild(icon);
+            button.classList.add('clipboard-btn');
+            button.setAttribute('data-clipboard-text',
+              element.querySelector(':scope .code > pre').innerText);
 
-          element.appendChild(button);
+            element.appendChild(button);
+          }
+
         }
       )
     }

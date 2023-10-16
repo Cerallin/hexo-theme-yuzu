@@ -65,3 +65,40 @@
       display: block
       margin: 0.5em auto 1.5em auto
       width: 80%
+
+  details
+    margin: 1em 0
+    padding: 1em 0.5em
+    border: 1px solid
+    border-color(border-color, border-color-light, border-color-dark)
+    border-radius: 5px
+
+    summary
+      display: grid
+      grid-template-columns: auto 1fr auto
+      align-items: center
+      column-gap: 0.5em
+      padding: 0 0.25em
+      cursor: pointer
+
+      &:before
+        @extend .icon
+        content: icon-tags
+
+      &:after
+        @extend .icon
+        content: icon-chevron-right
+        transition: 0.15s linear
+
+    &[open]
+      summary
+        margin-bottom: 1em
+
+        &:after
+          transform: rotate(90deg)
+
+  .tab-folder > .tab-content:target ~ .tab-content:last-child, .tab-folder > .tab-content
+    display: none
+
+  .tab-folder > :last-child, .tab-folder > .tab-content:target
+    display: block
