@@ -66,31 +66,51 @@
       margin: 0.5em auto 1.5em auto
       width: 80%
 
+  info-color = #d2e3ff
+  info-color-dark = #282c34
+  info-stress-color = #448aff
+  info-stress-color-dark = #00aeff
+
   details
     margin: 1em 0
-    padding: 1em 0.5em
     border: 1px solid
     border-color(border-color, border-color-light, border-color-dark)
     border-radius: 5px
+    box-shadow: 1px 1px 1px 1px rgba(0, 0, 0, 0.125)
 
     summary
       display: grid
       grid-template-columns: auto 1fr auto
-      align-items: center
+      align-items: baseline
       column-gap: 0.5em
-      padding: 0 0.25em
+      padding: 0.5em 0.5em
+      background-color(info-color, info-color, info-color-dark)
+      font-family: default-font-family
+      font-weight: bold
       cursor: pointer
 
       &:before
-        @extend .icon
-        content: icon-tags
+        content: icon-exclamation-triangle-fill
 
       &:after
-        @extend .icon
         content: icon-chevron-right
+
+      &:before, &:after
+        @extend .icon
+        font-weight: normal
+        text-color(info-stress-color, info-stress-color, info-stress-color-dark)
         transition: 0.15s linear
 
+    & > p, & > figure, & > img, & > div
+      margin-left: 0.5em
+      margin-right: 0.5em
+
+    p
+      detailed-text()
+
     &[open]
+      padding-bottom: 0.5em
+
       summary
         margin-bottom: 1em
 
