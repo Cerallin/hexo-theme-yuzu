@@ -4,6 +4,13 @@ $dark-mode = hexo-config('dark_mode')
 $smooth-corner = hexo-config('smooth_corner')
 code-border-color = rgba(0, 0, 0, 0.125)
 
+code, .code, .gutter, pre, figcaption
+  padding: 7px
+  // TODO 代码自动换行并对齐行号
+  line-height: 1.45em
+  font-size: code-font-size
+  font-family: code-font-family
+
 figure.highlight
   margin: 1em 0
   box-shadow: 1px 1px 2px 2px rgba(0, 0, 0, 0.125)
@@ -24,12 +31,6 @@ figure.highlight
 
       &
         @extend .hljs
-
-
-  code, .code, .gutter, pre, figcaption
-    padding: 7px
-    font-size: code-font-size
-    font-family: code-font-family
 
   if ($smooth-corner)
     smooth-corner(5, 5, 5)
@@ -53,6 +54,9 @@ figure.highlight
     .gutter
       width: 10px
       text-align: right
+      user-select: none
+      background-color(code-border-color, code-border-color, code-border-color)
+      border-radius: 5px 0 0 5px
 
       if (!hexo-config('code.line_number'))
         display: none
@@ -100,10 +104,6 @@ figure.highlight
       .icon
         text-color(primary-color, primary-color-light, primary-color-dark)
 
-  .line
-    // TODO 代码自动换行并对齐行号
-    line-height: 1.45em
-
   table, tr
     margin: 0
     padding: 0
@@ -114,6 +114,10 @@ figure.highlight
   figcaption
     padding-caption = 1em
     padding-x = 2 * padding-caption
+    user-select: none
+    border-radius: 5px 5px 0 0
+    border-bottom: 1px solid
+    border-color(code-border-color, code-border-color, code-border-color)
 
     font-weight: normal
     display: grid
@@ -128,6 +132,10 @@ figure.highlight
 
     .clipboard-btn
       cursor: pointer
+
+    & + table
+      .gutter
+        border-radius: 0 0 0 5px
 
   &.c
     figcaption
