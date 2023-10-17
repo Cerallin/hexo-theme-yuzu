@@ -4,6 +4,16 @@ $dark-mode = hexo-config('dark_mode')
 $smooth-corner = hexo-config('smooth_corner')
 code-border-color = rgba(0, 0, 0, 0.125)
 
+if ($dark-mode == false)
+  @import './highlight-themes/atom-one-light'
+else if ($dark-mode == true)
+  @import './highlight-themes/atom-one-dark-reasonable'
+else // auto
+  @import './highlight-themes/atom-one-light'
+
+  @media (prefers-color-scheme: dark)
+    @import './highlight-themes/atom-one-dark-reasonable'
+
 code, .code, .gutter, pre, figcaption
   padding: 7px
   // TODO 代码自动换行并对齐行号
