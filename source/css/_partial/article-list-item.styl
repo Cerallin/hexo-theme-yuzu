@@ -18,8 +18,8 @@
   h3 + h4, h4 + h5
     padding-top: 0
 
-  // 3-line table
-  &>table, div>table
+  // 3-line table, but ignore equations aligned as table
+  &:not([id^='eq:'])>table, div:not([id^='eq:'])>table
     line-height: 2em
     border-top: 2px solid
     border-bottom: 2px solid
