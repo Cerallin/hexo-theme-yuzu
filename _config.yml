@@ -38,6 +38,8 @@ header_menu:
   About: /about
 
 # 文章右侧TOC导航
+# 对于每篇文章，都可以使用"toc: false|true"指定是否显示toc
+# 不设置则默认与下面的toc.enable保持一致
 toc:
   enable: true
   list_number: true  # 是否显示数字排序

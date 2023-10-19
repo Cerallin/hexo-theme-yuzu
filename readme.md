@@ -46,9 +46,6 @@ beian:
   enable: true
   icp: 京ICP备xxxxxxxx号
 
-# toc
-toc: true
-
 # visit count
 visit_count:
   type: busuanzi

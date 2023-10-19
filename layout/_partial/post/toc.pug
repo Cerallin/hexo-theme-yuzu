@@ -5,7 +5,7 @@
       list_number: theme.toc.list_number
     })
 
-if tocHtml
+if (undefined === page.toc || true === page.toc) && tocHtml
   aside.post-widget
     h4= __('toc.title')
     nav#post-toc.post-toc-wrap
