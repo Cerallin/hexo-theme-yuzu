@@ -18,6 +18,10 @@
   h3 + h4, h4 + h5
     padding-top: 0
 
+  &[id^='eq:']>table, div[id^='eq:']>table
+    tr
+      vertical-align: bottom
+
   // 3-line table, but ignore equations aligned as table
   &:not([id^='eq:'])>table, div:not([id^='eq:'])>table
     line-height: 2em

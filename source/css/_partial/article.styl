@@ -72,6 +72,17 @@
   info-stress-color = #448aff
   info-stress-color-dark = #00aeff
 
+  .math
+    &.display
+      font-size: content-font-size
+
+    @media (max-width: 768px)
+      &
+        font-size: default-font-size
+
+      &.display
+        font-size: info-font-size
+
   details
     margin: 1em 0
     border: 1px solid
