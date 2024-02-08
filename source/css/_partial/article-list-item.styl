@@ -21,8 +21,20 @@
   &[id^='eq:']>table, div[id^='eq:']>table
     width: 100%
 
-    tr
-      vertical-align: text-bottom
+    tbody
+      width: 100%
+
+      tr
+        width: 100%
+        position: relative
+        display: flex
+        justify-content: flex-end
+        align-items: center
+        vertical-align: text-bottom
+
+        td:first-child
+          width: 100%
+          position: absolute
 
   // 3-line table, but ignore equations aligned as table
   &:not([id^='eq:'])>table, div:not([id^='eq:'])>table
