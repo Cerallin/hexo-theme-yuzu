@@ -90,24 +90,58 @@ search:
 
 ## 学术写作指南
 
-请先安装`hexo-renderer-pandoc`。
+**注意** 如果不想做交叉引用可以跳过本章。
 
-### 三线表格
+首先安装`hexo-renderer-pandoc`，然后安装`pandoc`和`pandoc-crossref`。
 
-```md
-| key          | value                    |  type   |
-| :----------- | :----------------------- | :-----: |
-| num          | 65535                    | integer |
-| post         | {id: 4, content: "text"} | object  |
-| article_list | [{id: 1}, {id: 2}]       |  array  |
-: 表格名 {#ref:tbl-name}
+`_config.yml`里相关配置如下：
+```yaml
+pandoc:
+  pandoc_path: pandoc
+  extra:
+    - filter: pandoc-crossref
+    - csl: ieee.csl
+    - citeproc: # Just leave it here
+  meta:
+    - link-citations: true
+    - crossrefYaml: _crossref.yml
 ```
 
-### 图
+其中最后一行的意思是`_crossref.yml`是`pandoc-crossref`的配置文件，部分内容如下。
 
-```md
-![figure description](/path/to/figure.jpg){#ref:fig-name}
+```yaml
+# Options for pandoc-crossref
+# Docs: http://lierdakil.github.io/pandoc-crossref/
+# Source: https://github.com/lierdakil/pandoc-crossref
+
+titleDelim: ":"
+
+figureTitle: "图"
+figPrefix: "图"
+# 图1: 图标题
+figureTemplate: $$figureTitle$$$$i$$$$titleDelim$$ $$t$$
+figPrefixTemplate: $$p$$$$i$$
+
+tableTitle: "表"
+tblPrefix: "表"
+# 表1: 表标题
+tableTemplate: $$tableTitle$$$$i$$$$titleDelim$$ $$t$$
+tblPrefixTemplate: $$p$$$$i$$
+
+eqnTitle: "式"
+eqnPrefix: "式"
+# 式(1)
+eqnTemplate: $$eqnTitle$$($$i$$)
+eqnPrefixTemplate: $$p$$($$i$$)
+# 公式template
+equationNumberTeX: \\tag
+eqnIndexTemplate: $$i$$
+
+linkReferences: true
+nameInLink: true
 ```
+
+[一些有用的cheatsheets](docs/writing.md)。
 
 ### 推荐插件
 
