@@ -6,6 +6,24 @@ head
   meta(name="keyword" content= config.keyword)
 
   title
+    if is_archive()
+      | !{ __('nav.archives') }
+      | -
+      |
+    else if is_category()
+      | !{ __('nav.category') }
+      | !{ page.category }
+      | -
+      |
+    else if is_tag()
+      | !{ __('nav.tags') }
+      | !{ page.tag }
+      | -
+      |
+    else if page.title
+      | !{ page.title }
+      | -
+      |
     | !{ config.title }
     | -
     |
