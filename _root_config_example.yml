@@ -37,5 +37,3 @@ search:
   path: meta.json # changeable
   field: post
   content: false # currently unsupported
-
-theme: hexo-theme-yuzu

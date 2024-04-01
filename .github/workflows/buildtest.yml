@@ -41,7 +41,9 @@ jobs:
         path: themes/hexo-theme-yuzu
   
     - name: Modify _config.yml
-      run: cat themes/hexo-theme-yuzu/_root_config_example.yml >> _config.yml
+      run: |
+        sed 's_^theme:.*$_theme: hexo-theme-yuzu_' _config.yml
+        cat themes/hexo-theme-yuzu/_root_config_example.yml >> _config.yml
 
     - name: Build assets
       run: npm run build
