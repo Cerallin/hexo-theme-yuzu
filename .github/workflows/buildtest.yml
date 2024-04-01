@@ -35,13 +35,13 @@ jobs:
         npm install
         npm install hexo-renderer-pug
     
-    - name: Modify _config.yml
-      run: cat themes/hexo-theme-yuzu/_root_config_example.yml >> _config.yml
-
     - name: Checkout hexo-theme-yuzu
       uses: actions/checkout@v4
       with:
         path: themes/hexo-theme-yuzu
   
+    - name: Modify _config.yml
+      run: cat themes/hexo-theme-yuzu/_root_config_example.yml >> _config.yml
+
     - name: Build assets
       run: npm run build
