@@ -11,13 +11,13 @@ on:
 
 jobs:
   build:
-
-    runs-on: ubuntu-latest
-
     strategy:
       matrix:
+        os: [ubuntu-latest, windows-latest]
         node-version: [16.x, 18.x, 20.x]
-        # See supported Node.js release schedule at https://nodejs.org/en/about/releases/
+
+
+    runs-on: ${{ matrix.os }}
 
     steps:
     - name: Use Node.js ${{ matrix.node-version }}
@@ -42,7 +42,7 @@ jobs:
   
     - name: Modify _config.yml
       run: |
-        sed 's_^theme:.*$_theme: hexo-theme-yuzu_' _config.yml
+        sed -i 's_^theme:.*$_theme: hexo-theme-yuzu_' _config.yml
         cat themes/hexo-theme-yuzu/_root_config_example.yml >> _config.yml
 
     - name: Build assets
