@@ -1,0 +1,41 @@
+since_year: 2020
+
+post_copy:
+  text: 署名-非商业性使用-相同方式共享
+  text_en: CC BY-NC-SA 2.5 CN
+  link: https://creativecommons.org/licenses/by-nc-sa/2.5/cn/
+
+# 自定义侧边栏
+menu:
+  Archives:
+    widget: Archives # 三种：Archives | Posts | Tags
+  Posts1:
+    name: Posts
+    widget: Posts
+  Posts2:
+    name: Posts2
+    widget: Posts
+  Tags:
+    widget: Tags
+
+# 右上角
+header_menu:
+  关于: /about
+
+# 备案
+beian:
+  enable: true
+  icp: 京ICP备xxxxxxxx号
+
+# visit count
+visit_count:
+  type: busuanzi
+
+# hexo-generator-search
+# Please see https://github.com/wzpan/hexo-generator-search/tree/master for detail.
+search:
+  path: meta.json # changeable
+  field: post
+  content: false # currently unsupported
+
+theme: hexo-theme-yuzu
