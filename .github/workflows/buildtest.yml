@@ -32,8 +32,8 @@ jobs:
   
     - name: Install node modules
       run: |
-        npm ci
-        npm i hexo-renderer-pug
+        npm install
+        npm install hexo-renderer-pug
     
     - name: Modify _config.yml
       run: cat themes/hexo-theme-yuzu/_root_config_example.yml >> _config.yml
