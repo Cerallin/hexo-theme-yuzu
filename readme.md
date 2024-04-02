@@ -169,7 +169,7 @@ nameInLink: true
 
 This project is under MIT License.
 
-    Copyright (c) 2021-2023 Cerallin   <cerallin@cerallin.top>
+    Copyright (c) 2021-2024 Cerallin   <cerallin@cerallin.top>
 
     Permission is hereby granted, free of charge, to any person obtaining a copy
     of this software and associated documentation files (the "Software"), to deal
