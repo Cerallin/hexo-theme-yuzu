@@ -7,6 +7,8 @@
 
 ## 安装使用
 
+1. 安装主题与必要的依赖
+
 ```shell
 # 在hexo网站源码目录下执行
 $ npm i hexo-renderer-pug
@@ -14,49 +16,11 @@ $ mkdir -p themes && cd themes
 $ git clone https://github.com/Cerallin/hexo-theme-yuzu
 ```
 
-将 `config.yml` 中 `theme` 字段改为 `hexo-theme-yuzu`，在 `config.yml` 中添加如下内容：
+2. 修改网站根目录下的 `config.yml`。
 
-```yml
-since_year: 2020
+将 `config.yml` 中 `theme` 字段改为 `hexo-theme-yuzu`。将主题文件夹下 `_root_config_example.yml` 的内容添加到 `config.yml` 中。
 
-post_copy:
-  text: 署名-非商业性使用-相同方式共享
-  text_en: CC BY-NC-SA 2.5 CN
-  link: https://creativecommons.org/licenses/by-nc-sa/2.5/cn/
-
-# 自定义侧边栏
-menu:
-  Archives:
-    widget: Archives # 三种：Archives | Posts | Tags
-  Posts1:
-    name: Posts
-    widget: Posts
-  Posts2:
-    name: Posts2
-    widget: Posts
-  Tags:
-    widget: Tags
-
-# 右上角
-header_menu:
-  关于: /about
-
-# 备案
-beian:
-  enable: true
-  icp: 京ICP备xxxxxxxx号
-
-# visit count
-visit_count:
-  type: busuanzi
-
-# hexo-generator-search
-# Please see https://github.com/wzpan/hexo-generator-search/tree/master for detail.
-search:
-  path: meta.json # changeable
-  field: post
-  content: false # currently unsupported
-```
+3. 根据自己的需要修改主题配置
 
 **In case you didn't know** 你可以创建一个`_config.[theme name].yml`文件来覆盖主题的默认设置。对于上述安装方法来说，就是`_config.hexo-theme-yuzu.yml`。
 
