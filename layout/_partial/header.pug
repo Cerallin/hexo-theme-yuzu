@@ -19,5 +19,6 @@ header.head-header
     .head-item
       - const header_menu = config.header_menu;
       - for (const item in header_menu)
-        a.head-item-link(href= url_for(header_menu[item]))
-          = item
+        div.head-item
+          a.head-item-link(href= url_for(header_menu[item]))
+            = item
