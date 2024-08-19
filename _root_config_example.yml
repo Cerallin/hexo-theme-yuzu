@@ -18,6 +18,14 @@ menu:
   Tags:
     widget: Tags
 
+# 首页的Tags Widget显示选项，只有以下选项有效。
+# 参考 https://hexo.io/docs/helpers.html#list-tags
+tag_options:
+  orderby: length   # 按标签文章数排序
+  order: -1         # 倒序
+  show_count: true  # 是否显示tag文章数
+  amount: 20        # 至多显示20个tag
+
 # 右上角
 header_menu:
   关于: /about

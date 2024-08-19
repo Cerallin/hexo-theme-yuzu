@@ -1,1 +1,19 @@
-| !{ list_tags() }
+-
+  const default_options = { amount: 0 }
+  const { amount, orderby, order, show_count } = {
+    ...default_options,
+    ...config.tag_options
+  }
+  const tag_options = {
+    orderby: orderby,
+    order: order,
+    show_count: show_count,
+    amount: amount,
+  }
+
+| !{ list_tags(site.tags, tag_options) }
+
+if amount != 0
+  p.menu-nav-item
+    a(title= __('nav.more')
+      href= url_for(`/tags`)) ...
