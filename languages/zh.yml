@@ -6,6 +6,7 @@ nav:
   about: 关于
   search: 搜索
   category: "分类："
+  toggle_bar: 菜单按钮
 
 toc:
   title: 目录
