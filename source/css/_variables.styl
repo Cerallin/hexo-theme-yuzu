@@ -13,6 +13,7 @@ info-font-size = 14px
 // Colors for light mode
 background-color-light = #ffffff
 primary-color-light = #333333
+code-background-color-light = #CECEFF
 primary-gray-light = #AAAAAA
 secondary-color-light = #838383
 secondary-gray-light = #666666
@@ -22,6 +23,7 @@ border-table-light = #000000
 // Colors for dark mode
 background-color-dark = #101010
 primary-color-dark = #CDCDCD
+code-background-color-dark = #33333E
 primary-gray-dark = #565656
 secondary-color-dark = #7D7D7D
 secondary-gray-dark = #9A9A9A
@@ -32,6 +34,7 @@ border-table-dark = #ffffff
 if (!hexo-config('dark_mode'))
   $background-color = background-color-light
   primary-color = primary-color-light
+  code-background-color = code-background-color-light
   primary-gray = primary-gray-light
   secondary-color = secondary-color-light
   secondary-gray = secondary-gray-light
@@ -41,6 +44,7 @@ if (!hexo-config('dark_mode'))
 else
   $background-color = background-color-dark
   primary-color = primary-color-dark
+  code-background-color = code-background-color-dark
   primary-gray = primary-gray-dark
   secondary-color = secondary-color-dark
   secondary-gray = secondary-gray-dark
