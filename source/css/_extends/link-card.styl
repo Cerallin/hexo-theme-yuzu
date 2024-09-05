@@ -1,0 +1,82 @@
+// Copied and modified from 
+// https://github.com/OrangeX4/hexo-link-card/blob/main/index.js
+//
+// MIT License
+//
+// Copyright (c) 2022 OrangeX4
+// Copyright (c) 2024 Cerallin
+//
+// Permission is hereby granted, free of charge, to any person obtaining a copy
+// of this software and associated documentation files (the "Software"), to deal
+// in the Software without restriction, including without limitation the rights
+// to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+// copies of the Software, and to permit persons to whom the Software is
+// furnished to do so, subject to the following conditions:
+//
+// The above copyright notice and this permission notice shall be included in all
+// copies or substantial portions of the Software.
+//
+// THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+// IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+// FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+// AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+// LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+// OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+// SOFTWARE.
+//
+
+// light mode
+link-card-background-color-light = #F6F6F6
+link-card-title-color-light = #121212
+link-card-desc-color-light = #999999
+// dark mode
+link-card-background-color-dark = #212121
+link-card-title-color-dark = #e4e4e4
+link-card-desc-color-dark = #999999
+
+if (!hexo-config('dark_mode'))
+  $link-card-background-color = link-card-background-color-light
+  $link-card-title-color = link-card-title-color-light
+  $link-card-desc-color = link-card-desc-color-light
+else
+  $link-card-background-color = link-card-background-color-dark
+  $link-card-title-color = link-card-title-color-dark
+  $link-card-desc-color = link-card-desc-color-dark
+
+.link-card
+  position: relative
+  display: flex
+  box-sizing: border-box
+  flex-direction: column
+  width: 420px
+  min-height: 84px
+  border-radius: 8px
+  max-width: 100%
+  overflow: hidden
+  margin: 16px auto
+  padding: 12px 20px 9px
+  justify-content: center
+  background-color($link-card-background-color, link-card-background-color-light, link-card-background-color-dark)
+
+  .link-card-title
+    display: flex
+    overflow: hidden
+    text-overflow: ellipsis
+    max-height: 40px
+    line-height: 1.25
+    text-color($link-card-title-color, link-card-title-color-light, link-card-title-color-dark) 
+
+  .link-card-link
+    display: flex
+    font-size: 13px
+    height: 18px
+    line-height: 18px
+    color: $link-card-desc-color
+    word-break: break-all
+    text-overflow: ellipsis
+    overflow: hidden
+    text-color($link-card-desc-color, link-card-desc-color-light, link-card-desc-color-dark) 
+
+    .link-card-icon
+      display: inline-flex
+      align-items: center
