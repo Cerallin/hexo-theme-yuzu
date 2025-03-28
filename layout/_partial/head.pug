@@ -9,27 +9,16 @@ head
 
   title
     if is_archive()
-      | !{ __('nav.archives') }
-      | -
-      |
+      | !{ __('nav.archives') } - 
     else if is_category()
-      | !{ __('nav.category') }
-      | !{ page.category }
-      | -
-      |
+      | !{ __('nav.category') } !{ page.category } - 
     else if is_tag()
-      | !{ __('nav.tags') }
-      | !{ page.tag }
-      | -
-      |
+      | !{ __('nav.tags') } !{ page.tag } - 
     else if page.title
-      | !{ page.title }
-      | -
-      |
+      | !{ page.title } - 
     | !{ config.title }
-    | -
-    |
-    | !{ config.subtitle }
+    if config.subtitle
+      |  - !{ config.subtitle }
 
   if theme.favicon
     link(rel="icon" href= theme.favicon)
