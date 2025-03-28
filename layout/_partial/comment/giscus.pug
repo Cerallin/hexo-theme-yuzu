@@ -1,23 +1,27 @@
-if theme.comment.enable && theme.comment.type === 'giscus'
-  #giscus-comments
-  script.
-    function loadGiscus() {
-      const config = !{JSON.stringify(theme.comment.giscus)};
-      const giscusScript = document.createElement('script');
-      giscusScript.src = 'https://giscus.app/client.js';
-      giscusScript.setAttribute('data-repo', config.repo);
-      giscusScript.setAttribute('data-repo-id', config.repo_id);
-      giscusScript.setAttribute('data-category', config.category);
-      giscusScript.setAttribute('data-category-id', config.category_id);
-      giscusScript.setAttribute('data-mapping', config.mapping || 'pathname');
-      giscusScript.setAttribute('data-strict', config.strict || '0');
-      giscusScript.setAttribute('data-reactions-enabled', config.reactions_enabled || '1');
-      giscusScript.setAttribute('data-emit-metadata', config.emit_metadata || '0');
-      giscusScript.setAttribute('data-input-position', config.input_position || 'top');
-      giscusScript.setAttribute('data-theme', config.theme || 'preferred_color_scheme');
-      giscusScript.setAttribute('data-lang', config.lang || 'zh-CN');
-      giscusScript.crossOrigin = 'anonymous';
-      giscusScript.async = true;
-      document.getElementById('giscus-comments').appendChild(giscusScript);
-    }
-    window.addEventListener('load', loadGiscus);
+# giscus-comments
+script.
+  function loadGiscus() {
+    const config = !{JSON.stringify(theme.comment.giscus)};
+    
+    const giscusScript = document.createElement('script');
+    giscusScript.src = 'https://giscus.app/client.js';
+    
+    giscusScript.setAttribute('data-repo', config.repo);
+    giscusScript.setAttribute('data-repo-id', config.repo_id);
+    giscusScript.setAttribute('data-category', config.category); 
+    giscusScript.setAttribute('data-category-id', config.category_id);
+    giscusScript.setAttribute('data-mapping', config.mapping || 'pathname');
+    giscusScript.setAttribute('data-strict', config.strict || '0');
+    giscusScript.setAttribute('data-reactions-enabled', config.reactions_enabled || '1');
+    giscusScript.setAttribute('data-emit-metadata', config.emit_metadata || '0');
+    giscusScript.setAttribute('data-input-position', config.input_position || 'top');
+    giscusScript.setAttribute('data-theme', config.theme || 'preferred_color_scheme');
+    giscusScript.setAttribute('data-lang', config.lang || 'zh-CN');
+    
+    giscusScript.crossOrigin = 'anonymous';
+    giscusScript.async = true;
+    
+    document.getElementById('giscus-comments').appendChild(giscusScript);
+  }
+
+  window.addEventListener('load', loadGiscus);
