@@ -5,9 +5,6 @@
 # 是否允许用户复制网站上的内容，仅仅是君子协定
 selectable: true
 
-# 文字是否缩进（2字符）
-text_indent: true
-
 # Dark mode
 # Available values: true, false, auto
 dark_mode: auto
@@ -25,17 +22,10 @@ code:
 word_count:
   enable: true
   mode: all # or en_only | zh_only
-  reading_time: false
+  reading_time: true
   reading_speed:
     cn: 300
     en: 160
-
-# Site creation time
-since: 2018
-
-# key: link text, value: URL link
-header_menu:
-  About: /about
 
 # 文章右侧TOC导航
 # 对于每篇文章，都可以使用"toc: false|true"指定是否显示toc
@@ -48,8 +38,21 @@ toc:
 signature: 热爱生活，然后发现，处处都是阳光
 
 comment:
-  enable: false
-  type: 'gitalk' # gitalk or valine
+  enable: true
+  type: 'giscus'#gitalk/valine/giscus
+  # giscus 专用配置
+  giscus:
+    repo: ""
+    repo_id: ""
+    category: ""
+    category_id: ""
+    mapping: ""
+    strict: "0"
+    reactions_enabled: "1"
+    emit_metadata: "0"
+    input_position: "top"
+    theme: "preferred_color_scheme"
+    lang: "zh-CN"
   # config for valine
   placeholder: 'Just go go.'
   app_id:
