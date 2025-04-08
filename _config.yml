@@ -49,7 +49,7 @@ signature: 热爱生活，然后发现，处处都是阳光
 
 comment:
   enable: false
-  type: 'gitalk' # gitalk or valine
+  type: 'gitalk' # gittalk or valine or giscus
   # config for valine
   placeholder: 'Just go go.'
   app_id:
@@ -60,6 +60,19 @@ comment:
   repo:
   owner:
   admin: []
+  # giscus评论系统配置，使用前请取消注释，配置参考：https://giscus.app/zh-CN
+  # giscus:
+  #   repo: ""
+  #   repo_id: ""
+  #   category: ""
+  #   category_id: ""
+  #   mapping: ""
+  #   strict: ""
+  #   reactions_enabled: ""
+  #   emit_metadata: ""
+  #   input_position: ""
+  #   theme: ""
+  #   lang: ""
 
 # 是否显示“更多”按钮
 excerpt_link: true

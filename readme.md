@@ -52,6 +52,10 @@ $ git clone https://github.com/Cerallin/hexo-theme-yuzu
 
 将主题配置文件中的`dark_mode`值改为`true`。
 
+## 文章可选开启评论
+
+当配置文件中`comment`设置为`true`时，可在文章的Front-matter中使用`comments: true/false`来控制评论功能的开启或关闭。
+
 ## 学术写作指南
 
 **注意** 如果不想做交叉引用可以跳过本章。

@@ -17,10 +17,12 @@ article#post.post
     //- post content
     | !{ post.content }
     //- comments
-    if theme.comment.enable
+    if theme.comment.enable && post.comments !== false
       h3#comments
         = __('post.comments')
       if theme.comment.type === "gitalk"
         | !{ partial('_partial/comment/gitalk', null, {cache: true}) }
       else if theme.comment.type === "valine"
         | !{ partial('_partial/comment/valine', null, {cache: true}) }
+      else if theme.comment.type === "giscus"
+        | !{ partial('_partial/comment/giscus', null, {cache: true}) }
