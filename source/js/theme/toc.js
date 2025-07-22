@@ -4,6 +4,7 @@
   Theme.toc = {
     register() {
       const tocWrapper = document.getElementById('post-toc');
+      if (!tocWrapper || !tocWrapper.offsetParent) return;
       const sections = document.querySelectorAll('article h3[id], article h4[id], article h5[id]');
 
       // scroll title to the middle of toc wrapper, and deactivate all the titles
