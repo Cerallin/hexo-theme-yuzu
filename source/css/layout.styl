@@ -141,6 +141,9 @@ del, s
   grid-template-columns: @css{minmax(75%, 800px)} auto
   grid-column-gap: 20px
 
+  @media (max-width: 768px)
+    grid-template-columns: 1fr
+
   &[data-page="category"], &[data-page="archive"]
     display: block
 
@@ -264,3 +267,4 @@ del, s
   .post-visit
     display: inline-block
     margin: 0 10px
+
