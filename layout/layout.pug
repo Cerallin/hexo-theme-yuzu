@@ -10,7 +10,7 @@ html(lang= config.language)
 
     .page(data-filter)
       .head(data-show)
-        | !{ partial('_partial/header', null, {cache: true}) }
+        | !{ partial('_partial/header', null, {cache: false}) }
         | !{ partial('_partial/menubar', null, {cache: true}) }
 
       .main(data-page= current_page()) !{ body }
