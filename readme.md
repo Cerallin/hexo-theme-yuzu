@@ -1,4 +1,12 @@
 # Hexo-Theme-Yuzu
+
+![GitHub release](https://img.shields.io/github/v/release/Cerallin/hexo-theme-yuzu?sort=semver)
+![Node.js Version](https://img.shields.io/badge/nodejs-20.x%20|%2022.x%20|%2024.x-brightgreen)
+![License](https://img.shields.io/github/license/Cerallin/hexo-theme-yuzu)
+![GitHub Repo stars](https://img.shields.io/github/stars/Cerallin/hexo-theme-yuzu)
+![Last Commit](https://img.shields.io/github/last-commit/Cerallin/hexo-theme-yuzu)
+![CI](https://img.shields.io/github/actions/workflow/status/Cerallin/hexo-theme-yuzu/buildtest.yml)
+
 本项目从 [hexo-theme-orange](https://github.com/Orange-way/hexo-theme-orange) fork 出来，鉴于无法找到原作者联系方式，本项目将由[Cerallin](https://github.com/Cerallin)继续维护。
 
 **当前分支为 v3.x 版本**，使用pug代替ejs作为模板引擎。
