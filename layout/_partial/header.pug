@@ -1,7 +1,12 @@
 header.head-header
   .head-author
-    a.head-author-link(href= url_for())
-      = config.title
+    if is_home()
+      h1.head-author-title
+        a.head-author-link(href=url_for())
+          = config.title
+    else
+      a.head-author-link(href=url_for())
+        = config.title
   .head-right
     button#bar-wrap-toggle.bar-wrap(title= __('nav.toggle_bar'))
       span.bar
