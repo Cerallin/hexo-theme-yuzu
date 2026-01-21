@@ -1,8 +1,17 @@
 -
-  const archivesHtml = list_archives({
-    show_count: config.show_count,
-    type: config.archive_type,
-    order: -1,
-  })
+  const archive_format = config.archive_type == 'monthly' ? 'MMM YYYY' : undefined
+-
+  const archive_config = {
+    ...{
+      order: -1,
+      format: archive_format,
+    },
+    ...{
+      show_count: config.show_count,
+      type: config.archive_type,
+    }
+  }
+-
+  const archivesHtml = list_archives(archive_config)
 
 | !{ archivesHtml }
