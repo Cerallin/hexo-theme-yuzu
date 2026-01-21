@@ -31,12 +31,22 @@
     text-color(secondary-gray, secondary-gray-light, secondary-gray-dark)
 
   // Archive menu
-  .archive-list-item
-    height: 2em
-    line-height: 2em
+  .archive-list
+    if (hexo-config('archive_columns') == '2')
+      display: grid;
+      grid-template-columns: auto auto;
+    else if (hexo-config('archive_columns') == '3')
+      display: grid;
+      grid-template-columns: auto auto auto;
+    else // 1 column
+      // nothing
 
-    a
-      text-color(primary-color, primary-color-light, primary-color-dark)
+    .archive-list-item
+      height: 2em
+      line-height: 2em
+
+      a
+        text-color(primary-color, primary-color-light, primary-color-dark)
 
   // Tag menu
   .tag-list-item

@@ -80,6 +80,9 @@ excerpt_link: true
 # 是否加载辅助样式
 helpers: true
 
+# 主页归档列数
+archive_columns: 1
+
 favicon: /img/favicon.ico
 
 # 此处请设置与根目录下_config.yml里的root一致（一般在url的下一行）
