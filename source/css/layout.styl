@@ -172,6 +172,13 @@ del, s
     li
       list-style: disc
 
+      &:has(> label > input[type="checkbox"])
+        list-style: none
+        margin-left: -2em
+
+        label > input[type="checkbox"]
+          margin-right: 0.5em
+
       p
         text-indent: 0
 
