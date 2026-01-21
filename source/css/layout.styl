@@ -136,13 +136,16 @@ del, s
   &[data-page="tag"]
     display: block
 
-
   display: grid
-  grid-template-columns: @css{minmax(75%, 800px)} auto
-  grid-column-gap: 20px
 
+  // 在桌面端有2列，分别是正文和目录
+  grid-template-columns: @css{minmax(75%, 800px)} auto
+  // 移动端因为隐藏了目录所以只有1列，此时第2列的auto是不该存在的
+  // 否则会导致右侧有多余的空间，于是左右看起来不对称
   @media (max-width: 768px)
-    grid-template-columns: 1fr
+    grid-template-columns: @css{minmax(75%, 800px)}
+
+  grid-column-gap: 20px
 
   &[data-page="category"], &[data-page="archive"]
     display: block
@@ -274,4 +277,3 @@ del, s
   .post-visit
     display: inline-block
     margin: 0 10px
-
