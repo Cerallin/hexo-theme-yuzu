@@ -10,6 +10,11 @@ head
   title
     if is_archive()
       | !{ __('nav.archives') }
+      |
+      if page.year
+        | -
+        | !{ page.year }
+        |
       | -
       |
     else if is_category()
@@ -30,6 +35,9 @@ head
     | -
     |
     | !{ config.subtitle }
+
+    if (page.current) && (page.current > 1)
+      | p!{ page.current }
 
   if theme.favicon
     link(rel="icon" href= theme.favicon)
