@@ -44,6 +44,10 @@ toc:
   enable: true
   list_number: true  # 是否显示数字排序
 
+# 文章右侧参考文献侧边栏
+refs_sidebar:
+  enable: false
+
 # A sentence to show
 signature: 热爱生活，然后发现，处处都是阳光
 

@@ -1,0 +1,105 @@
+// Refs sidebar (citation popup) - light/dark via theme mixins
+refs-sidebar-highlight-light = #E8E8E8
+refs-sidebar-highlight-dark = #2a2a2a
+refs-sidebar-hover-light = #F0F0F0
+refs-sidebar-hover-dark = #252525
+if (!hexo-config('dark_mode'))
+  refs-sidebar-highlight-default = refs-sidebar-highlight-light
+  refs-sidebar-hover-default = refs-sidebar-hover-light
+else
+  refs-sidebar-highlight-default = refs-sidebar-highlight-dark
+  refs-sidebar-hover-default = refs-sidebar-hover-dark
+
+refs-sidebar-bg-light = rgba(255, 255, 255, 0.8)
+refs-sidebar-bg-dark = rgba(16, 16, 16, 0.8)
+
+.refs-sidebar
+  position: fixed
+  top: 0
+  right: 0
+  width: 100%
+  max-width: 45vw
+  height: 100%
+  z-index: 9999
+  display: flex
+  flex-direction: column
+  overflow: hidden
+  pointer-events: none
+  transform: translateX(100%)
+  transition: transform 0.25s ease-out
+  background-color(refs-sidebar-bg-light, refs-sidebar-bg-light, refs-sidebar-bg-dark)
+  -webkit-backdrop-filter: blur(3px)
+  backdrop-filter: blur(3px)
+  box-shadow: -2px 0 12px rgba(0, 0, 0, 0.08)
+
+.refs-sidebar[data-open]
+  transform: translateX(0)
+  pointer-events: auto
+
+.refs-sidebar-header
+  flex-shrink: 0
+  padding: 1rem 1.25rem
+  display: flex
+  align-items: center
+  justify-content: space-between
+  border-color($border-color, border-color-light, border-color-dark)
+  border-bottom-width: 1px
+  border-bottom-style: solid
+
+.refs-sidebar-title
+  font-weight: 600
+  margin: 0
+  font-size: 1rem
+  text-color(primary-color, primary-color-light, primary-color-dark)
+
+.refs-sidebar-close
+  background: none
+  border: none
+  cursor: pointer
+  padding: 0.25rem
+  line-height: 1
+  opacity: 0.7
+  text-color(primary-color, primary-color-light, primary-color-dark)
+
+.refs-sidebar-close:hover
+  opacity: 1
+
+.refs-sidebar-content
+  flex: 1
+  overflow-y: auto
+  overflow-x: hidden
+  padding: 1rem 1.25rem
+  scrollbar-width: thin
+  scrollbar-color: primary-gray border-gray
+
+  &::-webkit-scrollbar
+    width: 8px
+
+  &::-webkit-scrollbar-track
+    background-color(border-gray, border-gray-light, border-gray-dark)
+    border-radius: 4px
+
+  &::-webkit-scrollbar-thumb
+    background-color(primary-gray, primary-gray-light, primary-gray-dark)
+    border-radius: 4px
+
+  &::-webkit-scrollbar-thumb:hover
+    background-color(secondary-gray, secondary-gray-light, secondary-gray-dark)
+
+  .csl-entry
+    scroll-margin-top: 1rem
+    scroll-margin-bottom: 1rem
+    border-radius: 4px
+    padding: 0.25rem 0.5rem
+    margin-left: -0.5rem
+    margin-right: -0.5rem
+    transition: background-color 0.15s ease
+
+    &:hover
+      background-color(refs-sidebar-hover-default, refs-sidebar-hover-light, refs-sidebar-hover-dark)
+
+    &[data-refs-highlight]
+      background-color(refs-sidebar-highlight-default, refs-sidebar-highlight-light, refs-sidebar-highlight-dark)
+
+    &[data-refs-highlight]:hover
+      background-color(refs-sidebar-highlight-default, refs-sidebar-highlight-light, refs-sidebar-highlight-dark)

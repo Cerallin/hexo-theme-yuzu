@@ -14,6 +14,8 @@ if config.search
   | !{ js('js/theme/search') }
 if theme.toc.enable
   | !{ js('js/theme/toc') }
+if theme.refs_sidebar.enable
+  | !{ js('js/theme/refs-sidebar') }
 if theme.smooth_corner
   | !{ js('js/theme/smooth-corners') }
 
