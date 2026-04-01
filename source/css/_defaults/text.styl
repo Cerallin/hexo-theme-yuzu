@@ -11,6 +11,15 @@ content-text()
   if (hexo-config('text_indent'))
     text-indent: 2em
 
+inline-code()
+  text-color(primary-color, primary-color-light, primary-color-dark)
+  vertical-align: middle
+  padding: 3px 0.4em
+  border-radius: 3px
+
+  if (hexo-config('smooth_corner'))
+    smooth-corner(5)
+
 primary-link-text()
   text-color(primary-color, primary-color-light, primary-color-dark)
   font-size: default-font-size
