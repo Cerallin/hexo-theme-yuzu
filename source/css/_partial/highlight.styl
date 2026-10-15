@@ -3,6 +3,12 @@ code-font-family = 'Inconsolata', 'monospace', 'Open Sans', 'Microsoft Yahei', s
 $dark-mode = hexo-config('dark_mode')
 $smooth-corner = hexo-config('smooth_corner')
 code-border-color = rgba(0, 0, 0, 0.125)
+$code-line-number = hexo-config('code.line_number')
+line-number-width = 2.15em
+line-number-pad = 0.55em
+line-number-gap = 0.85em
+line-number-gutter = line-number-width + line-number-gap
+line-number-color = #a0a1a7
 
 if ($dark-mode == false)
   @import './highlight-themes/atom-one-light'
@@ -16,7 +22,6 @@ else // auto
 
 code, .code, .gutter, pre, figcaption
   padding: 7px
-  // TODO 代码自动换行并对齐行号
   line-height: 1.45em
   font-size: code-font-size
   font-family: code-font-family
@@ -49,30 +54,55 @@ figure.highlight
     display: block
     position: relative
     margin: 0 !important
-    overflow-x: auto
+    overflow-x: visible
 
     .code
+      padding: 0
+
       if ($smooth-corner)
-        padding-left: 1em
         padding-right: 1em
 
       pre
         margin: 0
-        // avoid cover by the button
-        max-width: calc(100% - 64px)
+        // keep the first line clear of the copy button
+        padding: 7px 64px 7px 0
+        counter-reset: line
+        border-radius: 5px 0 0 5px
+
+        @media (max-width: 768px)
+          padding-right: 7px
+
+        if ($code-line-number)
+          background-image: linear-gradient(to right, code-border-color 0, code-border-color line-number-width, transparent line-number-width)
+
+        br
+          display: none
+
+        .line
+          display: block
+          position: relative
+          min-height: 1.45em
+          white-space: pre-wrap
+          overflow-wrap: anywhere
+
+          if ($code-line-number)
+            padding-left: line-number-gutter
+            counter-increment: line
+
+            &:before
+              content: counter(line)
+              position: absolute
+              left: 0
+              top: 0
+              box-sizing: border-box
+              width: line-number-width
+              padding-right: line-number-pad
+              text-align: right
+              user-select: none
+              text-color(line-number-color, line-number-color, #b18eb1)
 
     .gutter
-      width: 10px
-      text-align: right
-      user-select: none
-      background-color(code-border-color, code-border-color, code-border-color)
-      border-radius: 5px 0 0 5px
-
-      if (!hexo-config('code.line_number'))
-        display: none
-
-      pre
-        margin: 0
+      display: none
 
   & > .clipboard-btn
     border: 1px solid
@@ -147,7 +177,7 @@ figure.highlight
       cursor: pointer
 
     & + table
-      .gutter
+      .code pre
         border-radius: 0 0 0 5px
 
   &.c
