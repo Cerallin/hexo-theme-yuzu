@@ -64,16 +64,9 @@ figure.highlight
 
       pre
         margin: 0
-        // keep the first line clear of the copy button
-        padding: 7px 64px 7px 0
+        padding: 7px
         counter-reset: line
         border-radius: 5px 0 0 5px
-
-        @media (max-width: 768px)
-          padding-right: 7px
-
-        if ($code-line-number)
-          background-image: linear-gradient(to right, code-border-color 0, code-border-color line-number-width, transparent line-number-width)
 
         br
           display: none
@@ -85,7 +78,11 @@ figure.highlight
           white-space: pre-wrap
           overflow-wrap: anywhere
 
-          if ($code-line-number)
+        if ($code-line-number)
+          padding-left: 0
+          background-image: linear-gradient(to right, code-border-color 0, code-border-color line-number-width, transparent line-number-width)
+
+          .line
             padding-left: line-number-gutter
             counter-increment: line
 
@@ -103,6 +100,13 @@ figure.highlight
 
     .gutter
       display: none
+
+  &:has(> .clipboard-btn)
+    table .code pre
+      padding-right: 64px
+
+      @media (max-width: 768px)
+        padding-right: 7px
 
   & > .clipboard-btn
     border: 1px solid

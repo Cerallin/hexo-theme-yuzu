@@ -20,6 +20,8 @@ smooth_corner: false
 code:
   # Force hide line numbers
   line_number: false
+  # Hide the copy button when a block has this many lines or fewer
+  line_threshold: 3
 
 # Counting words
 word_count:

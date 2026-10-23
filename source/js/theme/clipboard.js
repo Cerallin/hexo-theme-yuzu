@@ -25,9 +25,21 @@
         console.error('Trigger:', e.trigger);
       });
 
+      const threshold = Number(window.config && window.config.code_line_threshold);
+
+      function lineCount(element) {
+        const lines = element.querySelectorAll(':scope .code > pre .line');
+        if (lines.length) return lines.length;
+        const pre = element.querySelector(':scope .code > pre');
+        if (!pre) return 0;
+        return pre.innerText.replace(/\n$/, '').split('\n').length;
+      }
+
       // Insert clipboard icons to code blocks
       document.getElementsByClassName('highlight').forEach(
         function (element) {
+          if (lineCount(element) <= threshold) return;
+
           const hasCaption = element.childNodes[0].tagName === 'FIGCAPTION';
           if (hasCaption) {
             const button = document.createElement('a');
